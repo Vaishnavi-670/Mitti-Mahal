@@ -7,20 +7,19 @@ const Home = () => {
         <div className=" mx-auto max-w-7xl">
           <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
             <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
-              <span>Start</span>{" "}
-              <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">
-                building a buzz
+              <span>Discover</span>{" "}
+              <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-gray-400 to-red-500 lg:inline">
+                the art of clay crafting
               </span>{" "}
-              <span>around your product ?</span>
+              <span>with our products</span>
             </h1>
             <p className="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24">
-              Start gaining the traction you've always wanted with our next-level
-              templates and designs. Crafted to help you tell your story.
+              Unleash your creativity with our premium clay products. Perfect for artists of all levels, our clay is designed to help you bring your visions to life.
             </p>
             <div className=" space-x-0 md:space-x-2 ">
               <a
                 href="#_"
-                className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-400 rounded-2xl sm:w-auto sm:mb-0"
+                className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-red-400 rounded-2xl sm:w-auto sm:mb-0"
               >
                 Get Started
                 <svg
@@ -60,6 +59,8 @@ const Home = () => {
           </div>
 
         </div>
+
+
         <div className='h-[100vh] w-[100%] bg-gray-50'>
           <div className='flex flex-col h-screen'>
             <img className='object-cover rounded-e-full' src="https://sothebys-com.brightspotcdn.com/76/45/1de85a4a4a7f915016c4802bcd28/hk1219-marketing-hero.jpg" alt="" />
