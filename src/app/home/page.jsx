@@ -148,11 +148,63 @@ const Home = () => {
         </div>
         <div className='flex justify-center flex-col'>
           <div className='flex justify-center flex-col'>
-            <h1 className='text-5xl font-bold text-red-950 text-center'> Latest Product</h1>
+            <h1 className='text-5xl font-bold mt-6 text-red-950 text-center'> Latest Product</h1>
             <p className="text-gray-900  text-xl mt-5 text-center"> Introducing Our Latest Masterpiece: Where Innovation Meets Timeless Craftsmanship</p>
           </div>
 
+        </div>
+        <div className='flex mt-7 justify-around p-8'>
+        <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 h-96 w-80  rounded-2xl hover:duration-700 duration-700">
+        <div className="w-80 h-96 text-gray-800">
+           <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
+           </div>
+          <div className="absolute bg-transparent -bottom-24 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
+            <span className="text-lime-400 font-bold text-xs">Caramic Bottle</span>
+            <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span>
+            <p className="text-neutral-800">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
           </div>
+        </div>
+        <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96  rounded-2xl hover:duration-700 duration-700">
+          <div className="w-80 h-96  text-gray-800">
+           <img className="w-80 h-96" src="https://i.pinimg.com/236x/6c/e5/73/6ce573c2e30bef90a91ee2a0413e48ea.jpg" alt="" />
+          </div>
+          <div className="absolute bg-transparent -bottom-24 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
+            <span className="text-lime-400 font-bold text-xs">Caramic Plate </span>
+            <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span>
+            <p className="text-neutral-800">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96  rounded-2xl hover:duration-700 duration-700">
+          <div className="w-80 h-96  text-gray-800">
+           <img className="w-80 h-96" src="https://i.pinimg.com/236x/7e/16/78/7e1678cce31fb1f9ddd9a216573162af.jpg" alt="" />
+          </div>
+          <div className="absolute bg-transparent -bottom-24 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
+            <span className="text-lime-400 font-bold text-xs">Caramic Bowl
+            </span>
+            <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span>
+            <p className="text-neutral-800">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96  rounded-2xl hover:duration-700 duration-700">
+          <div className="w-80 h-96  text-gray-800">
+            <img className="w-80 h-96" src="https://i.pinimg.com/236x/62/fd/e2/62fde2e169f2394c6f0b2d8c9636c5af.jpg" alt="" />
+          </div>
+          <div className="absolute bg-transparent -bottom-24 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
+            <span className="text-lime-400 font-bold text-xs">Caramic Pot</span>
+            <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span>
+            <p className="text-neutral-800">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+
+        </div>
 
 
       </section>
