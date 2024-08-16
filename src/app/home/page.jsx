@@ -7,12 +7,12 @@ const Home = () => {
       <section className="pt-24 bg-white">
         <div className=" mx-auto max-w-7xl">
           <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
-            <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
-              <span>Discover</span>{" "}
-              <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-gray-400 to-red-500 lg:inline">
+            <h1 className=" mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
+              <span className='text1'>Discover</span>{" "}
+              <span className=" text2 block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-gray-400 to-red-500 lg:inline">
                 the art of clay crafting
               </span>{" "}
-              <span>with our products</span>
+              <span className='text1'>with our products</span>
             </h1>
             <p className="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24">
               Unleash your creativity with our premium clay products. Perfect for artists of all levels, our clay is designed to help you bring your visions to life.
@@ -71,81 +71,92 @@ const Home = () => {
           <button className='px-4 py-2 rounded-md text-white bg-blue-500 hover:bg-blue-700'>Discover Now</button>
         </div> */}
         </div>
-<div className='mt-0'>
-  <div className='flex justify-center'>
-    <h1 className='text-3xl font-bold'>Our Gallery</h1>
-  </div>
-  <div className="p-8 grid-wrapper">
-  <div >
-    <img
-      src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-      alt=""
-    />
-  </div>
-  <div >
-    <img
-      src="https://images.unsplash.com/photo-1588282322673-c31965a75c3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
-      alt=""
-    />
-  </div>
-  <div className="tall">
-    <img
-      src="https://images.unsplash.com/photo-1588117472013-59bb13edafec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-      alt=""
-    />
-  </div>
-  <div className="wide">
-    <img
-      src="https://images.unsplash.com/photo-1587588354456-ae376af71a25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-      alt=""
-    />
-  </div>
-  <div>
-    <img
-      src=" https://images.unsplash.com/photo-1558980663-3685c1d673c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60"
-      alt=""
-    />
-  </div>
-  <div className="tall">
-    <img
-      src="https://images.unsplash.com/photo-1588499756884-d72584d84df5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
-      alt=""
-    />
-  </div>
-  <div className="big">
-    <img
-      src="https://images.unsplash.com/photo-1588492885706-b8917f06df77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"
-      alt=""
-    />
-  </div>
-  <div>
-    <img
-      src="https://images.unsplash.com/photo-1588247866001-68fa8c438dd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80"
-      alt=""
-    />
-  </div>
-  <div className="wide">
-    <img
-      src="https://images.unsplash.com/photo-1586521995568-39abaa0c2311?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-      alt=""
-    />
-  </div>
-  <div className='gallery'>
-    <img
-      src="https://images.unsplash.com/photo-1553984840-b8cbc34f5215?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-      alt=""
-    />
-  </div>
-  <div className='gallery'>
-    <img
-      src="https://images.unsplash.com/photo-1433446787703-42d5bf446876?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
-      alt=""
-    />
-  </div>
-</div>
-</div>
+        <div className='mt-0'>
+          <div className='flex justify-center flex-col'>
+            <h1 className='text-5xl font-bold text-red-950 text-center'>Our Gallery</h1>
+            <p className="text-gray-900 font- text-xl mt-5 text-center"> Explore the Beauty of Handcrafted Art: A Curated Collection of Unique Clay Creations, Each Piece Telling Its Own Story,  <br />Immerse yourself in our gallery, where every handcrafted clay creation tells a unique story</p>
+          </div>
+          <div className="p-8 mt-5 grid-wrapper">
+            <div >
+              <img className='object-cover'
+                src="https://i.pinimg.com/236x/48/36/b5/4836b50972a30baae1c9af7e88d5fbcc.jpg"
+                alt=""
+              />
+            </div>
+            <div >
+              <img
+                src="https://i.pinimg.com/236x/01/19/6f/01196fd141c5be39e9ac1a375a267007.jpg"
+                alt=""
+              />
+            </div>
+            <div className="tall">
+              <img
+                src="https://i.pinimg.com/236x/9a/fb/75/9afb7581ea0b50307d7ec9e7876bc026.jpg"
+                alt=""
+              />
+            </div>
+            <div className="wide object-cover">
+              <img
+                src="https://i.pinimg.com/564x/5c/59/50/5c5950be2c19d678e1939e7fe30675c5.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src=" https://i.pinimg.com/236x/cd/2e/83/cd2e83a5ef5996dcbfd83e721700b0a1.jpg"
+                alt=""
+              />
+            </div>
+            <div className="tall">
+              <img
+                src="https://i.pinimg.com/236x/56/b9/eb/56b9ebe0630d263c852b772e7c3c2f38.jpg"
+                alt=""
+              />
+            </div>
+            <div className="big">
+              <img
+                src="https://i.pinimg.com/564x/96/a9/81/96a981454ffcc57b07875f81c96ed91c.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img className='object-contain'
+                src="https://i.pinimg.com/236x/af/77/48/af77480560cc4048cf5b477826a91607.jpg"
+                alt=""
+              />
+            </div>
+            <div className="wide object-cover">
+              <img
+                src="https://i.pinimg.com/564x/5d/19/04/5d1904b44e7e78f088c1da10a315ce81.jpg"
+                alt=""
+              />
+            </div>
+            <div className='gallery'>
+              <img
+                src="https://i.pinimg.com/236x/5d/5c/1c/5d5c1cdf80da3880d2fe69bea00c7c36.jpg"
+                alt=""
+              />
+            </div>
+            <div className='gallery'>
+              <img
+                src="https://i.pinimg.com/236x/0c/68/3b/0c683bbeb73333d513b05e982854dc47.jpg"
+                alt=""
+              />
+            </div>
+
+          </div>
+        </div>
+        <div className='flex justify-center flex-col'>
+          <div className='flex justify-center flex-col'>
+            <h1 className='text-5xl font-bold text-red-950 text-center'> Latest Product</h1>
+            <p className="text-gray-900  text-xl mt-5 text-center"> Introducing Our Latest Masterpiece: Where Innovation Meets Timeless Craftsmanship</p>
+          </div>
+
+          </div>
+
 
       </section>
+
 
     </>
   )
