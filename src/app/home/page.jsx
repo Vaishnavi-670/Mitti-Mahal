@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 const Home = () => {
@@ -57,11 +58,8 @@ const Home = () => {
               </a>
             </div>
           </div>
-
         </div>
-
-
-        <div className='h-[100vh] w-[100%] bg-gray-50'>
+        <div className='h-[85vh] w-[100%] bg-gray-50'>
           <div className='flex flex-col h-screen'>
             <img className='object-cover rounded-e-full' src="https://sothebys-com.brightspotcdn.com/76/45/1de85a4a4a7f915016c4802bcd28/hk1219-marketing-hero.jpg" alt="" />
             {/* <div className='flex flex-col items-center justify-center bottom-0 h-screen'>
@@ -72,9 +70,81 @@ const Home = () => {
           {/* <div className='flex justify-center items-center h-screen'>
           <button className='px-4 py-2 rounded-md text-white bg-blue-500 hover:bg-blue-700'>Discover Now</button>
         </div> */}
-
-
         </div>
+<div className='mt-0'>
+  <div className='flex justify-center'>
+    <h1 className='text-3xl font-bold'>Our Gallery</h1>
+  </div>
+  <div className="p-8 grid-wrapper">
+  <div >
+    <img
+      src="https://images.unsplash.com/photo-1541845157-a6d2d100c931?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+      alt=""
+    />
+  </div>
+  <div >
+    <img
+      src="https://images.unsplash.com/photo-1588282322673-c31965a75c3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+      alt=""
+    />
+  </div>
+  <div className="tall">
+    <img
+      src="https://images.unsplash.com/photo-1588117472013-59bb13edafec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      alt=""
+    />
+  </div>
+  <div className="wide">
+    <img
+      src="https://images.unsplash.com/photo-1587588354456-ae376af71a25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+      alt=""
+    />
+  </div>
+  <div>
+    <img
+      src=" https://images.unsplash.com/photo-1558980663-3685c1d673c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60"
+      alt=""
+    />
+  </div>
+  <div className="tall">
+    <img
+      src="https://images.unsplash.com/photo-1588499756884-d72584d84df5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+      alt=""
+    />
+  </div>
+  <div className="big">
+    <img
+      src="https://images.unsplash.com/photo-1588492885706-b8917f06df77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"
+      alt=""
+    />
+  </div>
+  <div>
+    <img
+      src="https://images.unsplash.com/photo-1588247866001-68fa8c438dd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80"
+      alt=""
+    />
+  </div>
+  <div className="wide">
+    <img
+      src="https://images.unsplash.com/photo-1586521995568-39abaa0c2311?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+      alt=""
+    />
+  </div>
+  <div className='gallery'>
+    <img
+      src="https://images.unsplash.com/photo-1553984840-b8cbc34f5215?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+      alt=""
+    />
+  </div>
+  <div className='gallery'>
+    <img
+      src="https://images.unsplash.com/photo-1433446787703-42d5bf446876?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+      alt=""
+    />
+  </div>
+</div>
+</div>
+
       </section>
 
     </>
