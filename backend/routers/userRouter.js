@@ -1,32 +1,73 @@
 const express = require('express');
+const Model = require('../models/userModel');
+const { } = require('mongoose');
+
 const router = express.Router();
 
 router.post('/add', (req , res) => {
     console.log(req.body);
-    res.send('Response from userRouter');  
-})
+    new Model(req.body).save()
+    .then((results) =>{
+        res.status(200).json(results);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
 
 router.get('/getall', (req, res) => {
-    res.send('Response from userRouter');
+    Model.find()
+    .then((results) => {
+        res.status(200).json(results);
+    })
+    .catch((err) => {
+        console.log(err);     
+        res.status(500).json(err);
+    })
 })
 
 router.get('/getbyid/:id', (req, res) => {
-    console.log(req.params.id);
-    res.send('Response from userRouter');
+    Model.findById(req.params.id)
+    .then((result) => {
+        res.status(200).json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 })
 router.get('/getbyemail/:email', (req, res) => {
-    console.log(req.params.id);
-    res.send('Response from userRouter');
+    Model.findOne({ email:req.params.email})
+    .then((result) => {
+        res.status(200).json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 })
 
-router.put('/update', (req, res) => {
-    console.log(req.body);
-    res.send('Response from userRouter');
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body, {new:true}) //new true value is used to get the updated data from the database
+    .then((result) => {
+        res.status(200).json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 })
 
-router.delete('/delete', (req, res) => {
-    console.log(req.body);
-    res.send('Response from userRouter');
+router.delete('/delete/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+    .then((results) => {
+     res.status(200).json(results);
+    })
+    .catch((err) => {
+         console.log(err);
+         res.status(500).json(err);
+     });
 })
 
 module.exports = router;
