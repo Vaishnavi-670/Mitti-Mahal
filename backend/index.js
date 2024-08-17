@@ -5,7 +5,6 @@ const app = express();
 const port =5001;
 
 app.use(express.json());
-
 app.use('/user', userRouter);
 
 app.get('/',(req, res) => {
