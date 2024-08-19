@@ -99,7 +99,7 @@ const Signup = () => {
                             Already have an account?
                             <a
                                 className="ml-1 block font-sans text-sm font-bold leading-normal text-cyan-500 antialiased"
-                                href="#"
+                                href="/login"
                             >
                                 Login
                             </a>
