@@ -210,6 +210,12 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div>
+          <div>
+            <h1>User reviews</h1>
+            
+          </div>
+        </div>
       </section>
     </div>
 
