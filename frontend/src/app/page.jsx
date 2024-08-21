@@ -213,7 +213,7 @@ const Home = () => {
         <div>
           <div>
             <h1>User reviews</h1>
-            
+            <div className='h-11 w-11'></div>
           </div>
         </div>
       </section>
