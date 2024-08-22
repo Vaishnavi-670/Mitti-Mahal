@@ -213,7 +213,11 @@ const Home = () => {
         <div>
           <div>
             <h1>User reviews</h1>
-            <div className='h-11 w-11'></div>
+            <div className='h-80 w-80'>
+              <div>
+                <img src="" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
