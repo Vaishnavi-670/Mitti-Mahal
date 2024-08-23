@@ -247,7 +247,7 @@ const Home = () => {
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
           <h3 className="text-2xl font-bold mb-4">Custom Clay Sculptures</h3>
           <p className="text-gray-600">Get personalized clay sculptures crafted to your specifications. Perfect for gifts and home decor.</p>
-          <img src="path/to/custom-sculpture.jpg" alt="Custom Clay Sculptures" className="mt-4 mx-auto rounded-lg shadow-md" />
+          <img src="https://i.pinimg.com/236x/2a/e2/da/2ae2dae46048841b71b818705f5c4765.jpg" alt="Custom Clay Sculptures" className="mt-4 mx-auto rounded-lg shadow-md" />
         </div>
       </div>
       <div className="w-full md:w-1/3 p-4">
