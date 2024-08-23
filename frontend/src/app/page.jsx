@@ -210,32 +210,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div>
-          <div>
-            <h1>User reviews</h1>
-            <div className='h-80 w-80'>
-              <div>
-                <img src="" alt="" />
-              </div>
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ad pariatur voluptatem tenetur. Doloremque, est provident officiis a mollitia qui.</p>
-            </div>
-            <div className='h-80 w-80'>
-              <div>
-                <img src="" alt="" />
-              </div>
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ad pariatur voluptatem tenetur. Doloremque, est provident officiis a mollitia qui.</p>
-            </div>
-            <div className='h-80 w-80'>
-              <div>
-                <img src="" alt="" />
-              </div>
-              <h3>Lorem ipsum dolor sit amet.</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ad pariatur voluptatem tenetur. Doloremque, est provident officiis a mollitia qui.</p>
-            </div>
-          </div>
-        </div>
+        
       </section>
     </div>
 
