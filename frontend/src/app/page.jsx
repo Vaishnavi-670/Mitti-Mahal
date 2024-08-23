@@ -238,6 +238,49 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <div className="bg-white py-20">
+  <div className="container mx-auto px-6">
+    <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
+    <div className="flex flex-wrap justify-center">
+      <div className="w-full md:w-1/3 p-4">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+          <h3 className="text-2xl font-bold mb-4">Custom Clay Sculptures</h3>
+          <p className="text-gray-600">Get personalized clay sculptures crafted to your specifications. Perfect for gifts and home decor.</p>
+          <img src="path/to/custom-sculpture.jpg" alt="Custom Clay Sculptures" className="mt-4 mx-auto rounded-lg shadow-md" />
+        </div>
+      </div>
+      <div className="w-full md:w-1/3 p-4">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+          <h3 className="text-2xl font-bold mb-4">Workshops & Classes</h3>
+          <p className="text-gray-600">Join our workshops and classes to learn the art of clay crafting from experienced artisans.</p>
+          <img src="path/to/workshop.jpg" alt="Workshops & Classes" className="mt-4 mx-auto rounded-lg shadow-md" />
+        </div>
+      </div>
+      <div className="w-full md:w-1/3 p-4">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+          <h3 className="text-2xl font-bold mb-4">Eco-Friendly Materials</h3>
+          <p className="text-gray-600">We use eco-friendly and sustainable materials to create our clay products, ensuring minimal environmental impact.</p>
+          <img src="path/to/eco-friendly.jpg" alt="Eco-Friendly Materials" className="mt-4 mx-auto rounded-lg shadow-md" />
+        </div>
+      </div>
+      <div className="w-full md:w-1/3 p-4">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+          <h3 className="text-2xl font-bold mb-4">Wide Range of Products</h3>
+          <p className="text-gray-600">Explore our wide range of clay products, including pottery, sculptures, and decorative items.</p>
+          <img src="path/to/products.jpg" alt="Wide Range of Products" className="mt-4 mx-auto rounded-lg shadow-md" />
+        </div>
+      </div>
+      <div className="w-full md:w-1/3 p-4">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+          <h3 className="text-2xl font-bold mb-4">Gift Wrapping Services</h3>
+          <p className="text-gray-600">Avail our gift wrapping services to make your clay products perfect for any occasion.</p>
+          <img src="path/to/gift-wrapping.jpg" alt="Gift Wrapping Services" className="mt-4 mx-auto rounded-lg shadow-md" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       </section>
     </div>
 
