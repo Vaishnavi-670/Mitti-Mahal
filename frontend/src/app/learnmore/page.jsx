@@ -38,7 +38,7 @@ const LearnMore = () => {
         <div className="w-full md:w-1/3 p-4">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
             <h3 className="text-2xl font-bold mb-4">Wide Range of Products</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-800">
               Explore our diverse range of clay products, including pottery,
               decorative items, and more.
             </p>
@@ -55,10 +55,10 @@ const LearnMore = () => {
   {/* Our Process Section */}
   <section className="bg-gray-100 py-20">
     <div className="container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+      <h2 className="text-3xl font-bold text-black mb-8 text-center">
         Our Process
       </h2>
-      <p className="text-center text-gray-600 mb-12">
+      <p className="text-center text-gray-800 mb-12">
         From selecting the finest materials to the final touches, learn how our
         clay products are crafted with care and precision.
       </p>
