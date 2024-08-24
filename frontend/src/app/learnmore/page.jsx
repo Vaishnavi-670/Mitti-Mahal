@@ -17,19 +17,19 @@ const LearnMore = () => {
   {/* Our Products Section */}
   <section className="py-20">
     <div className="container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+      <h2 className="text-3xl font-bold text-red-800 mb-8 text-center">
         Our Products
       </h2>
       <div className="flex flex-wrap justify-center">
         <div className="w-full md:w-1/3 p-4">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
             <h3 className="text-2xl font-bold mb-4">Custom Clay Sculptures</h3>
-            <p className="text-gray-600">
+            <p className="text-black">
               We create personalized clay sculptures that are perfect for gifts,
               home decor, and more.
             </p>
             <img
-              src="https://your_image_url_here.jpg"
+              src=""
               alt="Custom Clay Sculptures"
               className="mt-4 mx-auto rounded-lg shadow-md"
             />
