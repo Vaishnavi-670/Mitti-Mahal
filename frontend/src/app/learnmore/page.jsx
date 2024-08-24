@@ -88,7 +88,7 @@ const LearnMore = () => {
       <h2 className="text-3xl font-bold text-black mb-8 text-center">
         Workshops &amp; Classes
       </h2>
-      <p className="text-center text-gray-600 mb-12">
+      <p className="text-center text-gray-800 mb-12">
         Join our workshops and classes to learn the art of clay crafting from
         experienced artisans.
       </p>
@@ -101,7 +101,7 @@ const LearnMore = () => {
               className="rounded-lg shadow-md mb-6"
             />
             <h3 className="text-2xl font-bold mb-4">Learn from the Best</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-800">
               Our workshops offer a hands-on experience where you can create
               your own clay masterpieces.
             </p>
@@ -113,10 +113,10 @@ const LearnMore = () => {
   {/* Eco-Friendly Practices Section */}
   <section className="bg-gray-100 py-20">
     <div className="container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+      <h2 className="text-3xl font-bold text-red-900 mb-8 text-center">
         Eco-Friendly Practices
       </h2>
-      <p className="text-center text-gray-600 mb-12">
+      <p className="text-center text-gray-800 mb-12">
         We are committed to sustainability, using eco-friendly materials and
         processes to minimize our environmental impact.
       </p>
