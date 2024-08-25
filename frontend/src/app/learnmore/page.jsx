@@ -43,7 +43,7 @@ const LearnMore = () => {
               decorative items, and more.
             </p>
             <img
-              src="https://your_image_url_here.jpg"
+              src=""
               alt="Wide Range of Products"
               className="mt-4 mx-auto rounded-lg shadow-md"
             />
