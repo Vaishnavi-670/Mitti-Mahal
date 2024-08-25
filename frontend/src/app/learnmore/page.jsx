@@ -29,9 +29,9 @@ const LearnMore = () => {
               home decor, and more.
             </p>
             <img
-              src="https://i.pinimg.com/236x/36/22/34/362234fdf31eeb5ed7804b97c63a308c.jpg"
+              src="https://i.pinimg.com/236x/08/59/e6/0859e62cc616405b70595f15e7351580.jpg"
               alt="Custom Clay Sculptures"
-              className="mt-4 mx-auto rounded-lg shadow-md"
+              className="mt-4 mx-auto rounded-lg object-cover shadow-md"
             />
           </div>
         </div>
