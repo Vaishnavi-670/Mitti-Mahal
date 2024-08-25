@@ -29,7 +29,7 @@ const LearnMore = () => {
               home decor, and more.
             </p>
             <img
-              src=""
+              src="https://i.pinimg.com/236x/36/22/34/362234fdf31eeb5ed7804b97c63a308c.jpg"
               alt="Custom Clay Sculptures"
               className="mt-4 mx-auto rounded-lg shadow-md"
             />
@@ -43,7 +43,7 @@ const LearnMore = () => {
               decorative items, and more.
             </p>
             <img
-              src=""
+              src="https://i.pinimg.com/564x/6d/ce/2c/6dce2c03cb196ad49da424f63a3d04d6.jpg"
               alt="Wide Range of Products"
               className="mt-4 mx-auto rounded-lg shadow-md"
             />
