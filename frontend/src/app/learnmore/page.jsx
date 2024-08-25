@@ -96,7 +96,7 @@ const LearnMore = () => {
         <div className="w-full md:w-1/2 p-4">
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <img
-              src="https://your_image_url_here.jpg"
+              src=""
               alt="Workshops & Classes"
               className="rounded-lg shadow-md mb-6"
             />
