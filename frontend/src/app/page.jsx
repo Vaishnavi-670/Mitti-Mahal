@@ -18,7 +18,7 @@ const Home = () => {
       },
       smartphone: {
         smooth: true, // Enable smooth scrolling on smartphones
-      },     
+      }     
     });
 
     return () => {
