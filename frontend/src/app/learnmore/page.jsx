@@ -11,12 +11,12 @@ const LearnMore = () => {
     const scroll = new LocomotiveScroll({
       el: scrollRef.current,
       smooth: true,
-      smoothMobile: true, // Enable smooth scrolling on mobile devices
+      smoothMobile: true, 
       tablet: {
-        smooth: true, // Enable smooth scrolling on tablets
+        smooth: true, 
       },
       smartphone: {
-        smooth: true, // Enable smooth scrolling on smartphones
+        smooth: true, 
       },
     });
 

@@ -18,7 +18,7 @@ const Home = () => {
       },
       smartphone: {
         smooth: true, // Enable smooth scrolling on smartphones
-      }     
+      } ,    
     });
 
     return () => {
@@ -99,7 +99,7 @@ const Home = () => {
                 alt=""
               />
             </div>
-            <div >
+            <div>
               <img
                 src="https://i.pinimg.com/236x/01/19/6f/01196fd141c5be39e9ac1a375a267007.jpg"
                 alt=""
@@ -188,7 +188,7 @@ const Home = () => {
               <span className="text-black font-bold text-3xl">Caramic Plate </span>
               {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
               <p className="text-neutral-800">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Lorem ipsum dolor sit amet,
               </p>
             </div>
           </div>
