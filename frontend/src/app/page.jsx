@@ -224,21 +224,21 @@ const Home = () => {
             <div className="grid grid-cols-1 m-14 p-6 md:grid-cols-2 lg:grid-cols-3 ">
               <div className="h-80 w-80 bg-white shadow-lg rounded-lg p-4">
                 <div className="h-32 w-32 mx-auto mb-4">
-                  <img src="path/to/image1.jpg" alt="Review 1" className="h-full w-full object-cover rounded-full" />
+                  <img src="" alt="Review 1" className="h-full w-full object-cover rounded-full" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Lorem ipsum dolor sit amet.</h3>
                 <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ad pariatur voluptatem tenetur. Doloremque, est provident officiis a mollitia qui.</p>
               </div>
               <div className="h-80 w-80 bg-white shadow-lg rounded-lg p-4">
                 <div className="h-32 w-32 mx-auto mb-4">
-                  <img src="path/to/image1.jpg" alt="Review 1" className="h-full w-full object-cover rounded-full" />
+                  <img src="" alt="Review 1" className="h-full w-full object-cover rounded-full" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Lorem ipsum dolor sit amet.</h3>
                 <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ad pariatur voluptatem tenetur. Doloremque, est provident officiis a mollitia qui.</p>
               </div>
               <div className="h-80 w-80 bg-white shadow-lg rounded-lg p-4">
                 <div className="h-32 w-32 mx-auto mb-4">
-                  <img src="path/to/image2.jpg" alt="Review 2" className="h-full w-full object-cover rounded-full" />
+                  <img src="" alt="Review 2" className="h-full w-full object-cover rounded-full" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Lorem ipsum dolor sit amet.</h3>
                 <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ad pariatur voluptatem tenetur. Doloremque, est provident officiis a mollitia qui.</p>
