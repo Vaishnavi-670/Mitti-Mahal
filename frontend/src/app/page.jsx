@@ -221,7 +221,7 @@ const Home = () => {
         <div>
           <div className='flex flex-col'>
             <h1 className="text-4xl font-bold mb-8 text-center">User Reviews</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+            <div className="grid grid-cols-1 m-14 p-6 md:grid-cols-2 lg:grid-cols-3 ">
               <div className="h-80 w-80 bg-white shadow-lg rounded-lg p-4">
                 <div className="h-32 w-32 mx-auto mb-4">
                   <img src="path/to/image1.jpg" alt="Review 1" className="h-full w-full object-cover rounded-full" />
