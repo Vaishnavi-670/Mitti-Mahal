@@ -196,64 +196,44 @@ const Home = () => {
           </div>
         </div>
         <div className='flex justify-center flex-col'>
-          <div data-scroll data-scroll-speed="2" data-scroll-delay="0.4" className='flex justify-center flex-col'>
+          <div className='flex justify-center mb-10 flex-col'>
             <h1 className='text-5xl font-bold mt-3 text-red-950 text-center'> Latest Product</h1>
             <p className="text-gray-900  text-xl mt-5 text-center"> Introducing Our Latest Masterpiece: Where Innovation Meets Timeless Craftsmanship</p>
           </div>
         </div>
-        <div className='flex mt-3 justify-around p-5'>
-          <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96 rounded-2xl hover:duration-700 duration-700">
-            <div className="w-80 h-96 text-gray-800">
-              <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
-            </div>
-            <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
-              <span className="text-black font-bold text-3xl text-center">Caramic Bottle</span>
-              {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
-              <p className="text-neutral-800 text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
+        <div className='flex  mt-3 justify-around p-5'>
+          <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
+            <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/236x/df/64/3c/df643c5dd49dd291a221a2778bd454a8.jpg" alt="" />
+            <h3 className='text-center mt-5 text-xl'>Ceramic Plates</h3>
+            <p className=" text-center mt-2 text-[#ff3f40] text-xl">
+            R$<span className="text-3xl">7.93</span>
+          </p>
           </div>
-          <div className=" group flex-nowrap flex cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96 rounded-2xl hover:duration-700 duration-700">
-            <div className="w-80 h-96 text-gray-800">
-              <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
-            </div>
-            <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
-              <span className="text-black font-bold text-3xl text-center">Caramic Bottle</span>
-              {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
-              <p className="text-neutral-800 text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
+          <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
+            <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/736x/bc/71/ae/bc71aea448160276b39ca2643a7fb3d2.jpg" alt="" />
+            <h3 className='text-center mt-5 text-xl'>Ceramic Pot</h3>
+            <p className=" text-center mt-2 text-[#ff3f40] text-xl">
+            R$<span className="text-3xl">7.93</span>
+          </p>
           </div>
-          <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 h-96 w-80  rounded-2xl hover:duration-700 duration-700">
-            <div className="w-80 h-96 text-gray-800">
-              <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
-            </div>
-            <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
-              <span className="text-black font-bold text-3xl text-center">Caramic Bottle</span>
-              {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
-              <p className="text-neutral-800 text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
+          <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
+            <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/236x/7b/f2/c7/7bf2c70db01aa709f05fd7a10d97e830.jpg" alt="" />
+            <h3 className='text-center mt-5 text-xl'>Ceramic bowl</h3>
+            <p className=" text-center mt-2 text-[#ff3f40] text-xl">
+            R$<span className="text-3xl">7.93</span>
+          </p>
           </div>
-          <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 h-96 w-80  rounded-2xl hover:duration-700 duration-700">
-            <div className="w-80 h-96 text-gray-800">
-              <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
-            </div>
-            <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
-              <span className="text-black font-bold text-3xl text-center">Caramic Bottle</span>
-              {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
-              <p className="text-neutral-800 text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
+          <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
+            <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/564x/08/51/87/0851874dd3a7a48dc2667ffc766cbb08.jpg" alt="" />
+            <h3 className='text-center mt-5 text-xl'>Ceramic Bottle</h3>
+            <p className=" text-center mt-2  text-[#ff3f40] text-xl">
+            R$<span className="text-3xl">7.93</span>
+          </p>
           </div>
         </div>
         <div>
         </div>
-        <div className="bg-white mt-20 h-[120vh]">
+        <div className="bg-white mt-28 h-[120vh]">
           <div className="container mx-auto  h-full">
             <h2 className="text-5xl font-bold text-red-950 mb-8 text-center">Our Services</h2>
             <div className="flex flex-wrap justify-center w-full h-[100vh]">
@@ -300,78 +280,78 @@ const Home = () => {
             </div>
           </div>
         </div>
-          <div className=" h-[73vh]">
-            <div className="relative top-20 z-10 w-3/4 mx-auto p-10 flex justify-between bg-white rounded-b-3xl shadow-2xl" data-scroll="" data-scroll-speed="5">
-              <h1 className="text-4xl font-black mt-5 text-gray-900">Subscribe To Our Newsletter</h1>
-              <div className="w-2/5 mt-3">
-                <input type="email" placeholder="enter your email here" className="mr-7 p-3.5 bg-gray-100 w-2/5 rounded-2xl border-none text-black font-semibold outline-none" />
-                {/* <button className="p-3.5 w-2/5 bg-orange-800 rounded-lg text-white font-semibold tracking-wider mt-4 outline-none">Subscribe</button> */}
+        <div className=" h-[73vh]">
+          <div className="relative top-20 z-10 w-3/4 mx-auto p-10 flex justify-between bg-white rounded-b-3xl shadow-2xl" data-scroll="" data-scroll-speed="5">
+            <h1 className="text-4xl font-black mt-5 text-gray-900">Subscribe To Our Newsletter</h1>
+            <div className="w-2/5 mt-3">
+              <input type="email" placeholder="enter your email here" className="mr-7 p-3.5 bg-gray-100 w-2/5 rounded-2xl border-none text-black font-semibold outline-none" />
+              {/* <button className="p-3.5 w-2/5 bg-orange-800 rounded-lg text-white font-semibold tracking-wider mt-4 outline-none">Subscribe</button> */}
 
-                <button className="bg-gradient-to-r from-gray-900 to-gray-400 hover:from-gray-900 hover:to-gray-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
-                  Subscribe
-                </button>
+              <button className="bg-gradient-to-r from-gray-900 to-gray-400 hover:from-gray-900 hover:to-gray-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
+                Subscribe
+              </button>
 
-              </div>
-            </div>
-            <div className="bg-gray-400 py-28">
-              <div className="relative top-12 w-4/5 mx-auto flex justify-between">
-                <div className="text-black w-80">
-                  <h1 className="text-5xl font-bold">Foodie Hub</h1>
-                  <p className='text-lg mt-5'>Mitti Mahal offers handcrafted clay products that blend traditional artistry with modern design. Discover our unique collection of home décor, tableware, and gifts, each piece crafted with care by skilled artisans</p>
-                  <i className="fa fa-twitter text-4xl tracking-wider" aria-hidden="true"></i>
-                  <i className="fa fa-facebook text-4xl tracking-wider" aria-hidden="true"></i>
-                  <i className="fa fa-instagram text-4xl tracking-wider" aria-hidden="true"></i>
-                  <i className="fa fa-linkedin text-4xl tracking-wider" aria-hidden="true"></i>
-                </div>
-                <ul className="list-none text-black">
-                  <li className="mt-4">
-                    <h3 className="text-3xl font-bold">Service</h3>
-                  </li>
-                  <li className="mt-4">
-                    <a href="/shop" className="text-lg">Shop</a>
-                  </li>
-                  <li className="mt-2">
-                    <a href="#" className="text-lg ">About</a>
-                  </li >
-                  <li className="mt-2">
-                    <a href="#" className="text-lg ">Contact</a>
-                  </li>
-                  <li className="mt-2">
-                    <a href="#" className="text-lg ">Gift Cards</a>
-                  </li>
-                  <li className="mt-2">
-                    <a href="#" className="text-lg ">Features</a>
-                  </li>
-                </ul>
-                <ul className="list-none">
-                  <li className="mt-4">
-                    <h3 className="text-3xl font-bold">Privacy</h3>
-                  </li>
-                  <li className="mt-4">
-                    <a href="#" className="text-lg ">Privacy Policy</a>
-                  </li>
-                  <li className="mt-2">
-                    <a href="#" className="text-lg ">Terms &amp; Condition</a>
-                  </li>
-                  <li className="mt-2">
-                    <a href="#" className="text-lg "> Cookies </a>
-                  </li>
-
-                </ul>
-                <ul className="list-none ">
-                  <li className="mt-4">
-                    <h3 className="text-3xl font-bold">Contact Us</h3>
-                  </li>
-                  <p className='text-lg mt-2'>Mitti Mahal,<br />
-                    123 Artisan Lane,<br />
-                    Clayville, CA 90210</p>
-                  <p className="pt-4 ">mittimahal@gmail.com</p>
-                  <p className="pt-2">(+62) 81234567890</p>
-                </ul>
-              </div>
             </div>
           </div>
-        
+          <div className="bg-gray-400 py-28">
+            <div className="relative top-12 w-4/5 mx-auto flex justify-between">
+              <div className="text-black w-80">
+                <h1 className="text-5xl font-bold">Foodie Hub</h1>
+                <p className='text-lg mt-5'>Mitti Mahal offers handcrafted clay products that blend traditional artistry with modern design. Discover our unique collection of home décor, tableware, and gifts, each piece crafted with care by skilled artisans</p>
+                <i className="fa fa-twitter text-4xl tracking-wider" aria-hidden="true"></i>
+                <i className="fa fa-facebook text-4xl tracking-wider" aria-hidden="true"></i>
+                <i className="fa fa-instagram text-4xl tracking-wider" aria-hidden="true"></i>
+                <i className="fa fa-linkedin text-4xl tracking-wider" aria-hidden="true"></i>
+              </div>
+              <ul className="list-none text-black">
+                <li className="mt-4">
+                  <h3 className="text-3xl font-bold">Service</h3>
+                </li>
+                <li className="mt-4">
+                  <a href="/shop" className="text-lg">Shop</a>
+                </li>
+                <li className="mt-2">
+                  <a href="/aboutus" className="text-lg ">About</a>
+                </li >
+                <li className="mt-2">
+                  <a href="#" className="text-lg ">Contact</a>
+                </li>
+                <li className="mt-2">
+                  <a href="#" className="text-lg ">Gift Cards</a>
+                </li>
+                <li className="mt-2">
+                  <a href="#" className="text-lg ">Features</a>
+                </li>
+              </ul>
+              <ul className="list-none">
+                <li className="mt-4">
+                  <h3 className="text-3xl font-bold">Privacy</h3>
+                </li>
+                <li className="mt-4">
+                  <a href="#" className="text-lg ">Privacy Policy</a>
+                </li>
+                <li className="mt-2">
+                  <a href="#" className="text-lg ">Terms &amp; Condition</a>
+                </li>
+                <li className="mt-2">
+                  <a href="#" className="text-lg "> Cookies </a>
+                </li>
+
+              </ul>
+              <ul className="list-none ">
+                <li className="mt-4">
+                  <h3 className="text-3xl font-bold">Contact Us</h3>
+                </li>
+                <p className='text-lg mt-2'>Mitti Mahal,<br />
+                  123 Artisan Lane,<br />
+                  Clayville, CA 90210</p>
+                <p className="pt-4 ">mittimahal@gmail.com</p>
+                <p className="pt-2">(+62) 81234567890</p>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
   )
