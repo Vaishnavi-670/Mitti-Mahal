@@ -134,7 +134,7 @@ const Features = () => {
             Discover the unique features that make Mitti Mahal's pottery special. Browse our collection today and find the perfect piece to add to your home.
           </p>
           <a 
-            href="/collection" 
+            href="/shop" 
             className="inline-block bg-gray-800 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-700"
           >
             Shop Now
