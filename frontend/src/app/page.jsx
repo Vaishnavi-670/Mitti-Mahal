@@ -206,14 +206,14 @@ const Home = () => {
             <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/236x/df/64/3c/df643c5dd49dd291a221a2778bd454a8.jpg" alt="" />
             <h3 className='text-center mt-5 text-xl'>Ceramic Plates</h3>
             <p className=" text-center mt-2 text-[#ff3f40] text-xl">
-            R$<span className="text-3xl">7.93</span>
+            R$<span className="text-3xl">8.83</span>
           </p>
           </div>
           <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
             <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/736x/bc/71/ae/bc71aea448160276b39ca2643a7fb3d2.jpg" alt="" />
             <h3 className='text-center mt-5 text-xl'>Ceramic Pot</h3>
             <p className=" text-center mt-2 text-[#ff3f40] text-xl">
-            R$<span className="text-3xl">7.93</span>
+            R$<span className="text-3xl">7.90</span>
           </p>
           </div>
           <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
@@ -227,7 +227,7 @@ const Home = () => {
             <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/564x/08/51/87/0851874dd3a7a48dc2667ffc766cbb08.jpg" alt="" />
             <h3 className='text-center mt-5 text-xl'>Ceramic Bottle</h3>
             <p className=" text-center mt-2  text-[#ff3f40] text-xl">
-            R$<span className="text-3xl">7.93</span>
+            R$<span className="text-3xl">6.93</span>
           </p>
           </div>
         </div>
