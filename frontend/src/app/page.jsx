@@ -320,7 +320,7 @@ const Home = () => {
                   <a href="#" className="text-lg ">Gift Cards</a>
                 </li>
                 <li className="mt-2">
-                  <a href="#" className="text-lg ">Features</a>
+                  <a href="/features" className="text-lg ">Features</a>
                 </li>
               </ul>
               <ul className="list-none">
