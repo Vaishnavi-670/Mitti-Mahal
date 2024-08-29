@@ -27,12 +27,12 @@ const Home = () => {
   }, []);
   return (
     <div data-scroll-container ref={scrollRef}>
-      <section data-scroll-section className="pt-24 bg-white">
+      <section data-scroll-section className="pt-24">
         <div className=" mx-auto max-w-7xl">
           <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
             <h1 className=" mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
               <span className='text1'>Discover</span>{" "}
-              <span className=" text2 block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-gray-400 to-red-500 lg:inline">
+              <span className=" text2 block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-gray-400 to-red-800 lg:inline">
                 the art of clay crafting
               </span>{" "}
               <span className='text1'>with our products</span>
@@ -43,7 +43,7 @@ const Home = () => {
             <div className=" space-x-0 md:space-x-2 ">
               <Link
                 href="#_"
-                className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-red-400 rounded-2xl sm:w-auto sm:mb-0"
+                className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-red-700 rounded-2xl sm:w-auto sm:mb-0"
               >
                 Get Started
                 <svg
@@ -91,40 +91,40 @@ const Home = () => {
           <div data-scroll data-scroll-speed="2" className="h-80 p-6 ml-11 w-80 bg-white shadow-lg rounded-lg">
             <div className="h-32 w-32 mx-auto mb-4">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxfn0YrIo1UvS8jraZVRBgOU3yskyKLr_J0A&s" alt="Review 1"
-               className="h-full w-full object-cover rounded-full" />
+                className="h-full w-full object-cover rounded-full" />
             </div>
             <h3 className="text-xl text-center font-semibold mb-2">Pottery Classes</h3>
             <p className="text-gray-600 text-center">Explore the world of pottery with our expert-led classes and transform <br /> clay into beautiful personalized art pieces </p>
           </div>
-          <div data-scroll data-scroll-speed="1" data-scroll-delay="0.2" className="h-80 p-6 ml-11 w-80 bg-white shadow-lg rounded-lg">
+          <div data-scroll data-scroll-speed="2" data-scroll-delay="0.4" className="h-80 p-6 ml-11 w-80 bg-white shadow-lg rounded-lg">
             <div className="h-32 w-32 mx-auto mb-4">
-              <img src="https://thumbs.dreamstime.com/b/human-hands-crafting-clay-bowl-ink-contour-hand-drawn-two-hands-making-ceramic-pot-painted-black-white-vector-illustration-323581298.jpg" alt="Review 1" 
-              className="h-full w-full object-cover rounded-full" />
+              <img src="https://thumbs.dreamstime.com/b/human-hands-crafting-clay-bowl-ink-contour-hand-drawn-two-hands-making-ceramic-pot-painted-black-white-vector-illustration-323581298.jpg" alt="Review 1"
+                className="h-full w-full object-cover rounded-full" />
             </div>
             <h3 className="text-xl text-center font-semibold mb-2">Pottery Weel</h3>
             <p className="text-gray-600 text-center">Master the pottery wheel and learn to shape spin and create stunning ceramics with our guided classes for all experience levels</p>
           </div>
           <div data-scroll data-scroll-speed="2" data-scroll-delay="0.4" className="h-80 p-6 ml-11 w-80 bg-white shadow-lg rounded-lg ">
             <div className="h-32 w-32 mx-auto mb-4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR__IltOZX6Mly4Y-WWLkp_p7yfhYbxPO3w5Q&s" alt="Review 1" 
-              className="h-full w-full object-cover rounded-full" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR__IltOZX6Mly4Y-WWLkp_p7yfhYbxPO3w5Q&s" alt="Review 1"
+                className="h-full w-full object-cover rounded-full" />
             </div>
             <h3 className="text-xl text-center font-semibold mb-2">Gift Cards</h3>
             <p className="text-gray-600 text-center">Share the joy of creativity with a <br /> gift card, perfect for inspiring <br /> pottery enthusiasts and art <br /> lovers alike</p>
           </div>
-          <div data-scroll data-scroll-speed="3" data-scroll-delay="0.6" className="h-80 p-6 ml-11 w-80 bg-white shadow-lg rounded-lg ">
+          <div data-scroll data-scroll-speed="2" data-scroll-delay="0.4" className="h-80 p-6 ml-11 w-80 bg-white shadow-lg rounded-lg ">
             <div className="h-32 w-32 mx-auto mb-4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnWGIokcgfvbClpBxy1mlJdhIklXj-5Bm5hg&s" alt="Review 1" 
-              className="h-full w-full object-cover rounded-full" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnWGIokcgfvbClpBxy1mlJdhIklXj-5Bm5hg&s" alt="Review 1"
+                className="h-full w-full object-cover rounded-full" />
             </div>
             <h3 className="text-xl text-center font-semibold mb-2">Design Process</h3>
             <p className="text-gray-600 text-center">Discover the design process and bring your creative visions to life with our step-by-step guidance in pottery and ceramic art</p>
           </div>
         </div>
         <div className='mt-0'>
-          <div className='flex justify-center flex-col'>
-            <h1 data-scroll data-scroll-speed="1" className='text-5xl font-bold text-red-950 text-center'>Our Gallery</h1>
-            <p data-scroll data-scroll-speed="1.5" data-scroll-delay="0.2" className="text-gray-900 font- text-xl mt-5 text-center"> Explore the Beauty of Handcrafted Art: A Curated Collection of Unique Clay Creations, Each Piece Telling Its Own Story,  <br />Immerse yourself in our gallery, where every handcrafted clay creation tells a unique story</p>
+          <div data-scroll data-scroll-speed="1" className='flex justify-center flex-col'>
+            <h1 className='text-5xl font-bold text-red-950 text-center'>Our Gallery</h1>
+            <p className="text-gray-900 font- text-xl mt-7 text-center"> Explore the Beauty of Handcrafted Art: A Curated Collection of Unique Clay Creations, Each Piece Telling Its Own Story,  <br />Immerse yourself in our gallery, where every handcrafted clay creation tells a unique story</p>
           </div>
           <div data-scroll data-scroll-class="fade-in" data-scroll-speed="2" className=" p-4 mt-2 grid-wrapper">
             <div data-scroll data-scroll-class="fade-in"  >
@@ -196,68 +196,66 @@ const Home = () => {
           </div>
         </div>
         <div className='flex justify-center flex-col'>
-          <div className='flex justify-center flex-col'>
-            <h1 className='text-5xl font-bold mt-6 text-red-950 text-center'> Latest Product</h1>
+          <div data-scroll data-scroll-speed="2" data-scroll-delay="0.4" className='flex justify-center flex-col'>
+            <h1 className='text-5xl font-bold mt-3 text-red-950 text-center'> Latest Product</h1>
             <p className="text-gray-900  text-xl mt-5 text-center"> Introducing Our Latest Masterpiece: Where Innovation Meets Timeless Craftsmanship</p>
           </div>
         </div>
-        <div className='flex mt-7 justify-around p-8'>
+        <div className='flex mt-3 justify-around p-5'>
+          <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96 rounded-2xl hover:duration-700 duration-700">
+            <div className="w-80 h-96 text-gray-800">
+              <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
+            </div>
+            <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
+              <span className="text-black font-bold text-3xl text-center">Caramic Bottle</span>
+              {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
+              <p className="text-neutral-800 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+          <div className=" group flex-nowrap flex cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96 rounded-2xl hover:duration-700 duration-700">
+            <div className="w-80 h-96 text-gray-800">
+              <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
+            </div>
+            <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
+              <span className="text-black font-bold text-3xl text-center">Caramic Bottle</span>
+              {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
+              <p className="text-neutral-800 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
           <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 h-96 w-80  rounded-2xl hover:duration-700 duration-700">
             <div className="w-80 h-96 text-gray-800">
               <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
             </div>
             <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
-              <span className="text-black font-bold text-3xl">Caramic Bottle</span>
+              <span className="text-black font-bold text-3xl text-center">Caramic Bottle</span>
               {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
-              <p className="text-neutral-800">
+              <p className="text-neutral-800 text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
             </div>
           </div>
-          <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96  rounded-2xl hover:duration-700 duration-700">
-            <div className="w-80 h-96  text-gray-800">
-              <img className="w-80 h-96" src="https://i.pinimg.com/236x/6c/e5/73/6ce573c2e30bef90a91ee2a0413e48ea.jpg" alt="" />
+          <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 h-96 w-80  rounded-2xl hover:duration-700 duration-700">
+            <div className="w-80 h-96 text-gray-800">
+              <img className="w-80 h-96" src="https://i.pinimg.com/236x/39/d0/8e/39d08ea5e44e107003d6fa7ae3a738a6.jpg" alt="" />
             </div>
             <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
-              <span className="text-black font-bold text-3xl">Caramic Plate </span>
+              <span className="text-black font-bold text-3xl text-center">Caramic Bottle</span>
               {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
-              <p className="text-neutral-800">
-                Lorem ipsum dolor sit amet,
-              </p>
-            </div>
-          </div>
-          <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96  rounded-2xl hover:duration-700 duration-700">
-            <div className="w-80 h-96  text-gray-800">
-              <img className="w-80 h-96" src="https://i.pinimg.com/236x/7e/16/78/7e1678cce31fb1f9ddd9a216573162af.jpg" alt="" />
-            </div>
-            <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
-              <span className="text-black font-bold text-3xl">Caramic Bowl
-              </span>
-              {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
-              <p className="text-neutral-800">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
-          <div className=" group cursor-pointer group overflow-hidden relative text-gray-50 w-80 h-96  rounded-2xl hover:duration-700 duration-700">
-            <div className="w-80 h-96  text-gray-800">
-              <img className="w-80 h-96" src="https://i.pinimg.com/236x/62/fd/e2/62fde2e169f2394c6f0b2d8c9636c5af.jpg" alt="" />
-            </div>
-            <div className="absolute bg-transparent -bottom-16 w-72 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
-              <span className="text-black font-bold text-3xl">Caramic Pot</span>
-              {/* <span className="text-gray-800 font-bold text-3xl">Cheat Sheet</span> */}
-              <p className="text-neutral-800">
+              <p className="text-neutral-800 text-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
             </div>
           </div>
         </div>
         <div>
-
         </div>
-        <div className="bg-white py-20 h-[120vh]">
-          <div className="container mx-auto px-6 h-full">
-            <h2 className="text-5xl font-bold text-gray-800 mb-8 text-center">Our Services</h2>
+        <div className="bg-white mt-20 h-[120vh]">
+          <div className="container mx-auto  h-full">
+            <h2 className="text-5xl font-bold text-red-950 mb-8 text-center">Our Services</h2>
             <div className="flex flex-wrap justify-center w-full h-[100vh]">
               <div className="w-full h-[500px] md:w-1/3 p-4">
                 <div className="bg-gray-100 h-[350px] w-[90%] p-6 rounded-lg shadow-lg text-center">
@@ -302,6 +300,78 @@ const Home = () => {
             </div>
           </div>
         </div>
+          <div className=" h-[73vh]">
+            <div className="relative top-20 z-10 w-3/4 mx-auto p-10 flex justify-between bg-white rounded-b-3xl shadow-2xl" data-scroll="" data-scroll-speed="5">
+              <h1 className="text-4xl font-black mt-5 text-gray-900">Subscribe To Our Newsletter</h1>
+              <div className="w-2/5 mt-3">
+                <input type="email" placeholder="enter your email here" className="mr-7 p-3.5 bg-gray-100 w-2/5 rounded-2xl border-none text-black font-semibold outline-none" />
+                {/* <button className="p-3.5 w-2/5 bg-orange-800 rounded-lg text-white font-semibold tracking-wider mt-4 outline-none">Subscribe</button> */}
+
+                <button className="bg-gradient-to-r from-gray-900 to-gray-400 hover:from-gray-900 hover:to-gray-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
+                  Subscribe
+                </button>
+
+              </div>
+            </div>
+            <div className="bg-gray-400 py-28">
+              <div className="relative top-12 w-4/5 mx-auto flex justify-between">
+                <div className="text-black w-80">
+                  <h1 className="text-5xl font-bold">Foodie Hub</h1>
+                  <p className='text-lg mt-5'>Mitti Mahal offers handcrafted clay products that blend traditional artistry with modern design. Discover our unique collection of home décor, tableware, and gifts, each piece crafted with care by skilled artisans</p>
+                  <i className="fa fa-twitter text-4xl tracking-wider" aria-hidden="true"></i>
+                  <i className="fa fa-facebook text-4xl tracking-wider" aria-hidden="true"></i>
+                  <i className="fa fa-instagram text-4xl tracking-wider" aria-hidden="true"></i>
+                  <i className="fa fa-linkedin text-4xl tracking-wider" aria-hidden="true"></i>
+                </div>
+                <ul className="list-none text-black">
+                  <li className="mt-4">
+                    <h3 className="text-3xl font-bold">Service</h3>
+                  </li>
+                  <li className="mt-4">
+                    <a href="/shop" className="text-lg">Shop</a>
+                  </li>
+                  <li className="mt-2">
+                    <a href="#" className="text-lg ">About</a>
+                  </li >
+                  <li className="mt-2">
+                    <a href="#" className="text-lg ">Contact</a>
+                  </li>
+                  <li className="mt-2">
+                    <a href="#" className="text-lg ">Gift Cards</a>
+                  </li>
+                  <li className="mt-2">
+                    <a href="#" className="text-lg ">Features</a>
+                  </li>
+                </ul>
+                <ul className="list-none">
+                  <li className="mt-4">
+                    <h3 className="text-3xl font-bold">Privacy</h3>
+                  </li>
+                  <li className="mt-4">
+                    <a href="#" className="text-lg ">Privacy Policy</a>
+                  </li>
+                  <li className="mt-2">
+                    <a href="#" className="text-lg ">Terms &amp; Condition</a>
+                  </li>
+                  <li className="mt-2">
+                    <a href="#" className="text-lg "> Cookies </a>
+                  </li>
+
+                </ul>
+                <ul className="list-none ">
+                  <li className="mt-4">
+                    <h3 className="text-3xl font-bold">Contact Us</h3>
+                  </li>
+                  <p className='text-lg mt-2'>Mitti Mahal,<br />
+                    123 Artisan Lane,<br />
+                    Clayville, CA 90210</p>
+                  <p className="pt-4 ">mittimahal@gmail.com</p>
+                  <p className="pt-2">(+62) 81234567890</p>
+                </ul>
+              </div>
+            </div>
+          </div>
+        
       </section>
     </div>
   )
