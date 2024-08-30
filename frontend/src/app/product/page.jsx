@@ -1,104 +1,76 @@
-import React from 'react'
+'use client';
+import React, { useState } from 'react';
 
-const Product = () => {
+function ProductPage() {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleQuantityChange = (e) => {
+    const value = parseInt(e.target.value, 10);
+    setQuantity(value > 0 ? value : 1);
+  };
   return (
-    <>
-     <div className='flex justify-center items-center min-h-screen'>
-     <section className="grid grid-cols-[0.9fr_1fr] mx-auto py-10 min-w-[750px] bg-white rounded-md">
-        <div className="relative">
-          <div className="absolute -left-10 grid grid-rows-1 w-full h-full rounded-md shadow-[4px_4px_25px_-2px_rgba(0,0,0,0.3)]">
-            <div className="rounded-t-md bg-[#c4c7be] bg-gradient-radial from-[#d0d1cb] to-[#c4c7be]">
-              <img
-                src="https://i.pinimg.com/236x/9a/fb/75/9afb7581ea0b50307d7ec9e7876bc026.jpg"
-                alt="green apple slice"
-                className="absolute -left-14 top-8 max-w-[110%] filter saturate-150 contrast-120 hue-rotate-10 drop-shadow-[1px_20px_10px_rgba(0,0,0,0.3)]"
-              />
-            </div>
-            <div className="p-3 rounded-b-md bg-white">
-              <ul className="flex justify-around">
-                <li className="float-left w-14 h-14 p-2 border border-gray-400 rounded-md">
-                  <img
-                    src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
-                    alt="green apple"
-                  />
-                </li>
-                <li className="float-left w-14 h-14 p-2 border border-gray-400 rounded-md">
-                  <img
-                    src="https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png"
-                    alt="half apple"
-                  />
-                </li>
-                <li className="float-left w-14 h-14 p-2 border border-gray-400 rounded-md">
-                  <img
-                    src="https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png"
-                    alt="green apple"
-                  />
-                </li>
-                <li className="float-left w-14 h-14 p-2 border border-gray-400 rounded-md">
-                  <img
-                    src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png"
-                    alt="apple top"
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
+    <div className="bg-white min-h-screen mt-10 flex h-[100vh] items-center justify-center p-6">
+      <div className="max-w-6xl w-full flex h-[100vh] flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12">
+
+        {/* Product Image */}
+        <div className="w-full md:w-1/2 h-[90vh] flex justify-center">
+          <img
+            src="https://i.pinimg.com/236x/b0/c6/9c/b0c69cb637ba5d363baae66dd6617d34.jpg"
+            alt="Handcrafted Clay Pot"
+            className="w-full h-full rounded-lg shadow-md"
+          />
         </div>
-        <div className="py-3.5">
-          <div className="mb-0.5">
-            <h1 className="text-gray-700 text-2xl font-extrabold">Variable Product</h1>
-            <span className="text-xs text-gray-400">COD: 45999</span>
+
+        {/* Product Details */}
+        <div className="w-full md:w-1/2">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Handcrafted Clay Pot</h1>
+          <p className="text-lg text-gray-600 mb-6">
+            This beautifully handcrafted clay pot is perfect for your home decor. Made with natural clay, it adds a rustic and traditional touch to any space.
+          </p>
+
+          <div className="mb-6">
+            <span className="text-2xl font-semibold text-red-900">$45.00</span>
           </div>
-          <div className="my-6 text-[#ff3f40] text-xl">
-            R$ <span className="pl-0.5 text-3xl">7.93</span>
-          </div>
-          <div className="overflow-auto">
-            <h3 className="mb-4">SELECT A COLOR</h3>
-            <ul>
-              <li className="float-left w-9 h-9 p-0.5 border border-gray-400 rounded-md cursor-pointer">
-                <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
-                  alt="green apple"
-                />
-              </li>
-              <li className="float-left w-9 h-9 p-0.5 border border-transparent rounded-md cursor-pointer ml-0.5 hover:border-gray-400">
-                <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png"
-                  alt="yellow apple"
-                />
-              </li>
-              <li className="float-left w-9 h-9 p-0.5 border border-transparent rounded-md cursor-pointer ml-0.5 hover:border-gray-400">
-                <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png"
-                  alt="orange apple"
-                />
-              </li>
-              <li className="float-left w-9 h-9 p-0.5 border border-transparent rounded-md cursor-pointer ml-0.5 hover:border-gray-400">
-                <img
-                  src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png"
-                  alt="red apple"
-                />
-              </li>
+
+          <div className="mb-6">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Product Features:</h2>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>100% natural clay</li>
+              <li>Handcrafted by local artisans</li>
+              <li>Eco-friendly and sustainable</li>
+              <li>Perfect for indoor and outdoor use</li>
+              <li>Available in multiple sizes</li>
             </ul>
           </div>
-          <div className="clear-left my-8">
-            {/* <h3 className="mb-4">BENEFITS</h3> */}
-            <ul className="text-sm list-disc ml-4">
-              <li className="text-indent-[-0.6em] mb-2">Apples are nutritious</li>
-              <li className="text-indent-[-0.6em] mb-2">Apples may be good for weight loss</li>
-              <li className="text-indent-[-0.6em] mb-2">Apples may be good for bone health</li>
-              <li className="text-indent-[-0.6em] mb-2">They're linked to a lower risk of diabetes</li>
+
+          <div className="mb-6">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Specifications:</h2>
+            <ul className="text-gray-600 space-y-2">
+              <li><strong>Dimensions:</strong> 10 x 8 inches</li>
+              <li><strong>Weight:</strong> 1.5 kg</li>
+              <li><strong>Material:</strong> Natural clay</li>
+              <li><strong>Color:</strong> Terracotta</li>
             </ul>
           </div>
-          <button className="py-6 px-12 border-none rounded-md text-sm font-bold tracking-wide text-white bg-[#ff3f40] shadow-[2px_2px_25px_-7px_#4c4c4c] cursor-pointer active:scale-97">
-            ADD TO CART
+
+          <div className="mb-6">
+            <label htmlFor="quantity" className="text-lg font-medium text-gray-800 mr-4">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              value={quantity}
+              onChange={handleQuantityChange}
+              className="w-16 text-center py-2 border border-gray-300 rounded-md"
+            />
+          </div>
+
+          <button className="w-full md:w-auto px-6 py-3 bg-black text-white text-lg font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300">
+            Add to Cart
           </button>
         </div>
-      </section>
-     </div>
-
-    </>
-  )
+      </div>
+    </div>
+  );
 }
 
-export default Product;
+export default ProductPage;

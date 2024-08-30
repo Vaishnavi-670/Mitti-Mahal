@@ -28,20 +28,16 @@ const Home = () => {
   return (
     <div data-scroll-container ref={scrollRef}>
       <nav className="bg-white mt-2 w-full">
-      <div className="container mx-auto px-4 flex items-center justify-between h-20">
+      <div className="container  flex items-center justify-between h-20">
         <div className="flex items-center">
-          <img 
-            src="https://your-logo-url.com/logo.png" 
-            alt="Mitti Mahal Logo" 
-            className="h-12 w-12 object-cover"
-          />
-          <span className="ml-2 text-2xl font-bold text-gray-800">Mitti Mahal</span>
+         <img className='h-[200px] w-[200px]'  src="./Logo.jpg"></img>
         </div>
         <div className="hidden md:flex space-x-8">
           <Link href="/" className="text-gray-900 font-semibold hover:text-black px-3 py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Home</Link>
           <Link href="/shop" className="text-gray-900 hover:text-black px-3 font-semibold py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Shop</Link>
           <Link href="/aboutus" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">About Us</Link>
           <Link href="/contact" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Contact</Link>
+          <Link href="/faq" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">FAQ</Link>
         </div>
         <div className="flex items-center space-x-4">
           <Link href='/login' className="text-gray-600 hover:text-black font-semibold text-lg">Log in</Link>
@@ -332,19 +328,19 @@ const Home = () => {
                   <h3 className="text-3xl font-bold">Service</h3>
                 </li>
                 <li className="mt-4">
-                  <a href="/shop" className="text-lg">Shop</a>
+                  <Link href="/shop" className="text-lg">Shop</Link>
                 </li>
                 <li className="mt-2">
-                  <a href="/aboutus" className="text-lg ">About</a>
+                  <Link href="/aboutus" className="text-lg ">About</Link>
                 </li >
                 <li className="mt-2">
-                  <a href="#" className="text-lg ">Contact</a>
+                  <Link href="/contact" className="text-lg ">Contact</Link>
                 </li>
                 <li className="mt-2">
-                  <a href="#" className="text-lg ">Gift Cards</a>
+                  <Link href="#" className="text-lg ">Gift Cards</Link>
                 </li>
                 <li className="mt-2">
-                  <a href="/features" className="text-lg ">Features</a>
+                  <Link href="/features" className="text-lg ">Features</Link>
                 </li>
               </ul>
               <ul className="list-none">
@@ -352,13 +348,18 @@ const Home = () => {
                   <h3 className="text-3xl font-bold">Privacy</h3>
                 </li>
                 <li className="mt-4">
-                  <a href="#" className="text-lg ">Privacy Policy</a>
+                  <Link href="#" className="text-lg ">Privacy Policy</Link>
                 </li>
                 <li className="mt-2">
-                  <a href="#" className="text-lg ">Terms &amp; Condition</a>
+                  <Link href="#" className="text-lg ">Terms &amp; Condition</Link>
                 </li>
                 <li className="mt-2">
-                  <a href="#" className="text-lg "> Cookies </a>
+                  <Link href="#" className="text-lg "> Cookies </Link>
+                  
+                </li>
+                <li className="mt-2">
+                  <Link href="/customerhelp" className="text-lg "> Help </Link>
+                  
                 </li>
 
               </ul>
