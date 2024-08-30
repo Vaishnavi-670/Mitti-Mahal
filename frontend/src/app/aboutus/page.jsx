@@ -6,7 +6,7 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* About Us Title */}
-        <h1 className="text-5xl font-bold text-gray-800 mb-4  text-center">About Us</h1>
+        <h1 className="text-5xl font-bold text-gray-800 mb-6  text-center">About Us</h1>
         <p className='text-lg text-gray-800 text-center mb-8'>Each product at Mitti Mahal is a labor of love, crafted by skilled artisans who pour their heart and soul into every creation. From elegant home décor to functional tableware and unique gifts, our collections reflect the perfect blend of artistry and practicality. We believe in the importance of sustainability and quality, ensuring that every piece we offer is made with the finest materials and utmost care</p>
         
         {/* Introduction Section with Image */}

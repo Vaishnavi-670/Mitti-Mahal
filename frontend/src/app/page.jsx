@@ -12,12 +12,12 @@ const Home = () => {
     const scroll = new LocomotiveScroll({
       el: scrollRef.current,
       smooth: true,
-      smoothMobile: true, // Enable smooth scrolling on mobile devices
+      smoothMobile: true, 
       tablet: {
-        smooth: true, // Enable smooth scrolling on tablets
+        smooth: true, 
       },
       smartphone: {
-        smooth: true, // Enable smooth scrolling on smartphones
+        smooth: true, 
       },
     });
 
@@ -27,22 +27,46 @@ const Home = () => {
   }, []);
   return (
     <div data-scroll-container ref={scrollRef}>
-      <section data-scroll-section className="pt-24">
+      <nav className="bg-white mt-2 w-full">
+      <div className="container mx-auto px-4 flex items-center justify-between h-20">
+        <div className="flex items-center">
+          <img 
+            src="https://your-logo-url.com/logo.png" 
+            alt="Mitti Mahal Logo" 
+            className="h-12 w-12 object-cover"
+          />
+          <span className="ml-2 text-2xl font-bold text-gray-800">Mitti Mahal</span>
+        </div>
+        <div className="hidden md:flex space-x-8">
+          <Link href="/" className="text-gray-900 font-semibold hover:text-black px-3 py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Home</Link>
+          <Link href="/shop" className="text-gray-900 hover:text-black px-3 font-semibold py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Shop</Link>
+          <Link href="/aboutus" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">About Us</Link>
+          <Link href="/contact" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Contact</Link>
+        </div>
+        <div className="flex items-center space-x-4">
+          <Link href='/login' className="text-gray-600 hover:text-black font-semibold text-lg">Log in</Link>
+          <Link href='/signup' className="bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-black transition duration-300 ease-in-out">
+            Sign Up
+          </Link>
+        </div>
+      </div>
+    </nav>
+      <section  className="pt-20">
         <div className=" mx-auto max-w-7xl">
           <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
-            <h1 className=" mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
+            <h1 className=" mb-12 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
               <span className='text1'>Discover</span>{" "}
               <span className=" text2 block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-gray-400 to-red-800 lg:inline">
                 the art of clay crafting
               </span>{" "}
               <span className='text1'>with our products</span>
             </h1>
-            <p data-scroll data-scroll-delay="0.2" className="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24">
+            <p data-scroll data-scroll-delay="0.2" className="px-0 mb-10 text-lg text-gray-600 md:text-xl lg:px-24">
               Unleash your creativity with our premium clay products. Perfect for artists of all levels, our clay is designed to help you bring your visions to life.
             </p>
             <div className=" space-x-0 md:space-x-2 ">
               <Link
-                href="#_"
+                href="/shop"
                 className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-red-700 rounded-2xl sm:w-auto sm:mb-0"
               >
                 Get Started
@@ -206,29 +230,29 @@ const Home = () => {
             <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/236x/df/64/3c/df643c5dd49dd291a221a2778bd454a8.jpg" alt="" />
             <h3 className='text-center mt-5 text-xl'>Ceramic Plates</h3>
             <p className=" text-center mt-2 text-[#ff3f40] text-xl">
-            R$<span className="text-3xl">8.83</span>
-          </p>
+              R$<span className="text-3xl">8.83</span>
+            </p>
           </div>
           <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
             <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/736x/bc/71/ae/bc71aea448160276b39ca2643a7fb3d2.jpg" alt="" />
             <h3 className='text-center mt-5 text-xl'>Ceramic Pot</h3>
             <p className=" text-center mt-2 text-[#ff3f40] text-xl">
-            R$<span className="text-3xl">7.90</span>
-          </p>
+              R$<span className="text-3xl">7.90</span>
+            </p>
           </div>
           <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
             <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/236x/7b/f2/c7/7bf2c70db01aa709f05fd7a10d97e830.jpg" alt="" />
             <h3 className='text-center mt-5 text-xl'>Ceramic bowl</h3>
             <p className=" text-center mt-2 text-[#ff3f40] text-xl">
-            R$<span className="text-3xl">7.93</span>
-          </p>
+              R$<span className="text-3xl">7.93</span>
+            </p>
           </div>
           <div className=" flex flex-col cursor-pointer rounded-2xl w-80 h-96 ">
             <img className="w-80 h-96 rounded-2xl" src="https://i.pinimg.com/564x/08/51/87/0851874dd3a7a48dc2667ffc766cbb08.jpg" alt="" />
             <h3 className='text-center mt-5 text-xl'>Ceramic Bottle</h3>
             <p className=" text-center mt-2  text-[#ff3f40] text-xl">
-            R$<span className="text-3xl">6.93</span>
-          </p>
+              R$<span className="text-3xl">6.93</span>
+            </p>
           </div>
         </div>
         <div>
