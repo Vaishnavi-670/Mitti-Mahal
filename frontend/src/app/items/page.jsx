@@ -74,7 +74,7 @@ const ListingItems = () => {
                 </div>
                 {/* End Grid */}
             </div>
-            {/* End Card Blog */}
+            
         </>
     )
 }
