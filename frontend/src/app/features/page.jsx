@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Features = () => {
@@ -133,12 +134,12 @@ const Features = () => {
           <p className="text-lg text-gray-600 mb-8">
             Discover the unique features that make Mitti Mahal's pottery special. Browse our collection today and find the perfect piece to add to your home.
           </p>
-          <a 
+          <Link
             href="/shop" 
             className="inline-block bg-gray-800 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-700"
           >
             Shop Now
-          </a>
+          </Link>
         </div>
 
       </div>
