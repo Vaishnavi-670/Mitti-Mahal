@@ -59,13 +59,13 @@ const ListingItems = () => {
             //         </div>
             //     </div>
             // </Link>
-            <div key={product.id} className="bg-white border rounded-lg shadow-lg p-6">
+            <div key={product._id} className="bg-white border rounded-lg shadow-lg p-6">
             <img 
               src={product.imageUrl} 
-              alt={product.name} 
+              alt={product.title} 
               className="rounded-lg w-full h-64 object-cover mb-4"
             />
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h2>
             <p className="text-gray-600 mb-4">{product.description}</p>
             <p className="text-lg font-bold text-gray-800 mb-4">{product.price}</p>
             <Link 
