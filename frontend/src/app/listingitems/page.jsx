@@ -37,8 +37,7 @@ const ListingItems = () => {
                         </h3>
                         <h1>{product.price}</h1>
                         <p className="mt-3 text-gray-600 dark:text-neutral-400">
-                            Produce professional, reliable streams easily leveraging Preline's
-                            innovative broadcast studio
+                            {product.description}
                         </p>
                         <p className="mt-4 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
                             Read more
@@ -67,6 +66,10 @@ const ListingItems = () => {
         <>
             
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+                <div>
+                    <h1 className='text-center text-5xl text-gray-800 font-bold'>Our Products</h1>
+                </div>
+                
                 {/* Grid */}
                 <div className="grid lg:grid-cols-2 lg:gap-y-16 gap-10">
 
