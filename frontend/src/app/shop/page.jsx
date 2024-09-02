@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Shop = () => {
@@ -58,12 +59,12 @@ const Shop = () => {
               <h2 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h2>
               <p className="text-gray-600 mb-4">{product.description}</p>
               <p className="text-lg font-bold text-gray-800 mb-4">{product.price}</p>
-              <a 
+              <Link 
                 href={`/product/${product.id}`} 
                 className="block bg-gray-800 text-white py-2 px-4 rounded-lg text-center font-semibold hover:bg-gray-700"
               >
                 View Details
-              </a>
+              </Link>
             </div>
           ))}
         </div>
