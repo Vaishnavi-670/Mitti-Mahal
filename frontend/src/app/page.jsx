@@ -17,7 +17,7 @@ const Home = () => {
         smooth: true, 
       },
       smartphone: {
-        smooth: true, 
+        smooth: true,
       },
     });
 
