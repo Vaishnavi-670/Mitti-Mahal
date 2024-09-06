@@ -96,34 +96,63 @@ const LearnMore = () => {
         </div>
       </section>
       {/* Our Process Section */}
-      <section className="bg-gray-100 py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-black mb-8 text-center">
+      <section className="bg-gray-100  h-[100vh] py-7">
+        <div className="container mx-auto ">
+          <h2 className="text-5xl font-bold text-black mb-4 text-center">
             Our Process
           </h2>
-          <p className="text-center text-gray-800 mb-12">
+          <p className="text-center text-xl text-gray-800 mb-5">
             From selecting the finest materials to the final touches, learn how our
             clay products are crafted with care and precision.
           </p>
-          <div className="flex flex-wrap justify-center">
-            <div className="w-full md:w-1/2 p-4">
-              <div className="bg-white h-[500px] w-[100%] p-6 rounded-lg shadow-lg">
-                <img
-                  src="https://i.pinimg.com/564x/00/be/64/00be6415f9ac28429c3e9537c4381ba5.jpg"
+          <div className="flex flex-wrap h-[90vh] justify-center">
+            <div className="w-full flex gap-7 p-4">
+              <div className=" h-[620px] w-1/3 p-6 rounded-lg shadow-xl">
+                <video autoPlay muted loop 
+                  src="/process1.mp4"
                   alt="Clay Crafting Process"
-                  className="rounded-lg h-[350px] w-[100%] shadow-md mb-6"
+                  className="rounded-lg h-[450px] w-[100%] object-cover shadow-md mb-6"
                 />
                 <h3 className="text-2xl font-bold mb-4">
                   Handcrafted with Passion
                 </h3>
-                <p className="text-gray-800">
+                <p className="text-gray-800 text-lg">
                   Our artisans meticulously handcraft each piece, ensuring quality
                   and uniqueness.
                 </p>
-              </div>
+              </div>             
+              <div className=" h-[620px] w-1/3 p-6 rounded-lg shadow-xl">
+                <video autoPlay muted loop 
+                  src="/process2.mp4"
+                  alt="Clay Crafting Process"
+                  className="rounded-lg h-[450px] w-[100%] object-cover shadow-md mb-6"
+                />
+                <h3 className="text-2xl font-bold mb-4">
+                  Handcrafted with Passion
+                </h3>
+                <p className="text-gray-800 text-lg">
+                  Our artisans meticulously handcraft each piece, ensuring quality
+                  and uniqueness.
+                </p>
+              </div>             
+              <div className=" h-[620px] w-1/3 p-6 rounded-lg shadow-xl">
+                <video autoPlay muted loop 
+                  src="/process3.mp4"
+                  alt="Clay Crafting Process"
+                  className="rounded-lg h-[450px] w-[100%] object-cover shadow-md mb-6"
+                />
+                <h3 className="text-2xl font-bold mb-4">
+                  Handcrafted with Passion
+                </h3>
+                <p className="text-gray-800 text-lg">
+                  Our artisans meticulously handcraft each piece, ensuring quality
+                  and uniqueness.
+                </p>
+              </div>             
             </div>
           </div>
-        </div>
+          
+          </div>
       </section>
       {/* Workshops & Classes Section */}
       <section className="py-20">
@@ -136,7 +165,19 @@ const LearnMore = () => {
             experienced artisans.
           </p>
           <div className="flex flex-wrap justify-center">
-            <div className="w-full md:w-1/2 p-4">
+            <div className="w-full flex  p-4">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <img
+                  src="https://i.pinimg.com/564x/88/22/aa/8822aa69f60bbc6e884a10364365c584.jpg"
+                  alt="Workshops & Classes"
+                  className="rounded-lg shadow-md mb-6"
+                />
+                <h3 className="text-2xl font-bold mb-4">Learn from the Best</h3>
+                <p className="text-gray-800">
+                  Our workshops offer a hands-on experience where you can create
+                  your own clay masterpieces.
+                </p>
+              </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <img
                   src="https://i.pinimg.com/564x/88/22/aa/8822aa69f60bbc6e884a10364365c584.jpg"
@@ -154,22 +195,22 @@ const LearnMore = () => {
         </div>
       </section>
       {/* Eco-Friendly Practices Section */}
-      <section className="bg-gray-100 py-20">
+      <section className="bg-gray-100 py-10">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-5 text-center">
             Eco-Friendly Practices
           </h2>
-          <p className="text-center text-gray-800 mb-12">
+          <p className="text-center text-gray-800 mb-10">
             We are committed to sustainability, using eco-friendly materials and
             processes to minimize our environmental impact.
           </p>
           <div className="flex flex-wrap justify-center">
-            <div className="w-full md:w-1/2 p-4">
+            <div className="w-full p-4">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <img
                   src="https://m.media-amazon.com/images/I/41VsrLUVK4L._AC_UF894,1000_QL80_.jpg"
                   alt="Eco-Friendly Materials"
-                  className="rounded-lg shadow-md mb-6 h-[350px] w-[100%]"
+                  className="rounded-lg shadow-md mb-6 h-[450px] w-[100%]"
                 />
                 <h3 className="text-2xl font-bold mb-4">Sustainable Materials</h3>
                 <p className="text-gray-600">
