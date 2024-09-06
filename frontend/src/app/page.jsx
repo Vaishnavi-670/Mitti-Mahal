@@ -33,14 +33,14 @@ const Home = () => {
          <img className='h-[200px] w-[200px]'  src="./Logo.jpg"></img>
         </div>
         <div className="hidden md:flex space-x-8">
-          <Link href="/" className="text-gray-900 font-semibold hover:text-black px-3 py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Home</Link>
-          <Link href="/shop" className="text-gray-900 hover:text-black px-3 font-semibold py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Shop</Link>
-          <Link href="/aboutus" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">About Us</Link>
-          <Link href="/contact" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">Contact</Link>
-          <Link href="/faq" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-lg">FAQ</Link>
+          <Link href="/" className="text-gray-900 font-semibold hover:text-black px-3 py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Home</Link>
+          <Link href="/shop" className="text-gray-900 hover:text-black px-3 font-semibold py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Shop</Link>
+          <Link href="/aboutus" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">About Us</Link>
+          <Link href="/contact" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Contact</Link>
+          <Link href="/faq" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">FAQ</Link>
         </div>
         <div className="flex items-center space-x-4">
-          <Link href='/login' className="text-gray-600 hover:text-black font-semibold text-lg">Log in</Link>
+          <Link href='/login' className="text-gray-600 hover:text-black font-semibold text-xl">Log in</Link>
           <Link href='/signup' className="bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-black transition duration-300 ease-in-out">
             Sign Up
           </Link>
@@ -301,12 +301,10 @@ const Home = () => {
           </div>
         </div>
         <div className=" h-[73vh]">
-          <div className="relative top-20 z-10 w-3/4 mx-auto p-10 flex justify-between bg-white rounded-b-3xl shadow-2xl" data-scroll="" data-scroll-speed="5">
+        <div className="relative top-20 z-10 w-3/4 mx-auto p-10 flex justify-between bg-white rounded-b-3xl shadow-2xl" data-scroll="" data-scroll-speed="5">
             <h1 className="text-4xl font-black mt-5 text-gray-900">Subscribe To Our Newsletter</h1>
             <div className="w-2/5 mt-3">
               <input type="email" placeholder="enter your email here" className="mr-7 p-3.5 bg-gray-100 w-2/5 rounded-2xl border-none text-black font-semibold outline-none" />
-              {/* <button className="p-3.5 w-2/5 bg-orange-800 rounded-lg text-white font-semibold tracking-wider mt-4 outline-none">Subscribe</button> */}
-
               <button className="bg-gradient-to-r from-gray-900 to-gray-400 hover:from-gray-900 hover:to-gray-600 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 hover:animate-pulse active:animate-bounce">
                 Subscribe
               </button>
@@ -337,14 +335,14 @@ const Home = () => {
                   <Link href="/contact" className="text-lg ">Contact</Link>
                 </li>
                 <li className="mt-2">
-                  <Link href="#" className="text-lg ">Gift Cards</Link>
+                  <Link href="giftCard" className="text-lg ">Gift Cards</Link>
                 </li>
                 <li className="mt-2">
                   <Link href="/features" className="text-lg ">Features</Link>
                 </li>
               </ul>
               <ul className="list-none">
-                <li className="mt-4">
+                <li className="mt-4 ">
                   <h3 className="text-3xl font-bold">Privacy</h3>
                 </li>
                 <li className="mt-4">
