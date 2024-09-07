@@ -114,7 +114,7 @@ const Home = () => {
                 className="h-full w-full object-cover rounded-full" />
             </div>
             <h3 className="text-xl text-center font-semibold mb-2">Pottery Classes</h3>
-            <p className="text-gray-600 text-center">Explore the world of pottery with our expert-led classes and transform <br /> clay into beautiful personalized art pieces </p>
+            <p className="text-gray-600 text-center">Explore the world of pottery with our expert-led classes and transform  clay into beautiful personalized art pieces </p>
           </div>
           <div data-scroll data-scroll-speed="2" data-scroll-delay="0.4" className="h-80 p-6 ml-11 w-80 bg-white shadow-lg rounded-lg">
             <div className="h-32 w-32 mx-auto mb-4">
