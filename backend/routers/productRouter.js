@@ -52,5 +52,15 @@ router.get('/getbyprice', (req, res) => {
         res.status(500).json(err);
     })
 });
+router.delete('/delete/:id', (req, res) => {
+    Model.findByIdAndDelete(req.params.id)
+    .then((results) => {
+     res.status(200).json(results);
+    })
+    .catch((err) => {
+         console.log(err);
+         res.status(500).json(err);
+     });
+})
 
 module.exports  = router;
