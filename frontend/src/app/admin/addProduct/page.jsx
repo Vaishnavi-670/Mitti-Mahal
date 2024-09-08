@@ -1,4 +1,5 @@
 'use client';
+import axios from 'axios';
 import { useFormik } from 'formik';
 import { enqueueSnackbar } from 'notistack';
 import React from 'react'
@@ -30,6 +31,27 @@ const AddProduct = () => {
 
         }
     })
+
+    const uploadToCloud = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const fd = new FormData();
+        fd.append('file', file);
+        fd.append('upload_preset', 'mittimahal');
+        fd.append('cloud_name', 'df7ifncgy');
+
+        axios.post('https://api.cloudinary.com/v1_1/df7ifncgy/image/upload',
+            fd,
+            { headers: { 'Content-Type': 'multipart/form-data' } }
+        )
+            .then((response) => {
+                console.log(response.data);
+                addProduct.setFieldValue('image', response.data.url);
+            }).catch((err) => {
+                console.log(err);
+            });
+    }
 
     return (
         <>
@@ -88,7 +110,7 @@ const AddProduct = () => {
                                 </label>
                             </div>
                             <div className="relative h-11 w-full min-w-[200px]">
-                                <input type='file' id='image' onChange={addProduct.handleChange} value={addProduct.values.image}
+                                <input type='file' id='image' onChange={uploadToCloud}
                                     placeholder=""
                                     className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-cyan-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                                 />
