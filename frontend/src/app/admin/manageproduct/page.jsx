@@ -1,10 +1,11 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 
 const ManageProduct = () => {
     const [productList, setproductList] = useState([]);
 
         const fetchProduct = async ()=>{
-            const res = await fetch('http://localhost:5000/user/getall');
+            const res = await fetch('http://localhost:5000/product/getall');
             console.log(res.status);   
             const data = await res.json();
             console.table(data);
@@ -16,9 +17,9 @@ const ManageProduct = () => {
         
           const deleteUser = async (id) => {
             console.log(id);
-            const res = await fetch('http://localhost:5000/user/delete/'+id, { method:'DELETE'})
+            const res = await fetch('http://localhost:5000/product/delete/'+id, { method:'DELETE'})
             if(res.status === 200){
-                enqueueSnackbar ('User Deleted Successfully', { variant:'success'});
+                enqueueSnackbar ('Product Deleted Successfully', { variant:'success'});
                 fetchProduct();
               }
           }
