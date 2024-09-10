@@ -207,7 +207,7 @@ const ListingItems = () => {
                                     <circle cx={12} cy={12} r={10} />
                                     <path d="M15 9v6M9 9v6" />
                                 </svg>
-                                Sustainability
+                                Tableware
                             </Link>
                             <Link
                                 className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
@@ -228,7 +228,7 @@ const ListingItems = () => {
                                     <circle cx={12} cy={12} r={10} />
                                     <path d="M15 9v6M9 9v6" />
                                 </svg>
-                                Sustainability
+                                Jewelry
                             </Link>
                             <Link
                                 className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
@@ -249,7 +249,7 @@ const ListingItems = () => {
                                     <circle cx={12} cy={12} r={10} />
                                     <path d="M15 9v6M9 9v6" />
                                 </svg>
-                                Sustainability
+                                Gift Sets
                             </Link>
                             <Link
                                 className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
@@ -270,7 +270,7 @@ const ListingItems = () => {
                                     <circle cx={12} cy={12} r={10} />
                                     <path d="M15 9v6M9 9v6" />
                                 </svg>
-                                Sustainability
+                                Traditional Artifacts
                             </Link>
                             <Link
                                 className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
@@ -291,7 +291,7 @@ const ListingItems = () => {
                                     <circle cx={12} cy={12} r={10} />
                                     <path d="M15 9v6M9 9v6" />
                                 </svg>
-                                Sustainability
+                                Custom Orders
                             </Link>
                             <Link
                                 className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
@@ -312,7 +312,49 @@ const ListingItems = () => {
                                     <circle cx={12} cy={12} r={10} />
                                     <path d="M15 9v6M9 9v6" />
                                 </svg>
-                                Sustainability
+                                Planters & Gardening
+                            </Link>
+                            <Link
+                                className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                                href="#"
+                            >
+                                <svg
+                                    className="shrink-0 size-4"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={24}
+                                    height={24}
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <circle cx={12} cy={12} r={10} />
+                                    <path d="M15 9v6M9 9v6" />
+                                </svg>
+                                Kitchenware
+                            </Link>
+                            <Link
+                                className="m-1 py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                                href="#"
+                            >
+                                <svg
+                                    className="shrink-0 size-4"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={24}
+                                    height={24}
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <circle cx={12} cy={12} r={10} />
+                                    <path d="M15 9v6M9 9v6" />
+                                </svg>
+                                Home Decor
                             </Link>
                             
                             
