@@ -208,7 +208,7 @@ const LearnMore = () => {
             <div className="w-full p-4">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHddLfCsez3qRu0bp5LcT9tx6NB2dHz-JTeQ&s"
+                  src=""
                   alt="Eco-Friendly Materials"
                   className="rounded-lg shadow-md mb-6 h-[450px] w-[100%]"
                 />
