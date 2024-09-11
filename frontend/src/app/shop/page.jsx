@@ -39,7 +39,7 @@ const Shop = () => {
     <div className="bg-white py-16 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
 
-        {/* Shop Introduction Section */}
+        
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Welcome to Mitti Mahal Shop</h1>
           <p className="text-lg text-gray-600">
