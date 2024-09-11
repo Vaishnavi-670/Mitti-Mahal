@@ -21,7 +21,7 @@ function ProductPage() {
           />
         </div>
 
-        {/* Product Details */}
+        
         <div className="w-full md:w-1/2">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Handcrafted Clay Pot</h1>
           <p className="text-lg text-gray-600 mb-6">
