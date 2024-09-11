@@ -12,7 +12,7 @@ function ProductPage() {
     <div className="bg-white min-h-screen mt-10 flex h-[100vh] items-center justify-center p-6">
       <div className="max-w-6xl w-full flex h-[100vh] flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12">
 
-        {/* Product Image */}
+        
         <div className="w-full md:w-1/2 h-[90vh] flex justify-center">
           <img
             src="https://i.pinimg.com/236x/b0/c6/9c/b0c69cb637ba5d363baae66dd6617d34.jpg"
