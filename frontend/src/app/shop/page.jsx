@@ -32,7 +32,7 @@ const Shop = () => {
       imageUrl: 'https://via.placeholder.com/400x400',
       description: 'A hand-painted bowl featuring vibrant colors and detailed patterns, perfect for display or use.',
     },
-    // Add more products as needed
+    
   ];
 
   return (
