@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 
 const Shop = () => {
-  // Sample product data
   const products = [
     {
       id: 1,
