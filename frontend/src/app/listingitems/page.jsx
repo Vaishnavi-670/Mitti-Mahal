@@ -124,7 +124,7 @@ const ListingItems = () => {
                                 </svg>
                             </div>
                             {/* End SVG Element */}
-                            {/* SVG Element */}
+                            
                             <div className="hidden md:block absolute bottom-0 start-0 translate-y-10 -translate-x-32">
                                 <svg
                                     className="w-40 h-auto text-cyan-500"
@@ -142,7 +142,7 @@ const ListingItems = () => {
                                     />
                                 </svg>
                             </div>
-                            {/* End SVG Element */}
+                            
                         </div>
                         <div className="mt-16 ">
                             {/* Categories */}
