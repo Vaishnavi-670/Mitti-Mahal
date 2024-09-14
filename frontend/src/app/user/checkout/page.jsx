@@ -5,8 +5,7 @@ const CheckoutPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold mb-10 text-center text-gray-800">Checkout</h1>
-        
+        <h1 className="text-4xl font-bold mb-10 text-center text-gray-800">Checkout</h1>       
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           {/* Left Section - Product Details */}
@@ -43,7 +42,7 @@ const CheckoutPage = () => {
           </div>
 
           {/* Right Section - Shipping Details and Payment */}
-          <div className="bg-white p-8 rounded-2xl shadow-xl transform transition-transform hover:scale-105">
+          <div className="bg-white p-8 rounded-2xl  transform transition-transform ">
             <h2 className="text-3xl font-semibold border-b pb-4 mb-8 text-gray-700">Shipping Address</h2>
             <form className="space-y-6">
               <div>
