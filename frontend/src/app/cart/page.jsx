@@ -37,10 +37,12 @@ const CartPage = () => {
 
   return (
     <div className="min-h-screen">
-      <header className="text-center py-8 bg-slate-200 mb-5">
+      <header className="text-center py-8  mb-5">
         <h1 className="text-4xl font-bold text-black">
           <span className="inline-block transform transition-transform duration-700 ease-in-out hover:-translate-y-1">
-            Your Cart
+            Your Cart 
+            <img src="https://i.pinimg.com/236x/02/3b/3e/023b3e3ca534ae94a88cfc898b31e0cf.jpg" alt="Standard" className="inline-block object-cover w-14 h-16 ml-2" />
+
           </span>
         </h1>
       </header>

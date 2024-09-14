@@ -27,23 +27,25 @@ const Home = () => {
   }, []);
   return (
     <div data-scroll-container ref={scrollRef}>
-      <nav className="bg-white mt-2 w-full">
-      <div className="container  flex items-center justify-between h-20">
+      <nav className="bg-white px-6 mt-2 w-full">
+      <div className="  flex items-center justify-between h-20">
         <div className="flex items-center">
          <img className='h-[200px] w-[200px]'  src="./Logo.jpg"></img>
         </div>
         <div className="hidden md:flex space-x-8">
           <Link href="/" className="text-gray-900 font-semibold hover:text-black px-3 py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Home</Link>
-          <Link href="/shop" className="text-gray-900 hover:text-black px-3 font-semibold py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Shop</Link>
+          <Link href="/listingitems" className="text-gray-900 hover:text-black px-3 font-semibold py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Shop</Link>
           <Link href="/aboutus" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">About Us</Link>
           <Link href="/contact" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Contact</Link>
           <Link href="/faq" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">FAQ</Link>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3">
           <Link href='/login' className="text-gray-600 hover:text-black font-semibold text-xl">Log in</Link>
           <Link href='/signup' className="bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-black transition duration-300 ease-in-out">
             Sign Up
           </Link>
+          <Link href='/cart' className="text-gray-600 hover:text-black ">
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-garden-cart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17.5 17.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" /><path d="M6 8v11a1 1 0 0 0 1.806 .591l3.694 -5.091v.055" /><path d="M6 8h15l-3.5 7l-7.1 -.747a4 4 0 0 1 -3.296 -2.493l-2.853 -7.13a1 1 0 0 0 -.928 -.63h-1.323" /></svg></Link>
         </div>
       </div>
     </nav>
