@@ -33,7 +33,7 @@ const CheckoutPage = () => {
                                 className="w-40 h-40 object-cover rounded-xl"
                             />
                             <div>
-                                <h3 className="text-xl font-semibold text-gray-700">Product Name</h3>
+                                <h3 className="text-xl font-semibold text-gray-700">{product.title}</h3>
                                 <p className="text-gray-500">Short description of the product you ordered.</p>
                                 <p className="text-lg font-semibold mt-2 text-gray-800">Price: $50.00</p>
                             </div>
