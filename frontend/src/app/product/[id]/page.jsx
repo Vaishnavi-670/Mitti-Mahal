@@ -1,35 +1,52 @@
 'use client';
-import React, { useState } from 'react';
+import { useParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 
 function ProductPage() {
   const [quantity, setQuantity] = useState(1);
+  const [product, setProduct] = useState(null);
+
+  const { id } = useParams();
+
+  const fetchProductId = async () => {
+    const res = await fetch('http://localhost:5000/product/getbyid/' + id);
+    console.log(res.status);
+    const data = await res.json();
+    console.table(data);
+    setProduct(data);
+  }
+  useEffect(() => {
+    fetchProductId();
+  }, []);
 
   const handleQuantityChange = (e) => {
     const value = parseInt(e.target.value, 10);
     setQuantity(value > 0 ? value : 1);
   };
-  return (
-    <div className="bg-white min-h-screen mt-10 flex h-[100vh] items-center justify-center p-6">
-      <div className="max-w-6xl w-full flex h-[100vh] flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12">
 
-        
+  const showProductDetails = () => {
+    if(product!==null){
+      return (
+        <div className="max-w-6xl w-full flex h-[100vh] flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12">
+
+
         <div className="w-full md:w-1/2 h-[90vh] flex justify-center">
           <img
-            src="https://i.pinimg.com/236x/b0/c6/9c/b0c69cb637ba5d363baae66dd6617d34.jpg"
+            src={product.image}
             alt="Handcrafted Clay Pot"
             className="w-full h-full rounded-lg shadow-md"
           />
         </div>
 
-        
+
         <div className="w-full md:w-1/2">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Handcrafted Clay Pot</h1>
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">{product.title}</h1>
           <p className="text-lg text-gray-600 mb-6">
-            This beautifully handcrafted clay pot is perfect for your home decor. Made with natural clay, it adds a rustic and traditional touch to any space.
+{product.description}
           </p>
 
           <div className="mb-6">
-            <span className="text-2xl font-semibold text-red-900">$45.00</span>
+            <span className="text-2xl font-semibold text-red-900">{product.price}</span>
           </div>
 
           <div className="mb-6">
@@ -69,6 +86,15 @@ function ProductPage() {
           </button>
         </div>
       </div>
+      )
+    }else{
+      return <h2>Loading ... </h2>
+    }
+  }
+
+  return (
+    <div className="bg-white min-h-screen mt-10 flex h-[100vh] items-center justify-center p-6">
+      {showProductDetails()}
     </div>
   );
 }

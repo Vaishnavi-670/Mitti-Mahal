@@ -30,7 +30,7 @@ const ListingItems = () => {
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <p className="text-lg font-bold text-gray-800 mb-4">{product.price}</p>
                 <Link
-                    href={`/product/${product.id}`}
+                    href={`/product/${product._id}`}
                     className="block bg-gray-800 text-white py-2 px-4 rounded-lg text-center font-semibold hover:bg-gray-700"
                 >
                     View Details
