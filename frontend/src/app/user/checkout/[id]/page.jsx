@@ -59,39 +59,51 @@ const CheckoutPage = () => {
                     <div className="bg-white p-8 rounded-2xl  transform transition-transform ">
                         <h2 className="text-3xl font-semibold border-b pb-4 mb-8 text-gray-700">Shipping Address</h2>
                         <form className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm font-medium text-gray-600">Full Name</label>
+                                <label htmlFor="name" className="block text-lg font-medium text-gray-700"> First Name</label>
                                 <input
                                     type="text"
-                                    className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                    placeholder="Enter your full name"
+                                    id="name"
+                                    className="mt-2 p-4 w-full border border-gray-300 rounded-lg shadow-sm focus:ring-gray-500 focus:border-gray-500"
+                                    placeholder="Your Name"
+                                    required
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-600">Email Address</label>
+                                <label htmlFor="name" className="block text-lg font-medium text-gray-700">Last Name</label>
                                 <input
                                     type="email"
-                                    className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                    placeholder="Enter your email"
+                                    id="email"
+                                    className="mt-2 p-4 w-full border border-gray-300 rounded-lg shadow-sm focus:ring-gray-500 focus:border-gray-500"
+                                    placeholder="Your Email"
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label htmlFor="number" className="block text-lg font-medium text-gray-700">Phone Number</label>
+                                <input
+                                    type="num"
+                                    id="number"
+                                    className="mt-2 p-4 w-full border border-gray-300 rounded-lg shadow-sm focus:ring-gray-500 focus:border-gray-500"
+                                    placeholder="Your number"
+                                    required
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-600">Phone Number</label>
+                                <label htmlFor="email" className="block text-lg font-medium text-gray-700">email </label>
                                 <input
-                                    type="tel"
-                                    className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                    placeholder="Enter your phone number"
+                                    type="email"
+                                    id="email"
+                                    className="mt-2 p-4 w-full border border-gray-300 rounded-lg shadow-sm focus:ring-gray-500 focus:border-gray-500"
+                                    placeholder="Your Email"
+                                    required
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-600">Shipping Address</label>
-                                <input
-                                    type="text"
-                                    className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                    placeholder="Enter your shipping address"
-                                />
-                            </div>
-                            <div className="grid grid-cols-2 gap-4">
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-600">City</label>
                                     <input
@@ -109,10 +121,19 @@ const CheckoutPage = () => {
                                     />
                                 </div>
                             </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-600">Shipping Address</label>
+                                <input
+                                    type="text"
+                                    className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
+                                    placeholder="Enter your shipping address"
+                                />
+                            </div>
                             <button className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg">
                                 Proceed to Payment
                             </button>
-                        </form>
+                        
+                    </form>
                     </div>
 
                 </div>
