@@ -1,4 +1,5 @@
 'use client';
+import Link from "next/link";
 import React, { useState } from "react";
 
 const CartPage = () => {
@@ -44,7 +45,9 @@ const CartPage = () => {
             <img src="https://i.pinimg.com/236x/02/3b/3e/023b3e3ca534ae94a88cfc898b31e0cf.jpg" alt="Standard" className="inline-block object-cover w-14 h-16 ml-2" />
 
           </span>
+          
         </h1>
+        <p className="text-lg">A curated selection of your favorite clay products, ready to be shipped with care.</p>
       </header>
       <div className="flex mt-3">
       <div className=" w-[68%] p-6">
@@ -123,9 +126,9 @@ const CartPage = () => {
 
         {/* Checkout Button */}
         <div className="text-right mt-6">
-          <button className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors">
+          <Link href='' className="px-6 py-4 bg-green-500 text-white rounded-3xl hover:bg-green-600 transition-colors">
             Proceed to Checkout
-          </button>
+          </Link>
         </div>
       </div>
     </div>

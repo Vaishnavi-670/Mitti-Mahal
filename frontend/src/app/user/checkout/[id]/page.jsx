@@ -123,14 +123,14 @@ const CheckoutPage = () => {
                                 <div>
                                     <label
                                         htmlFor="firstName"
-                                        className="block text-lg font-medium text-gray-700"
+                                        className="block text-lg font-medium text-gray-700 "
                                     >
                                         First Name
                                     </label>
                                     <input
                                         type="text"
                                         id="firstName"
-                                        className="mt-2 p-4 w-full border border-gray-300 rounded-lg shadow-sm focus:ring-gray-500 focus:border-gray-500"
+                                        className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                         placeholder="Your First Name"
                                         required
                                     />
@@ -145,7 +145,7 @@ const CheckoutPage = () => {
                                     <input
                                         type="text"
                                         id="lastName"
-                                        className="mt-2 p-4 w-full border border-gray-300 rounded-lg shadow-sm focus:ring-gray-500 focus:border-gray-500"
+                                        className="mt-2 p-4 w-full border rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                         placeholder="Your Last Name"
                                         required
                                     />
@@ -156,14 +156,14 @@ const CheckoutPage = () => {
                                 <div>
                                     <label
                                         htmlFor="number"
-                                        className="block text-lg font-medium text-gray-700"
+                                        className="block text-lg font-medium  text-gray-700"
                                     >
                                         Phone Number
                                     </label>
                                     <input
                                         type="text"
                                         id="number"
-                                        className="mt-2 p-4 w-full border border-gray-300 rounded-lg shadow-sm focus:ring-gray-500 focus:border-gray-500"
+                                        className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                         placeholder="Your Phone Number"
                                         required
                                     />
@@ -178,7 +178,7 @@ const CheckoutPage = () => {
                                     <input
                                         type="email"
                                         id="email"
-                                        className="mt-2 p-4 w-full border border-gray-300 rounded-lg shadow-sm focus:ring-gray-500 focus:border-gray-500"
+                                        className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300"
                                         placeholder="Your Email"
                                         required
                                     />
