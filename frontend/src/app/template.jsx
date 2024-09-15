@@ -1,13 +1,16 @@
 'use client';
+import { CartProvider } from '@/context/CartContext';
 import { SnackbarProvider } from 'notistack'
 import React from 'react'
 
-const Template = ({children}) => {
+const Template = ({ children }) => {
   return (
     <div>
-        <SnackbarProvider anchorOrigin={{horizontal: 'center', vertical : 'top'}}>
+      <SnackbarProvider anchorOrigin={{ horizontal: 'center', vertical: 'top' }}>
+        <CartProvider>
           {children}
-        </SnackbarProvider>
+        </CartProvider>
+      </SnackbarProvider>
     </div>
   )
 }
