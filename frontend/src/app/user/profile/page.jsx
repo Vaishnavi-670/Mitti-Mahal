@@ -24,7 +24,7 @@ const ProfilePage = () => {
 
         {/* Profile Information */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Personal Details */}
+
           <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
             <h2 className="text-xl font-medium text-gray-700 mb-4">Personal Information</h2>
             <div className="space-y-2">
