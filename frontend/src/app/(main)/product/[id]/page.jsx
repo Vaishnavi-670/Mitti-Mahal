@@ -49,7 +49,7 @@ function ProductPage() {
             </p>
 
             <div className="mb-6">
-              <span className="text-2xl font-semibold text-red-900">{product.price}</span>
+              <span className="text-2xl font-semibold text-red-900">₹{product.price}</span>
             </div>
 
             <div className="mb-6">
