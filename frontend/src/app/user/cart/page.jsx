@@ -3,25 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Clay Vase",
-      description: "Handmade clay vase with intricate design",
-      image: "https://via.placeholder.com/150",
-      price: 40,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      name: "Clay Plate Set",
-      description: "Set of 4 traditional clay plates",
-      image: "https://via.placeholder.com/150",
-      price: 60,
-      quantity: 2,
-    },
-  ]);
-
+const [cartItems, setCartItems] = useState([])
   const updateQuantity = (id, amount) => {
     const updatedCart = cartItems.map((item) =>
       item.id === id

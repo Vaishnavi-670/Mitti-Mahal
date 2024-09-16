@@ -10,12 +10,12 @@ const Navbar = () => {
   return (
     <nav className="bg-white py-2 flex justify-center">
       <div className="container h-20 w-[100%] flex justify-between items-center">
-        
+
         {/* Logo Section */}
         <div className="flex justify-center items-center">
-         <img className='h-[200px] w-[200px]'  src="/Logo.jpg"></img>
+          <img className='h-[200px] w-[200px]' src="/Logo.jpg"></img>
         </div>
-        
+
         {/* Links Section */}
         <div className="space-x-8 text-lg text-gray-700">
           <Link href="/aboutus" className="hover:text-gray-900">About Us</Link>
@@ -24,7 +24,9 @@ const Navbar = () => {
           <Link href="/faq" className="hover:text-gray-900">FAQ</Link>
           <Link href="/customerhelp" className="hover:text-gray-900">Customer Help</Link>
           <Link href="/features" className="hover:text-gray-900">Features</Link>
-          <Link href="/features" className="hover:text-gray-900">Cart ({cart.length}) </Link>
+          <Link href="/features" className="hover:text-gray-900">
+          Cart
+            ({cart.length}) </Link>
         </div>
 
         {/* Login/Signup Section */}
