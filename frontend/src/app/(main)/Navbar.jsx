@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link href="/faq" className="hover:text-gray-900">FAQ</Link>
           <Link href="/customerhelp" className="hover:text-gray-900">Customer Help</Link>
           <Link href="/features" className="hover:text-gray-900">Features</Link>
-          <Link href="/features" className="hover:text-gray-900">
+          <Link href="/user/cart" className="hover:text-gray-900">
           Cart
             ({cart.length}) </Link>
         </div>

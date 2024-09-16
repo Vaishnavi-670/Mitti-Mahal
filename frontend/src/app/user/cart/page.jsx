@@ -1,11 +1,15 @@
 'use client';
 import useCartContext from "@/context/CartContext";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import React, { useState } from "react";
 
 const CartPage = () => {
 
   const { cart, incrementQty, decrementQty , calculateTotalPrice } = useCartContext();
+
+  
+  
 
   const [cartItems, setCartItems] = useState([])
   const updateQuantity = (id, amount) => {
