@@ -31,7 +31,7 @@ function CustomerHelpPage() {
             </button>
           </div>
 
-          {/* Buying Products */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Buying Products</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
