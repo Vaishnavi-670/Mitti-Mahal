@@ -59,7 +59,7 @@ function CustomerHelpPage() {
             </button>
           </div>
 
-          {/* General Inquiries */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">General Inquiries</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
