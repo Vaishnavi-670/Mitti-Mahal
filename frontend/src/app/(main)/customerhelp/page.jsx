@@ -17,7 +17,7 @@ function CustomerHelpPage() {
         
         <div className="grid md:grid-cols-2 gap-8">
           
-          {/* Order Issues */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Order Issues</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
