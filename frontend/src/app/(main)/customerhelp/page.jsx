@@ -6,7 +6,7 @@ function CustomerHelpPage() {
       <div className="max-w-6xl mx-auto px-6">
         <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">Customer Help Center</h1>
         
-        {/* Contact Information */}
+        
         <div className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">How Can We Assist You?</h2>
           <p className="text-lg text-gray-600 mb-6">
@@ -14,7 +14,7 @@ function CustomerHelpPage() {
           </p>
         </div>
 
-        {/* Help Sections */}
+        
         <div className="grid md:grid-cols-2 gap-8">
           
           {/* Order Issues */}
