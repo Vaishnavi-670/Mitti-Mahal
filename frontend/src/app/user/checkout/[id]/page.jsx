@@ -44,7 +44,7 @@ const CheckoutPage = () => {
                             </div>
                         </div>
 
-                        {/* Pricing Details */}
+                        {/* Pricing Detail */}
                         <div className="space-y-4">
                             <div className="flex justify-between text-lg">
                                 <p className="text-gray-600">Subtotal:</p>
