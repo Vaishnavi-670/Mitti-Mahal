@@ -8,7 +8,7 @@ const Contact = () => {
                 
                 <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Contact Us</h1>
 
-                {/* Introduction Section */}
+                
                 <div className="text-center mb-16">
                     <p className="text-lg text-gray-600">
                         We would love to hear from you! Whether you have questions about our products, need assistance with an order, or want to share your feedback, our team is here to help. Reach out to us using the contact form below or get in touch directly through our contact details.
