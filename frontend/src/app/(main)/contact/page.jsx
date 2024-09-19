@@ -111,7 +111,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                {/* Map Section */}
+                
                 <div className="h-96 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
                     <iframe
                         title="Mitti Mahal Location"
