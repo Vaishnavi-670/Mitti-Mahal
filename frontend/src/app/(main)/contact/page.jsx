@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <div className="bg-white py-16 px-8 md:px-16 lg:px-32">
             <div className="max-w-7xl mx-auto shadow-gray-400">
-                {/* Page Title */}
+                
                 <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Contact Us</h1>
 
                 {/* Introduction Section */}
