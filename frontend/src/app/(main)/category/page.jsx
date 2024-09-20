@@ -7,18 +7,25 @@ const categories = [
       products: [
         { id: 1, name: "Earthen Clay Pot", price: "$20", image: "pot1.jpg" },
         { id: 2, name: "Handmade Clay Pot", price: "$25", image: "pot2.jpg" },
+        { id: 2, name: "Decorative Clay Pot", price: "$25", image: "pot2.jpg" },
+        { id: 2, name: "Aesthectic Clay Pot", price: "$25", image: "pot2.jpg" },
       ],
     },
+    
     {
       name: "Clay Vases",
       products: [
         { id: 3, name: "Decorative Clay Vase", price: "$30", image: "vase1.jpg" },
         { id: 4, name: "Handcrafted Clay Vase", price: "$35", image: "vase2.jpg" },
+        { id: 4, name: "Earthen Clay Vase", price: "$35", image: "vase2.jpg" },
+        { id: 4, name: "Aesthetic Clay Vase", price: "$35", image: "vase2.jpg" },
       ],
     },
     {
       name: "Clay Plates",
       products: [
+        { id: 5, name: "Rustic Clay Plate", price: "$15", image: "plate1.jpg" },
+        { id: 5, name: "Decorative Clay Plate", price: "$15", image: "plate1.jpg" },
         { id: 5, name: "Rustic Clay Plate", price: "$15", image: "plate1.jpg" },
         { id: 6, name: "Handmade Clay Plate", price: "$18", image: "plate2.jpg" },
       ],
