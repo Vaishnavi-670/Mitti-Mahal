@@ -55,7 +55,7 @@ const CheckoutPage = () => {
                                 <p className="text-gray-800 font-bold">$5.00</p>
                             </div>
 
-                            {/* Discountt Code Section */}
+                            {/* Discount Code  */}
                             <div className="mt-4">
                                 <label
                                     htmlFor="discount-code"
