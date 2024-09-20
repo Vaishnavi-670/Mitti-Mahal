@@ -49,7 +49,7 @@ const Category = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-56 object-contain"
+                  className="w-full h-56 object-cover"
                   loading="lazy"
                 />
                 <div className="p-5">
