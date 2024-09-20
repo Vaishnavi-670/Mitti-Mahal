@@ -278,9 +278,7 @@ const CheckoutPage = () => {
                                         Bank Transfer
                                     </label>
                                 </div>
-                            </div>
-
-                            
+                            </div>                           
                             <button className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg mt-6">
                                 Proceed to Payment
                             </button>
