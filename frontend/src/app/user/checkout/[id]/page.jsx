@@ -286,9 +286,6 @@ const CheckoutPage = () => {
                             </button>
                         </form>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
