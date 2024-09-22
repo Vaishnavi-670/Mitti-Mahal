@@ -86,6 +86,6 @@ export const CartProvider = ({ children }) => {
     );
 };
 
-const useCartContext = () => useContext(CartContext);
+const useCartContext = () => useContext(CartContext); // this is a custom hook for use with the components of this component that need to access the cart context
 
 export default useCartContext;

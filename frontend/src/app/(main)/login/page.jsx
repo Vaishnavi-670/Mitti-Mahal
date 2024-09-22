@@ -1,6 +1,8 @@
 'use client';
+import axios from 'axios';
 import { useFormik } from 'formik'
 import Link from 'next/link'
+import { enqueueSnackbar } from 'notistack';
 import React from 'react'
 
 const Login = () => {
@@ -10,10 +12,19 @@ const Login = () => {
             email: '',
             password: ''
         },
-        onSubmit: (values) => {
+        onSubmit: (values, { resetForm }) => {
             console.log(values);
+            axios.post('http://localhost:5000/authenticate', values)
+                .then((result) => {
+                    enqueueSnackbar('  Successful', { variant: 'success' });
 
-        }
+                }).catch((err) => {
+                    console.log(err);
+                    enqueueSnackbar('Something went Wrong', { variant: 'error' });
+                });
+            resetForm();
+        },
+
     })
     return (
         <>
