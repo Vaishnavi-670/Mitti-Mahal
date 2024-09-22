@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 
 const categories = [
   {
@@ -32,6 +32,9 @@ const categories = [
 ];
 
 const Category = () => {
+
+  const [category, setcategory] = useState([])
+  
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">
