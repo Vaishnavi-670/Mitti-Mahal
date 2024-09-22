@@ -14,13 +14,15 @@ const Login = () => {
         },
         onSubmit: (values, { resetForm }) => {
             console.log(values);
-            axios.post('http://localhost:5000/authenticate', values)
+            axios.post('http://localhost:5000/user/authenticate', values)
                 .then((result) => {
-                    enqueueSnackbar('  Successful', { variant: 'success' });
+                    // toast('  Successful', { variant: 'success' });
+                    console.log(result.data);
+                    
 
                 }).catch((err) => {
                     console.log(err);
-                    enqueueSnackbar('Something went Wrong', { variant: 'error' });
+                    // enqueueSnackbar('Something went Wrong', { variant: 'error' });
                 });
             resetForm();
         },
@@ -71,7 +73,7 @@ const Login = () => {
                         <div className="p-6 pt-0">
                             <button
                                 data-ripple-light="true"
-                                type="button"
+                                type="submit"
                                 className="block w-full select-none rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             >
                                 Login
