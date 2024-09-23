@@ -117,7 +117,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Call-to-Action Section */}
+       
         <div className="bg-gray-100 py-16 px-8 md:px-16 lg:px-32 text-center">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Join Our Community</h2>
           <p className="text-lg text-gray-600 mb-8">
