@@ -96,7 +96,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Brand History Timeline Section */}
+        
         <div className="mb-16">
           <h2 className="text-2xl font-semibold text-gray-800 mb-8 text-center">Our Journey</h2>
           <div className="relative">
