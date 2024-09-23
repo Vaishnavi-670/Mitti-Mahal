@@ -47,7 +47,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Commitment to Tradition Section with Image */}
+        
         <div className="flex flex-col md:flex-row w-[100%] items-center mb-16">
           <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
             <img 
