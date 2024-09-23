@@ -66,7 +66,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Sub Description Section */}
+        
         <div className="text-center mb-16">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Philosophy</h2>
           <p className="text-lg text-gray-600 mb-4">
