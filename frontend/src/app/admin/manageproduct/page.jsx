@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 const ManageProduct = () => {
   const [productList, setproductList] = useState([]);
+  const [product, setproduct] = useState([])
 
   const fetchProduct = async () => {
     const res = await fetch('http://localhost:5000/product/getall');
@@ -369,12 +370,12 @@ const ManageProduct = () => {
                             <div className="flex items-center gap-x-4">
                               <img
                                 className="shrink-0 size-[38px] rounded-lg"
-                                src="https://images.unsplash.com/photo-1572307480813-ceb0e59d8325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=320&q=80"
+                                src={product.image}
                                 alt="Product Image"
                               />
                               <div>
                                 <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
-                                  Brown Hat
+                                {product.title}
                                 </span>
                               </div>
                             </div>
@@ -489,7 +490,7 @@ const ManageProduct = () => {
                           </a>
                         </td>
                       </tr>
-                      
+
                     </tbody>
                   </table>
                   {/* End Table */}
