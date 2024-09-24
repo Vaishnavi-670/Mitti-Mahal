@@ -28,7 +28,7 @@ const categories = [
     products: [
       { id: 9, name: "Rustic Clay Plate", price: "$15", image: "plate1.jpg" },
       { id: 10, name: "Decorative Clay Plate", price: "$15", image: "plate2.jpg" },
-      { id: 11, name: "Aesthetic Clay Plate", price: "$15", image: "plate3.jpg" },
+      { id: 11, name: "Aesthetic Clay Plate", price: "$15", image: "" },
       { id: 12, name: "Handmade Clay Plate", price: "$18", image: "plate4.jpg" },
     ],
   },
