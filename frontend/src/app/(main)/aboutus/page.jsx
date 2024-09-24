@@ -8,13 +8,13 @@ const AboutUs = () => {
         {/* About Us Title */}
         <h1 className="text-5xl font-bold text-gray-800 mb-6  text-center">About Us</h1>
         <p className='text-lg text-gray-800 text-center mb-8'>Each product at Mitti Mahal is a labor of love, crafted by skilled artisans who pour their heart and soul into every creation. From elegant home décor to functional tableware and unique gifts, our collections reflect the perfect blend of artistry and practicality. We believe in the importance of sustainability and quality, ensuring that every piece we offer is made with the finest materials and utmost care</p>
-        
-        
+
+
         <div className="flex mt-14 flex-col md:flex-row items-center mb-16">
           <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-            <img 
-              src="https://i.pinimg.com/564x/a3/13/a8/a313a8ad98b43bf10337543f3d87df5c.jpg" 
-              alt="Mitti Mahal Pottery" 
+            <img
+              src="https://i.pinimg.com/564x/a3/13/a8/a313a8ad98b43bf10337543f3d87df5c.jpg"
+              alt="Mitti Mahal Pottery"
               className="rounded-lg h-96 shadow-lg w-full"
             />
           </div>
@@ -31,9 +31,9 @@ const AboutUs = () => {
         {/* Artisans and Craft Section with Image */}
         <div className="flex flex-col md:flex-row items-center mb-16">
           <div className="md:w-1/2 md:order-2 md:pl-8 mb-8 md:mb-0">
-            <img 
-              src="https://i.pinimg.com/736x/a6/b2/2b/a6b22bbae46abac10d9da27679b1622e.jpg" 
-              alt="Artisan at Work" 
+            <img
+              src="https://i.pinimg.com/736x/a6/b2/2b/a6b22bbae46abac10d9da27679b1622e.jpg"
+              alt="Artisan at Work"
               className="rounded-lg h-96 shadow-lg w-full"
             />
           </div>
@@ -47,12 +47,12 @@ const AboutUs = () => {
           </div>
         </div>
 
-        
+
         <div className="flex flex-col md:flex-row w-[100%] items-center mb-16">
           <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-            <img 
-              src="https://i.pinimg.com/736x/c7/ec/a3/c7eca3ef9ccb9bd36164a9d084357bbf.jpg" 
-              alt="Traditional Pottery Techniques" 
+            <img
+              src="https://i.pinimg.com/736x/c7/ec/a3/c7eca3ef9ccb9bd36164a9d084357bbf.jpg"
+              alt="Traditional Pottery Techniques"
               className="rounded-lg h-96 shadow-lg w-full"
             />
           </div>
@@ -66,7 +66,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        
+
         <div className="text-center mb-16">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Philosophy</h2>
           <p className="text-lg text-gray-600 mb-4">
@@ -77,7 +77,7 @@ const AboutUs = () => {
           </p>
         </div>
 
-        
+
         <div className="bg-gray-100 py-16 px-8 md:px-16 lg:px-32 mb-16">
           <h2 className="text-2xl font-semibold text-gray-800 mb-8 text-center">What Our Customers Say</h2>
           <div className="max-w-2xl mx-auto">
@@ -96,7 +96,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        
+
         <div className="mb-16">
           <h2 className="text-2xl font-semibold text-gray-800 mb-8 text-center">Our Journey</h2>
           <div className="relative">
@@ -117,14 +117,14 @@ const AboutUs = () => {
           </div>
         </div>
 
-       
+
         <div className="bg-gray-100 py-16 px-8 md:px-16 lg:px-32 text-center">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Join Our Community</h2>
           <p className="text-lg text-gray-600 mb-8">
             Stay connected and be the first to know about our latest collections, exclusive offers, and behind-the-scenes insights. Sign up for our newsletter and follow us on social media!
           </p>
-          <a 
-            href="/newsletter" 
+          <a
+            href="/newsletter"
             className="inline-block bg-gray-800 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-700"
           >
             Sign Up for Our Newsletter

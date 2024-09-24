@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link href="/customerhelp" className="hover:text-gray-900">Customer Help</Link>
           <Link href="/features" className="hover:text-gray-900">Features</Link>
           <Link href="/user/cart" className="hover:text-gray-900">
-          Cart
+            Cart
             ({cart.length}) </Link>
         </div>
 

@@ -17,7 +17,7 @@ export const AppProvider = ({ children }) => {
   }, [isLoggedIn]);
 
 
-  const logout = () => {
+  const logout = () => { 
     setIsLoggedIn([]);
   };
 

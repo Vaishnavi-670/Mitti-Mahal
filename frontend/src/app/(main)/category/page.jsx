@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 
 const categories = [
+
   {
     name: "Clay Pots",
     products: [
@@ -11,6 +12,7 @@ const categories = [
       { id: 4, name: "Aesthetic Clay Pot", price: "$25", image: "https://i.pinimg.com/236x/38/55/39/3855391293372869e0b6ffe1c93a44a8.jpg" },
     ],
   },
+
   {
     name: "Clay Vases",
     products: [
@@ -20,6 +22,7 @@ const categories = [
       { id: 8, name: "Aesthetic Clay Vase", price: "$35", image: "vase4.jpg" },
     ],
   },
+  
   {
     name: "Clay Plates",
     products: [
@@ -34,7 +37,7 @@ const categories = [
 const Category = () => {
 
   const [category, setcategory] = useState([])
-  
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">

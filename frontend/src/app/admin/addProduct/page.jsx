@@ -48,7 +48,7 @@ const AddProduct = () => {
             .then((response) => {
                 console.log(response.data);
                 addProduct.setFieldValue('image', response.data.url);
-                
+
             }).catch((err) => {
                 console.log(err);
             });
