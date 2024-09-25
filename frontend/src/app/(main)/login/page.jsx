@@ -16,7 +16,7 @@ const Login = () => {
             console.log(values);
             axios.post('http://localhost:5000/user/authenticate', values)
                 .then((result) => {
-                    // toast('  Successful', { variant: 'success' });
+                    toast.success('  Successful');
                     console.log(result.data);
                     document.cookie = 'user=' + result.data.token;
                     localStorage.setItem('user', JSON.stringify(result.data));
