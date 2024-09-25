@@ -78,7 +78,7 @@ router.post('/authenticate', (req, res) => {
 
             if (result) {
                 // generate token
-                const { _id, email, password } = result;
+                const { _id, name, email, password } = result;
                 const payload = { _id, email, password };
 
                 jwt.sign(
@@ -89,7 +89,7 @@ router.post('/authenticate', (req, res) => {
                         if (err) {
                             res.status(500).json({ message: 'Token Generation Failed' });
                         } else {
-                            res.status(200).json({ token: token });
+                            res.status(200).json({ token, name, email });
                         }
                     }
                 )

@@ -1,15 +1,11 @@
 'use client'
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 
 const ManageUser = () => {
   const [userList, setuserList] = useState([]);
-  const handleDelete = (userId) => {
-    
-    const updatedUserList = userList.filter(user => user.id !== userId);
-    
-    setuserList(updatedUserList);
-  };
+
   const fetchUser = async () => {
     const res = await fetch('http://localhost:5000/user/getall');
     console.log(res.status);
@@ -25,7 +21,7 @@ const ManageUser = () => {
     console.log(id);
     const res = await fetch('http://localhost:5000/user/delete/' + id, { method: 'DELETE' })
     if (res.status === 200) {
-      enqueueSnackbar('User Deleted Successfully', { variant: 'success' });
+      toast.success('User Deleted Successfully');
       fetchUser();
     }
   }
@@ -191,7 +187,7 @@ const ManageUser = () => {
                                 <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
                                   {user.email}
                                 </span>
-                               
+
                               </div>
                             </td>
                             <td className="size-px whitespace-nowrap">
@@ -235,7 +231,7 @@ const ManageUser = () => {
                                 <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
                                   {user.city}
                                 </span>
-                               
+
                               </div>
                             </td>
                             <td className="size-px whitespace-nowrap">
@@ -247,13 +243,13 @@ const ManageUser = () => {
                             </td>
                             <td className="size-px whitespace-nowrap">
                               <div className="px-6 py-1.5">
-                                <Link
+                                <button
                                   className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                                  href="#"
-                                  onClick={() => handleDelete(user.id)}
+
+                                  onClick={() => deleteUser(user._id)}
                                 >
                                   delete
-                                </Link>
+                                </button>
                               </div>
                             </td>
                           </tr>

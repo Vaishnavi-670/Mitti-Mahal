@@ -18,7 +18,8 @@ const Login = () => {
                 .then((result) => {
                     // toast('  Successful', { variant: 'success' });
                     console.log(result.data);
-                    
+                    document.cookie = 'user=' + result.data.token;
+                    localStorage.setItem('user', JSON.stringify(result.data));
 
                 }).catch((err) => {
                     console.log(err);
