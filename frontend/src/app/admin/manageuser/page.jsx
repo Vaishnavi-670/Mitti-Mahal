@@ -1,8 +1,15 @@
 'use client'
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const ManageUser = () => {
   const [userList, setuserList] = useState([]);
+  const handleDelete = (userId) => {
+    
+    const updatedUserList = userList.filter(user => user.id !== userId);
+    
+    setuserList(updatedUserList);
+  };
   const fetchUser = async () => {
     const res = await fetch('http://localhost:5000/user/getall');
     console.log(res.status);
@@ -234,18 +241,19 @@ const ManageUser = () => {
                             <td className="size-px whitespace-nowrap">
                               <div className="px-6 py-3">
                                 <span className="text-sm text-gray-500 dark:text-neutral-500">
-                                  {user.createdAt}
+                                  {new Date(user.createdAt).toDateString()}
                                 </span>
                               </div>
                             </td>
                             <td className="size-px whitespace-nowrap">
                               <div className="px-6 py-1.5">
-                                <a
+                                <Link
                                   className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
                                   href="#"
+                                  onClick={() => handleDelete(user.id)}
                                 >
-                                  Edit
-                                </a>
+                                  delete
+                                </Link>
                               </div>
                             </td>
                           </tr>
