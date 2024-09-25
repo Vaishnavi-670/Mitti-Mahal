@@ -1,4 +1,5 @@
 'use client';
+import { IconPlus } from '@tabler/icons-react';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import { enqueueSnackbar } from 'notistack';
@@ -126,8 +127,9 @@ const AddProduct = () => {
                         <div className="p-6 pt-0">
                             <button
                                 data-ripple-light="true"
-                                className="block h-12 w-full select-none rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                className="flex justify-center items-center h-12 w-full select-none rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             >
+                                <IconPlus size={15} />
                                 Add Product
                             </button>
                         </div>
