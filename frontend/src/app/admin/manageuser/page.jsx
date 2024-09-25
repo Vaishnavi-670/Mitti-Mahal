@@ -131,7 +131,7 @@ const ManageUser = () => {
                         <th scope="col" className="px-6 py-3 text-start">
                           <div className="flex items-center gap-x-2">
                             <span className="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                              Portfolio
+                              City
                             </span>
                           </div>
                         </th>
@@ -204,7 +204,7 @@ const ManageUser = () => {
                                 </span>
                               </div>
                             </td>
-                            <td className="size-px whitespace-nowrap">
+                            {/* <td className="size-px whitespace-nowrap">
                               <div className="px-6 py-3">
                                 <div className="flex items-center gap-x-3">
                                   <span className="text-xs text-gray-500 dark:text-neutral-500">
@@ -222,11 +222,19 @@ const ManageUser = () => {
                                   </div>
                                 </div>
                               </div>
+                            </td> */}
+                            <td className="h-px w-72 whitespace-nowrap">
+                              <div className="px-6 py-3">
+                                <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                                  {user.city}
+                                </span>
+                               
+                              </div>
                             </td>
                             <td className="size-px whitespace-nowrap">
                               <div className="px-6 py-3">
                                 <span className="text-sm text-gray-500 dark:text-neutral-500">
-                                  28 Dec, 12:12
+                                  {user.createdAt}
                                 </span>
                               </div>
                             </td>
