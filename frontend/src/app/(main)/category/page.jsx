@@ -22,7 +22,7 @@ const categories = [
       { id: 8, name: "Aesthetic Clay Vase", price: "$35", image: "vase4.jpg" },
     ],
   },
-  
+
   {
     name: "Clay Plates",
     products: [
