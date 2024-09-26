@@ -31,7 +31,7 @@ const Login = () => {
                     }
                 }).catch((err) => {
                     console.log(err);
-                    // enqueueSnackbar('Something went Wrong', { variant: 'error' });
+                    toast.error('Something went wrong');
                 });
             resetForm();
         },
