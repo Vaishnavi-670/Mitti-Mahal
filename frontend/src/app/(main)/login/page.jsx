@@ -24,9 +24,9 @@ const Login = () => {
                     console.log(result.data);
                     document.cookie = 'token=' + result.data.token;
                     localStorage.setItem('user', JSON.stringify(result.data));
-                    if(result.data.role === 'admin'){
+                    if (result.data.role === 'admin') {
                         router.push('/admin/addProduct');
-                    }else {
+                    } else {
                         router.push('/');
                     }
                 }).catch((err) => {
