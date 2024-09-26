@@ -7,7 +7,6 @@ const Features = () => {
       <div className="max-w-7xl mx-auto">
         {/* Page Title */}
         <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center">Our Features</h1>
-
         {/* Feature 1: Handcrafted Artistry */}
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 md:pr-8 h-[400px] mb-8 md:mb-0">
@@ -24,7 +23,6 @@ const Features = () => {
             </p>
           </div>
         </div>
-
         {/* Feature 2: Sustainable Materials */}
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:order-2 md:pl-8 mb-8 md:mb-0">
@@ -41,7 +39,6 @@ const Features = () => {
             </p>
           </div>
         </div>
-
         {/* Feature 3: Timeless Design */}
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:pr-8 mb-8 md:mb-0">
@@ -58,7 +55,6 @@ const Features = () => {
             </p>
           </div>
         </div>
-
         {/* Feature 4: Artisan Community */}
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:order-2 md:pl-8 mb-8 md:mb-0">
@@ -66,7 +62,6 @@ const Features = () => {
               src="https://i.pinimg.com/736x/1f/06/16/1f0616a44b2cdf089eb1141ee7ae4b27.jpg"
               alt="Artisan Community"
               className="rounded-lg h-[400px] shadow-lg w-full"
-
             />
           </div>
           <div className="md:w-1/2 md:order-1">
@@ -76,7 +71,6 @@ const Features = () => {
             </p>
           </div>
         </div>
-
         {/* Feature 5: Customization Options */}
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:pr-8 mb-8 md:mb-0">
@@ -93,7 +87,6 @@ const Features = () => {
             </p>
           </div>
         </div>
-
         {/* Feature 6: Quality Assurance */}
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:order-2 md:pl-8 mb-8 md:mb-0">
@@ -110,7 +103,6 @@ const Features = () => {
             </p>
           </div>
         </div>
-
         {/* Feature 7: Global Shipping */}
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:pr-8 mb-8 md:mb-0">
@@ -127,7 +119,6 @@ const Features = () => {
             </p>
           </div>
         </div>
-
         {/* Call-to-Action Section */}
         <div className="bg-gray-100 py-16 px-8 md:px-16 lg:px-32 text-center">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Explore Our Collection</h2>
@@ -141,7 +132,6 @@ const Features = () => {
             Shop Now
           </Link>
         </div>
-
       </div>
     </div>
   );
