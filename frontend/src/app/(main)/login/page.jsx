@@ -22,12 +22,12 @@ const Login = () => {
                 .then((result) => {
                     toast.success('  Successful');
                     console.log(result.data);
-                    document.cookie = 'user=' + result.data.token;
+                    document.cookie = 'token=' + result.data.token;
                     localStorage.setItem('user', JSON.stringify(result.data));
                     if(result.data.role === 'admin'){
                         router.push('/admin/addProduct');
                     }else {
-                        router.push('/user');
+                        router.push('/');
                     }
                 }).catch((err) => {
                     console.log(err);
