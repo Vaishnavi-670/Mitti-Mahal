@@ -19,12 +19,12 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="min-h-screen  flex flex-col justify-center items-center">
-      <div className="bg-gray-100 shadow-md rounded-lg p-8 w-full max-w-md">
+    <div className="min-h-screen flex flex-col justify-center items-center">
+      <form onSubmit={handlePasswordReset}>
+      <div className="bg-gray-100 h-[50vh] shadow-md rounded-lg p-8 w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
           Reset Password
         </h2>
-        <form onSubmit={handlePasswordReset}>
           <div className="mb-4">
             <label className="block text-gray-600 text-sm font-semibold mb-2" htmlFor="password">
               New Password
@@ -63,8 +63,9 @@ const ResetPassword = () => {
               Reset Password
             </button>
           </div>
-        </form>
+
       </div>
+      </form>
     </div>
   );
 };

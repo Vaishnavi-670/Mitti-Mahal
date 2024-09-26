@@ -5,6 +5,7 @@ const mySchema = new Schema({
     email: { type: String, unique: true },
     password: { type: String, required: true },
     city: { type: String, default: 'unknown' },
+    role: { type: String, default: 'user' },
     createdAt: { type: Date, default: Date.now }
 });
 

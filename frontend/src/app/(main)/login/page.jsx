@@ -2,10 +2,14 @@
 import axios from 'axios';
 import { useFormik } from 'formik'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 import { enqueueSnackbar } from 'notistack';
 import React from 'react'
+import toast from 'react-hot-toast';
 
 const Login = () => {
+
+    const router = useRouter();
 
     const loginform = useFormik({
         initialValues: {
@@ -20,7 +24,11 @@ const Login = () => {
                     console.log(result.data);
                     document.cookie = 'user=' + result.data.token;
                     localStorage.setItem('user', JSON.stringify(result.data));
-
+                    if(result.data.role === 'admin'){
+                        router.push('/admin/addProduct');
+                    }else {
+                        router.push('/user');
+                    }
                 }).catch((err) => {
                     console.log(err);
                     // enqueueSnackbar('Something went Wrong', { variant: 'error' });
