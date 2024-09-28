@@ -115,7 +115,7 @@ const CartPage = () => {
 
             {/* Checkout Button */}
             <div className="text-right mt-6">
-              <Link href='' className="px-6 py-4 bg-green-500 text-white rounded-3xl hover:bg-green-600 transition-colors">
+              <Link href='/user/checkout' className="px-6 py-4 bg-green-500 text-white rounded-3xl hover:bg-green-600 transition-colors">
                 Proceed to Checkout
               </Link>
             </div>

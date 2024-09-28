@@ -3,18 +3,7 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const CheckoutPage = () => {
-    const [product, setproduct] = useState([])
-    const { id } = useParams();
-
-    const fetchProducts = async () => {
-        const res = await fetch('http://localhost:5000/product/getbyid/' + id);
-        console.log(res.status);
-        const data = await res.json();
-        setproduct(data);
-    }
-    useEffect(() => {
-        fetchProducts();
-    }, []);
+    
 
     return (
         <div className="min-h-screen bg-gray-50 py-12">
@@ -38,7 +27,7 @@ const CheckoutPage = () => {
                                 className="w-full h-60 object-cover rounded-xl"
                             />
                             <div className="mt-5">
-                                <h3 className="text-2xl font-semibold text-gray-700">{product.title}</h3>
+                                <h3 className="text-2xl font-semibold text-gray-700">Bowl</h3>
                                 <p className="text-gray-500">Short description of the product you ordered.</p>
                                 <p className="text-lg font-semibold mt-2 text-red-600">Price: $50.00</p>
                             </div>
