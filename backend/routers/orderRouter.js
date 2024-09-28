@@ -43,7 +43,7 @@ router.get('/getbyid/:id', (req, res) => {
         });
 });
 
-// Get orders by user ID
+
 router.get('/getbyuser/:userid', (req, res) => {
     OrderModel.find({ user: req.params.userid })
         
