@@ -1,13 +1,18 @@
-
-import React, { createContext, useState, useEffect } from 'react';
+'use client'
+import { useRouter } from 'next/navigation';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
 
 const AppContext = createContext();
 
+
 export const AppProvider = ({ children }) => {
+
+  const router = useRouter();
+
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     // Load login state from localStorage
-    const savedLoginState = localStorage.getItem('isLoggedIn');
+    const savedLoginState = localStorage.getItem('user');
     return savedLoginState ? JSON.parse(savedLoginState) : false;
   });
 
@@ -18,7 +23,10 @@ export const AppProvider = ({ children }) => {
 
 
   const logout = () => { 
+    document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    localStorage.removeItem('user');
     setIsLoggedIn([]);
+    router.replace('/login');
   };
 
   return (
@@ -28,4 +36,5 @@ export const AppProvider = ({ children }) => {
   );
 };
 
-export { AppContext };
+const useUserContext = () => useContext(AppContext);
+export default useUserContext;
