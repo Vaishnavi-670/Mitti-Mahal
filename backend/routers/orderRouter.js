@@ -20,8 +20,7 @@ router.post('/add', (req, res) => {
 // Get all orders
 router.get('/getall', (req, res) => {
     OrderModel.find()
-        .populate('user') // Populate user details
-        .populate('items.product') // Populate product details
+        
         .then((result) => {
             res.status(200).json(result);
         })
@@ -34,8 +33,7 @@ router.get('/getall', (req, res) => {
 // Get order by ID
 router.get('/getbyid/:id', (req, res) => {
     OrderModel.findById(req.params.id)
-        .populate('user') // Populate user details
-        .populate('items.product') // Populate product details
+        
         .then((result) => {
             res.status(200).json(result);
         })
@@ -48,8 +46,7 @@ router.get('/getbyid/:id', (req, res) => {
 // Get orders by user ID
 router.get('/getbyuser/:userid', (req, res) => {
     OrderModel.find({ user: req.params.userid })
-        .populate('user') // Populate user details
-        .populate('items.product') // Populate product details
+        
         .then((result) => {
             res.status(200).json(result);
         })
