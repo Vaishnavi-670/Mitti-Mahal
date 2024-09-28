@@ -56,7 +56,7 @@ router.get('/getbyuser/:userid', (req, res) => {
         });
 });
 
-// Update order status
+
 router.put('/update/:id', (req, res) => {
     OrderModel.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then((result) => {
