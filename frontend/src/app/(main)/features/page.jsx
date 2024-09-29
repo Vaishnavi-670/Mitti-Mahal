@@ -55,7 +55,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        {/* Feature 4: Artisan Community */}
+        
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:order-2 md:pl-8 mb-8 md:mb-0">
             <img
