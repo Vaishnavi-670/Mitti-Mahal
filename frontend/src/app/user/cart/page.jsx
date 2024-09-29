@@ -7,10 +7,6 @@ import React, { useState } from "react";
 const CartPage = () => {
 
   const { cart, incrementQty, decrementQty , calculateTotalPrice } = useCartContext();
-
-  
-  
-
   const [cartItems, setCartItems] = useState([])
   const updateQuantity = (id, amount) => {
     const updatedCart = cartItems.map((item) =>

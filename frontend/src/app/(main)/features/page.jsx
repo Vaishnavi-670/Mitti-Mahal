@@ -7,7 +7,7 @@ const Features = () => {
       <div className="max-w-7xl mx-auto">
         {/* Page Title */}
         <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center">Our Features</h1>
-        {/* Feature 1: Handcrafted Artistry */}
+        
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 md:pr-8 h-[400px] mb-8 md:mb-0">
             <img

@@ -316,7 +316,7 @@ const Home = () => {
           <div className="bg-gray-400 py-28">
             <div className="relative top-12 w-4/5 mx-auto flex justify-between">
               <div className="text-black w-80">
-                <h1 className="text-5xl font-bold">Foodie Hub</h1>
+                <h1 className="text-5xl font-bold">Mitti Mahal</h1>
                 <p className='text-lg mt-5'>Mitti Mahal offers handcrafted clay products that blend traditional artistry with modern design. Discover our unique collection of home décor, tableware, and gifts, each piece crafted with care by skilled artisans</p>
                 <i className="fa fa-twitter text-4xl tracking-wider" aria-hidden="true"></i>
                 <i className="fa fa-facebook text-4xl tracking-wider" aria-hidden="true"></i>
@@ -337,7 +337,7 @@ const Home = () => {
                   <Link href="/contact" className="text-lg ">Contact</Link>
                 </li>
                 <li className="mt-2">
-                  <Link href="giftCard" className="text-lg ">Gift Cards</Link>
+                  <Link href="/giftCard" className="text-lg ">Gift Cards</Link>
                 </li>
                 <li className="mt-2">
                   <Link href="/features" className="text-lg ">Features</Link>
