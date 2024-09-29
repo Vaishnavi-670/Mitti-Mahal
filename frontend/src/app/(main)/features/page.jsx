@@ -71,7 +71,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        {/* Feature 5: Customization Options */}
+        
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:pr-8 mb-8 md:mb-0">
             <img
@@ -87,7 +87,7 @@ const Features = () => {
             </p>
           </div>
         </div>
-        {/* Feature 6: Quality Assurance */}
+        
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
           <div className="md:w-1/2 h-[400px] md:order-2 md:pl-8 mb-8 md:mb-0">
             <img
