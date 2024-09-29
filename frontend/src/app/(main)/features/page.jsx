@@ -5,7 +5,7 @@ const Features = () => {
   return (
     <div className="bg-white py-16 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto">
-        {/* Page Title */}
+       
         <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center">Our Features</h1>
         
         <div className="flex flex-col h-[400px] md:flex-row items-center mb-16">
