@@ -26,11 +26,11 @@ const CheckoutPage = () => {
                                 alt="Clay Product"
                                 className="w-full h-60 object-cover rounded-xl"
                             />
-                            <div className="mt-5">
+                            {/* <div className="mt-5">
                                 <h3 className="text-2xl font-semibold text-gray-700">Bowl</h3>
                                 <p className="text-gray-500">Short description of the product you ordered.</p>
                                 <p className="text-lg font-semibold mt-2 text-red-600">Price: $50.00</p>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Pricing Detail */}
@@ -90,9 +90,9 @@ const CheckoutPage = () => {
                         </div>
 
                         
-                        <button className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg mt-6">
+                        {/* <button className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg mt-6">
                             Proceed to Checkout
-                        </button>
+                        </button> */}
                     </div>
 
 
@@ -226,7 +226,7 @@ const CheckoutPage = () => {
                             </div>
 
                             {/* Payment Method Section */}
-                            <h2 className="text-2xl font-semibold mt-8 text-gray-700">
+                            {/* <h2 className="text-2xl font-semibold mt-8 text-gray-700">
                                 <img src="https://i.pinimg.com/236x/6d/20/15/6d20156a784ad1a24110d6379cc79156.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />
 
                                 Payment Method</h2>
@@ -267,7 +267,7 @@ const CheckoutPage = () => {
                                         Bank Transfer
                                     </label>
                                 </div>
-                            </div>                           
+                            </div>                            */}
                             <button className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg mt-6">
                                 Proceed to Payment
                             </button>
