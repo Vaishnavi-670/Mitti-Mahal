@@ -1,92 +1,80 @@
 'use client'
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 
-const ProfilePage = () => {
+const UserProfile = () => {
+  const [activeSection, setActiveSection] = useState('wallet');
+
+  const renderSectionContent = () => {
+    switch (activeSection) {
+      case 'wallet':
+        return <div>Wallet Details: Your balance is $100</div>;
+      case 'wishlist':
+        return <div>Wishlist Items: Clay Vase, Clay Bowl</div>;
+      case 'orders':
+        return <div>Orders: Clay Mug, Clay Plate</div>;
+      case 'account':
+        return <div>Account Details: John Doe, johndoe@gmail.com</div>;
+      case 'settings':
+        return <div>Settings: Notification Preferences, Privacy Settings</div>;
+      default:
+        return <div>Welcome to your profile!</div>;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center py-10">
-      <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-6">
-        {/* Profile Header */}
-        <div className="flex items-center justify-between border-b pb-6 mb-6">
-          <div className="flex items-center space-x-4">
-            <img
-              src="/path-to-profile-picture.jpg"
-              alt="Profile"
-              className="w-20 h-20 rounded-full object-cover"
-            />
-            <div>
-              <h1 className="text-2xl font-semibold text-gray-800">John Doe</h1>
-              <p className="text-gray-500">johndoe@example.com</p>
-              <p className="text-gray-500">Joined: January 2022</p>
-            </div>
-          </div>
-          <button className="bg-indigo-600 text-white px-4 py-2 rounded-md">Edit Profile</button>
+    <div className="min-h-screen bg-gray-100 flex">
+      {/* Left Sidebar */}
+      <div className="w-1/4 bg-white p-6 shadow-lg">
+        <div className="flex flex-col items-center">
+          <img
+            src="https://i.pinimg.com/236x/fa/84/12/fa8412953fc0e81715ab628daf7e5947.jpg"
+            alt="User"
+            className="w-24 h-24 rounded-full object-cover mb-4"
+          />
+          <h2 className="text-xl font-semibold">John Doe</h2>
         </div>
-
-        {/* Profile Information */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-          <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-            <h2 className="text-xl font-medium text-gray-700 mb-4">Personal Information</h2>
-            <div className="space-y-2">
-              <div>
-                <span className="block text-gray-600">Full Name</span>
-                <p className="text-gray-800">John Doe</p>
-              </div>
-              <div>
-                <span className="block text-gray-600">Email</span>
-                <p className="text-gray-800">johndoe@example.com</p>
-              </div>
-              <div>
-                <span className="block text-gray-600">Phone Number</span>
-                <p className="text-gray-800">+1 234 567 890</p>
-              </div>
-              <div>
-                <span className="block text-gray-600">Shipping Address</span>
-                <p className="text-gray-800">1234 Elm Street, Springfield, USA</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Order History */}
-          <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-            <h2 className="text-xl font-medium text-gray-700 mb-4">Order History</h2>
-            <ul className="space-y-3">
-              <li className="flex justify-between items-center">
-                <span>Clay Pot</span>
-                <span className="text-gray-500">25th August 2024</span>
-                <span className="text-green-500">Delivered</span>
-              </li>
-              <li className="flex justify-between items-center">
-                <span>Handmade Vase</span>
-                <span className="text-gray-500">5th July 2024</span>
-                <span className="text-green-500">Delivered</span>
-              </li>
-              <li className="flex justify-between items-center">
-                <span>Clay Mug Set</span>
-                <span className="text-gray-500">12th June 2024</span>
-                <span className="text-red-500">Cancelled</span>
-              </li>
-            </ul>
-          </div>
+        <div className="mt-8">
+          <button
+            className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === 'wallet' ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-200'}`}
+            onClick={() => setActiveSection('wallet')}
+          >
+            My Wallet
+          </button>
+          <button
+            className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === 'wishlist' ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-200'}`}
+            onClick={() => setActiveSection('wishlist')}
+          >
+            Wishlist
+          </button>
+          <button
+            className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === 'orders' ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-200'}`}
+            onClick={() => setActiveSection('orders')}
+          >
+            Orders
+          </button>
+          <button
+            className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === 'account' ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-200'}`}
+            onClick={() => setActiveSection('account')}
+          >
+            Account Details
+          </button>
+          <button
+            className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === 'settings' ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-200'}`}
+            onClick={() => setActiveSection('settings')}
+          >
+            Settings
+          </button>
         </div>
+      </div>
 
-        {/* Payment Details */}
-        <div className="bg-gray-50 p-4 rounded-lg shadow-sm mt-6">
-          <h2 className="text-xl font-medium text-gray-700 mb-4">Payment Details</h2>
-          <div className="space-y-2">
-            <div>
-              <span className="block text-gray-600">Payment Method</span>
-              <p className="text-gray-800">Credit Card (**** **** **** 1234)</p>
-            </div>
-            <div>
-              <span className="block text-gray-600">Billing Address</span>
-              <p className="text-gray-800">1234 Elm Street, Springfield, USA</p>
-            </div>
-          </div>
-        </div>
+      {/* Right Content Section */}
+      <div className="w-3/4 p-8 bg-white shadow-lg rounded-lg">
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Profile Details</h2>
+        <div className="text-gray-700">{renderSectionContent()}</div>
       </div>
     </div>
   );
 };
 
-export default ProfilePage;
+export default UserProfile;
