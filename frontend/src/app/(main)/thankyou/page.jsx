@@ -1,7 +1,70 @@
-import Link from 'next/link';
-import React from 'react';
+"use client";
+import { IconCircleCheck, IconCircleX } from "@tabler/icons-react";
+import React, { useEffect, useRef, useState } from "react";
+// import { useLocation } from "next/navigation";
+import Link from "next/link";
+const ThankYou = () => {
+  const hasRun = useRef();
 
-const ThankYouPage = () => {
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("user"))
+  );
+
+  let params = new URLSearchParams(location.search);
+  console.log(params.get("payment_intent"));
+
+  const savePayment = async () => {
+    const bookingDetails = JSON.parse(sessionStorage.getItem("bookingDetails"));
+    const paymentDetails = await retrievePaymentIntent();
+    const response = await fetch(
+      `http://localhost:5000/booking/add`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...bookingDetails,
+          paymentDetails: paymentDetails,
+          intentId: params.get("payment_intent")
+        }),
+      }
+    );
+    console.log(response.status);
+    if (response.status === 200) {
+      sessionStorage.removeItem("bookingDetails");
+      sessionStorage.removeItem("carDetails");
+    }
+  };
+
+  const retrievePaymentIntent = async () => {
+    const response = await fetch(
+      `http://localhost:5000/retrieve-payment-intent`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          paymentIntentId: params.get("payment_intent"),
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log(response.status);
+    const data = await response.json();
+    // console.log(data);
+    return data;
+  };
+
+  useEffect(() => {
+    if (!hasRun.current) {
+      hasRun.current = true;
+      if (params.get("redirect_status") === "succeeded") {
+        savePayment();
+
+      }
+    }
+  }, []);
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
       <img
@@ -36,4 +99,4 @@ const ThankYouPage = () => {
   );
 };
 
-export default ThankYouPage;
+export default ThankYou;
