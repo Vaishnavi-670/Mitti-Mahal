@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import LocomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import Link from 'next/link';
+import { IconHeart } from '@tabler/icons-react';
 
 const Home = () => {
   const scrollRef = useRef(null);
@@ -41,11 +42,14 @@ const Home = () => {
         </div>
         <div className="flex items-center space-x-4">
           <Link href='/login' className="text-gray-600 hover:text-black font-semibold text-xl">Log in</Link>
-          <Link href='/signup' className="bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-black transition duration-300 ease-in-out">
-            Sign Up
-          </Link>
+          <Link href='/signup' className="bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-black transition duration-300 ease-in-out">Sign Up</Link>
+          
           <Link href='/user/cart' className="text-gray-600 hover:text-black ">
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-garden-cart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17.5 17.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" /><path d="M6 8v11a1 1 0 0 0 1.806 .591l3.694 -5.091v.055" /><path d="M6 8h15l-3.5 7l-7.1 -.747a4 4 0 0 1 -3.296 -2.493l-2.853 -7.13a1 1 0 0 0 -.928 -.63h-1.323" /></svg></Link>
+          <Link href='/user/wishlist' className="text-gray-600 hover:text-black ">
+          <IconHeart/>
+          </Link>
+
         </div>
       </div>
     </nav>
