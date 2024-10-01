@@ -18,7 +18,8 @@
     "preline": "^2.4.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "react-star-ratings": "^2.3.0"
   },
   "devDependencies": {
     "postcss": "^8",

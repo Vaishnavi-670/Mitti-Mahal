@@ -1,31 +1,37 @@
 'use client'
-import React from "react";
+import React, { useState } from "react";
+import StarRatings from 'react-star-ratings';
+
 
 const Wishlist = () => {
-  const products = [
+    const [products, setProducts] = useState([
     {
       id: 1,
       title: "Clay Pot",
       description: "A traditional clay pot perfect for cooking and serving.",
       image: "https://via.placeholder.com/150", // Replace with your image URL
+      rating: 4.5,
     },
     {
       id: 2,
       title: "Clay Vase",
       description: "Beautiful handcrafted clay vase for your home decor.",
-      image: "https://via.placeholder.com/150", // Replace with your image URL
+      image: "https://via.placeholder.com/150", 
+      rating: 3.8,
     },
     {
       id: 3,
       title: "Clay Plate",
       description: "Elegant clay plate to serve your meals in style.",
-      image: "https://via.placeholder.com/150", // Replace with your image URL
+      image: "https://via.placeholder.com/150", 
+      rating: 4.2,
     },
     {
       id: 4,
       title: "Clay Bowl",
       description: "Handmade clay bowl, perfect for any dining experience.",
-      image: "https://via.placeholder.com/150", // Replace with your image URL
+      image: "https://via.placeholder.com/150",
+      rating: 4.7,
     },
     {
       id: 5,
@@ -39,7 +45,7 @@ const Wishlist = () => {
       description: "Decorative clay lamp to brighten up your space.",
       image: "https://via.placeholder.com/150", // Replace with your image URL
     },
-  ];
+  ]);
 
   return (
     <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8">
@@ -57,6 +63,14 @@ const Wishlist = () => {
             />
             <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
             <p className="text-gray-600">{product.description}</p>
+            <StarRatings
+              rating={product.rating}
+              starRatedColor="orange"
+              numberOfStars={5}
+              name='rating'
+              starDimension="20px"
+              starSpacing="5px"
+            />
           </div>
         ))}
       </div>
