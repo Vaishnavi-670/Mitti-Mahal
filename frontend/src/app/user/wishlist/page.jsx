@@ -9,7 +9,7 @@ const Wishlist = () => {
       id: 1,
       title: "Clay Pot",
       description: "A traditional clay pot perfect for cooking and serving.",
-      image: "https://via.placeholder.com/150", // Replace with your image URL
+      image: "https://via.placeholder.com/150", 
       rating: 4.5,
     },
     {
