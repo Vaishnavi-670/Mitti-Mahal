@@ -30,7 +30,7 @@ const UserProfile = () => {
       case 'wishlist':
         return (
           <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold mb-8 text-center">My Wishlist</h1>
+            <h3 className="text-2xl font-semibold mb-4">My Wishlist</h3>
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
                 <img
@@ -274,16 +274,16 @@ const UserProfile = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex">
       {/* Left Sidebar */}
-      <div className="w-1/4 bg-white p-6 shadow-lg">
+      <div className="w-1/4 bg-white p-6 shadow-2xl shadow-slate-300  transform transition-transform hover:scale-105">
         <div className="flex flex-col items-center">
           <img
             src="https://i.pinimg.com/236x/fa/84/12/fa8412953fc0e81715ab628daf7e5947.jpg"
             alt="User"
-            className="w-24 h-24 rounded-full object-cover mb-4"
+            className="w-28 h-28   rounded-full object-cover mb-4"
           />
           <h2 className="text-xl font-semibold">John Doe</h2>
         </div>
-        <div className="mt-8">
+        <div className="mt-4">
           {['wallet', 'wishlist', 'orders', 'account', 'settings'].map((section) => (
             <button
               key={section}

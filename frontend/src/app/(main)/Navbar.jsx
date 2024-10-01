@@ -4,8 +4,18 @@ import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
+  const showLoggedInOptions = () => {
+    if (isLoggedIn) {
+      return <button onClick={logout} href="/signup" className="px-4 py-3 bg-red-900 text-white rounded-3xl hover:bg-red-500">Logout</button>
+    } else {
+      return <>
+        <Link href="/login" className="px-4 py-2  text-black rounded-2xl">Login</Link>
+        <Link href="/signup" className="px-4 py-3 bg-gray-900 text-white rounded-3xl hover:bg-black">Sign Up</Link>
+      </>
+    }
+  }
 
-  const { cart } = useCartContext();
+  const { cart ,isLoggedIn } = useCartContext();
 
   return (
     <nav className="bg-white py-2 flex justify-center">
@@ -31,8 +41,7 @@ const Navbar = () => {
 
         {/* Login/Signup Section */}
         <div className="space-x-4 text-lg">
-          <Link href="/login" className="px-4 py-2  text-black rounded-2xl">Login</Link>
-          <Link href="/signup" className="px-4 py-3 bg-gray-900 text-white rounded-3xl hover:bg-black">Sign Up</Link>
+          {showLoggedInOptions()}
         </div>
       </div>
     </nav>
