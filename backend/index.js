@@ -3,7 +3,7 @@ const cors = require('cors');
 const orderRouter =  require('./routers/orderRouter');  
 const userRouter =  require('./routers/userRouter');
 const productRouter =  require('./routers/productRouter');
-const productRouter =  require('./routers/reviewRouter');
+const reviewRouter =  require('./routers/reviewRouter');
 
 const app = express();
 const port =5000;

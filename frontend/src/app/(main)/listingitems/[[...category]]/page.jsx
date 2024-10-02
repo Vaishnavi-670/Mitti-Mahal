@@ -6,10 +6,16 @@ import React, { useEffect, useState } from 'react'
 
 const ListingItems = () => {
     const [products, setproducts] = useState([]);
+    const [isWishlisted, setIsWishlisted] = useState(false);
+
+  const handleWishlistClick = () => {
+    setIsWishlisted(!isWishlisted);
+    // Here you can also add functionality to save the wishlist state in a database or local storage
+  };
 
     const { category } = useParams();
     console.log(category);
-    
+
 
     const fetchProducts = async () => {
         let res;
@@ -38,7 +44,16 @@ const ListingItems = () => {
                 />
                 <h2 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h2>
                 <p className="text-gray-600 mb-4">{product.description}</p>
-                <p className="text-lg font-bold text-gray-800 mb-4">₹{product.price}</p>
+                <div className="mt-4 flex justify-between items-center">
+                    <span className="text-lg font-semibold text-gray-900">${product.price}</span>
+                    <button
+                        onClick={handleWishlistClick}
+                        className={`px-4 py-2 rounded-full ${isWishlisted ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-900'
+                            } hover:bg-red-500 hover:text-white transition duration-300`}
+                    >
+                        {isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
+                    </button>
+                </div>
                 <Link
                     href={`/product/${product._id}`}
                     className="block bg-gray-800 text-white py-2 px-4 rounded-lg text-center font-semibold hover:bg-gray-700"
