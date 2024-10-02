@@ -72,7 +72,7 @@ const Home = () => {
             </p>
             <div className=" space-x-0 md:space-x-2 ">
               <Link
-                href="/shop"
+                href="/listingitems"
                 className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-red-700 rounded-2xl sm:w-auto sm:mb-0"
               >
                 Get Started

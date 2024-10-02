@@ -68,8 +68,8 @@ const ThankYou = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
       <img
-        src="https://i.pinimg.com/474x/36/ff/00/36ff00f0c9a628602af4a301a7144298.jpg"  
-        className="w-72 h-72 object-cover mb-10 rounded-full shadow-2xl "
+        src="https://i.pinimg.com/originals/73/3d/af/733daf2fa27ca522b952be87b683a78c.gif"  
+        className="w-80 h-80  object-cover mb-10 rounded-full shadow-2xl "
       />
       <h1 className="text-4xl font-bold text-orange-700 mb-4 animate-fade-in">
         Thank You for Your Purchase!

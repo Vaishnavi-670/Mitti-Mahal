@@ -44,11 +44,11 @@ const ListingItems = () => {
                 />
                 <h2 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h2>
                 <p className="text-gray-600 mb-4">{product.description}</p>
-                <div className="mt-4 flex justify-between items-center">
+                <div className="mt-4 flex mb-1 justify-between items-center">
                     <span className="text-lg font-semibold text-gray-900">${product.price}</span>
                     <button
                         onClick={handleWishlistClick}
-                        className={`px-4 py-2 rounded-full ${isWishlisted ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-900'
+                        className={`px-4 py-2  rounded-full ${isWishlisted ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-900'
                             } hover:bg-red-500 hover:text-white transition duration-300`}
                     >
                         {isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
@@ -289,12 +289,12 @@ const ListingItems = () => {
             </div>
 
 
-            <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <div className="max-w-[95rem] px-2 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 {/* <div>
                     <h1 className='text-center text-5xl text-gray-800 font-bold'>Our Products</h1>
                 </div> */}
                 {/* Grid */}
-                <div className="grid lg:grid-cols-2 mt-8 lg:gap-y-16 gap-10">
+                <div className="grid lg:grid-cols-3 mt-8 lg:gap-y-16 gap-10">
                     {displayProducts()}
                 </div>
                 {/* End Grid */}
