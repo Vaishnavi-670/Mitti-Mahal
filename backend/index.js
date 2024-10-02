@@ -3,6 +3,7 @@ const cors = require('cors');
 const orderRouter =  require('./routers/orderRouter');  
 const userRouter =  require('./routers/userRouter');
 const productRouter =  require('./routers/productRouter');
+const productRouter =  require('./routers/reviewRouter');
 
 const app = express();
 const port =5000;
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use('/user', userRouter);
 app.use('/product', productRouter);
 app.use('/order', orderRouter);
+app.use('/review', reviewRouter);
 
 app.get('/',(req, res) => {
     res.send('Response from server')

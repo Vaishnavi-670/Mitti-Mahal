@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from "react";
-import StarRatings from 'react-star-ratings';
 
 
 const Wishlist = () => {
@@ -63,14 +62,7 @@ const Wishlist = () => {
             />
             <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
             <p className="text-gray-600">{product.description}</p>
-            <StarRatings
-              rating={product.rating}
-              starRatedColor="orange"
-              numberOfStars={5}
-              name='rating'
-              starDimension="20px"
-              starSpacing="5px"
-            />
+            
           </div>
         ))}
       </div>

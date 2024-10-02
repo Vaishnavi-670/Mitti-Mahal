@@ -32,7 +32,7 @@ const Navbar = () => {
         <Link href="/giftCard" className="hover:text-gray-900">Gift Card</Link>
         <Link href="/checkout" className="hover:text-gray-900">Checkout</Link>
         <Link href="/faq" className="hover:text-gray-900">FAQ</Link>
-        <Link href="/manage-orders" className="hover:text-gray-900">MangeOrders</Link>
+        <Link href="/user/manage-orders" className="hover:text-gray-900">MangeOrders</Link>
         <Link href="/features" className="hover:text-gray-900">Features</Link>
 
       </div>

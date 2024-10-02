@@ -17,11 +17,6 @@ const reviewSchema = new mongoose.Schema({
     min: 1,
     max: 5,
   },
-  title: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   comment: {
     type: String,
     required: true,
@@ -44,17 +39,7 @@ const reviewSchema = new mongoose.Schema({
   helpfulCount: {
     type: Number,
     default: 0,
-  },
-  verifiedPurchase: {
-    type: Boolean,
-    default: false,
-  },
-  tags: [
-    {
-      type: String,
-      trim: true,
-    },
-  ],
+  }
 });
 
 reviewSchema.pre('save', function (next) {

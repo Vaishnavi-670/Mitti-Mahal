@@ -1,11 +1,15 @@
 'use client';
 import useCartContext from '@/context/CartContext';
+import axios from 'axios';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import { Rating } from 'react-simple-star-rating';
+import StarRatings from 'react-star-ratings';
 
 function ProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
+  const [rating, setRating] = useState(0);
 
   const { addToCart, checkItemInCart } = useCartContext();
 
@@ -17,7 +21,8 @@ function ProductPage() {
     const data = await res.json();
     console.table(data);
     setProduct(data);
-  }
+  };
+
   useEffect(() => {
     fetchProductId();
   }, []);
@@ -27,12 +32,24 @@ function ProductPage() {
     setQuantity(value > 0 ? value : 1);
   };
 
+  const handleRating = (rate) => {
+    setRating(rate);
+    console.log(`Rating given: ${rate}`);
+  };
+
+const sendReview = () => {
+  axios.post('', {
+    user : '',
+    product : id
+  })
+  
+}
+
+
   const showProductDetails = () => {
     if (product !== null) {
       return (
         <div className="max-w-6xl w-full flex h-[100vh] flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12">
-
-
           <div className="w-full md:w-1/2 h-[90vh] flex justify-center">
             <img
               src={product.image}
@@ -41,12 +58,9 @@ function ProductPage() {
             />
           </div>
 
-
           <div className="w-full md:w-1/2">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">{product.title}</h1>
-            <p className="text-lg text-gray-600 mb-6">
-              {product.description}
-            </p>
+            <p className="text-lg text-gray-600 mb-6">{product.description}</p>
 
             <div className="mb-6">
               <span className="text-2xl font-semibold text-red-900">₹{product.price}</span>
@@ -66,15 +80,25 @@ function ProductPage() {
             <div className="mb-6">
               <h2 className="text-xl font-semibold text-gray-800 mb-2">Specifications:</h2>
               <ul className="text-gray-600 space-y-2">
-                <li><strong>Dimensions:</strong> 10 x 8 inches</li>
-                <li><strong>Weight:</strong> 1.5 kg</li>
-                <li><strong>Material:</strong> Natural clay</li>
-                <li><strong>Color:</strong> Terracotta</li>
+                <li>
+                  <strong>Dimensions:</strong> 10 x 8 inches
+                </li>
+                <li>
+                  <strong>Weight:</strong> 1.5 kg
+                </li>
+                <li>
+                  <strong>Material:</strong> Natural clay
+                </li>
+
               </ul>
             </div>
-
             <div className="mb-6">
-              <label htmlFor="quantity" className="text-lg font-medium text-gray-800 mr-4">Quantity:</label>
+              <label
+                htmlFor="quantity"
+                className="text-lg font-medium text-gray-800 mr-4"
+              >
+                Quantity:
+              </label>
               <input
                 type="number"
                 id="quantity"
@@ -84,16 +108,38 @@ function ProductPage() {
               />
             </div>
 
-            <button disabled={checkItemInCart(product)} onClick={() => { addToCart(product) }} className="w-full border md:w-auto px-6 py-3 bg-black text-white text-lg font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300 disabled:bg-white disabled:text-gray-400 disabled:border-gray-400">
+            <div className="mb-6 items-center flex">
+
+              <StarRatings
+              onClick={handleRating}
+                rating={rating}
+                starRatedColor="red"
+                starEmptyColor="gray"               
+                changeRating={setRating}
+                numberOfStars={5}
+                name='rating'
+                starDimension="30px"
+                
+              />
+
+            </div>
+
+            <button
+              disabled={checkItemInCart(product)}
+              onClick={() => {
+                addToCart(product);
+              }}
+              className="w-full border md:w-auto px-6 py-3 bg-black text-white text-lg font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300 disabled:bg-white disabled:text-gray-400 disabled:border-gray-400"
+            >
               {checkItemInCart(product) ? 'Item already in cart' : 'Add to Cart'}
             </button>
           </div>
         </div>
-      )
+      );
     } else {
-      return <h2>Loading ... </h2>
+      return <h2>Loading ... </h2>;
     }
-  }
+  };
 
   return (
     <div className="bg-white min-h-screen mt-10 flex h-[100vh] items-center justify-center p-6">

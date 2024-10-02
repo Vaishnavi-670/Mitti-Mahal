@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import StarRatings from 'react-star-ratings';
 
 const UserProfile = () => {
   const [activeSection, setActiveSection] = useState('wallet');
@@ -40,14 +39,14 @@ const UserProfile = () => {
                 />
                 <h2 className="text-xl font-semibold mb-2">Clay Vase</h2>
                 <p className="text-gray-600">A beautiful handcrafted clay vase.</p>
-                <StarRatings
+                {/* <StarRatings
                   rating={4} // Replace with actual rating
                   starRatedColor="orange"
                   numberOfStars={5}
                   name='rating'
                   starDimension="20px"
                   starSpacing="5px"
-                />
+                /> */}
                 <button className="mt-4 text-sm text-blue-500 hover:underline">
                   View Details
                 </button>
@@ -61,14 +60,7 @@ const UserProfile = () => {
                 />
                 <h2 className="text-xl font-semibold mb-2">Clay Bowl</h2>
                 <p className="text-gray-600">An elegant clay bowl for your kitchen.</p>
-                <StarRatings
-                  rating={5} // Replace with actual rating
-                  starRatedColor="orange"
-                  numberOfStars={5}
-                  name='rating'
-                  starDimension="20px"
-                  starSpacing="5px"
-                />
+               
                 <button className="mt-4 text-sm text-blue-500 hover:underline">
                   View Details
                 </button>
@@ -243,7 +235,7 @@ const UserProfile = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg"
+                className="w-full bg-red-800 text-white p-4 rounded-lg hover:bg-red-900 transition-all ease-in-out duration-300 shadow-lg"
               >
                 Save Changes
               </button>
@@ -287,7 +279,7 @@ const UserProfile = () => {
           {['wallet', 'wishlist', 'orders', 'account', 'settings'].map((section) => (
             <button
               key={section}
-              className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === section ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-200'
+              className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === section ? 'bg-red-900 text-white' : 'text-gray-700 hover:bg-gray-200'
                 }`}
               onClick={() => setActiveSection(section)}
             >
