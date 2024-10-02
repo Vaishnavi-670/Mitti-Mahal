@@ -92,7 +92,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Traditional Techniques Section */}
+        
 
 
         {/* Customer Reviews Section */}
