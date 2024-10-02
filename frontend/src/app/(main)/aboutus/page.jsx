@@ -70,7 +70,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Artisans and Craft Section */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
           <div className="col-span-2">
             <video
