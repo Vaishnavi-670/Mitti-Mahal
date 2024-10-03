@@ -1,10 +1,12 @@
 const express = require('express');
 const Model = require('../models/reviewModel');
+const verifyToken = require('./verifyToken');
 
 const router = express.Router();
 
 // Add a new review
-router.post('/add', (req, res) => {
+router.post('/add', verifyToken , (req, res) => {
+    req.body.user = req.user._id;
     console.log(req.body);
     new Model(req.body).save()
         .then((result) => {

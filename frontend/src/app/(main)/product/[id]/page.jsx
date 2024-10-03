@@ -3,6 +3,7 @@ import useCartContext from '@/context/CartContext';
 import axios from 'axios';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Rating } from 'react-simple-star-rating';
 import StarRatings from 'react-star-ratings';
 
@@ -38,17 +39,25 @@ function ProductPage() {
   };
 
 const sendReview = () => {
-  axios.post('', {
-    user : '',
+  axios.post('http://localhost:5000/review/add', {
     product : id,
-    helpfulCount:"",
+    helpfulCount:"number",
     images:'string',
     comment : 'string',
-    rating:'',
+    rating:'rating',
     createdAt: '',
     updatedAt: ''
+  }, {
+    headers: {
+      'x-auth-token': localStorage.getItem('token')
+    }
   })
-  
+  .then((result) => {
+    toast.success('Review added successfully');
+  }).catch((err) => {
+    console.log(err);   
+    toast.error('Something went wrong');
+  });
 }
 
 
@@ -114,7 +123,7 @@ const sendReview = () => {
               />
             </div>
 
-            <div className="mb-6 items-center flex">
+            <div className="mb-6 items-center ">
 
               <StarRatings
               onClick={handleRating}
@@ -127,6 +136,18 @@ const sendReview = () => {
                 starDimension="30px"
                 
               />
+              <textarea 
+                name="comment" 
+                id="comment" 
+                className="w-full p-2 mt-5 border border-gray-300 rounded-md"
+                placeholder="Write your review here..."
+              ></textarea>
+              <button 
+                onClick={sendReview} 
+                className=" px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+              >
+                Submit Review
+              </button>
 
             </div>
 
