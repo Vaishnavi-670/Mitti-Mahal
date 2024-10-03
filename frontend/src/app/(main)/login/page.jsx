@@ -21,6 +21,7 @@ const Login = () => {
                 .then((result) => {
                     toast.success('  Successful');
                     console.log(result.data);
+                    localStorage.setItem('token', result.data.token);
                     document.cookie = 'token=' + result.data.token;
                     if (result.data.role === 'admin') {
                         localStorage.setItem('admin', JSON.stringify(result.data));
