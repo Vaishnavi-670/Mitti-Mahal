@@ -89,9 +89,7 @@ const CheckoutPage = () => {
                         </div>
 
                         
-                        {/* <button className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg mt-6">
-                            Proceed to Checkout
-                        </button> */}
+                        
                     </div>
 
 
@@ -205,7 +203,7 @@ const CheckoutPage = () => {
                                 />
                             </div>
 
-                            {/* Delivery Method Section */}
+                            
                             <h2 className="text-2xl font-semibold mt-8 text-gray-700">
                                 <img src="https://i.pinimg.com/236x/f3/99/f4/f399f4c3a5662fcbf8a1a7e8fb69a181.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />
                                 Delivery Method</h2>
