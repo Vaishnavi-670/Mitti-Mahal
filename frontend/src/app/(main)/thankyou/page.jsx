@@ -52,7 +52,7 @@ const ThankYou = () => {
     );
     console.log(response.status);
     const data = await response.json();
-    // console.log(data);
+    
     return data;
   };
 
