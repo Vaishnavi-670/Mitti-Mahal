@@ -40,7 +40,13 @@ function ProductPage() {
 const sendReview = () => {
   axios.post('', {
     user : '',
-    product : id
+    product : id,
+    helpfulCount:"",
+    images:'string',
+    comment : 'string',
+    rating:'',
+    createdAt: '',
+    updatedAt: ''
   })
   
 }
