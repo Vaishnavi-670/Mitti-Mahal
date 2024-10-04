@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 
 const ManageProduct = () => {
   const [productList, setproductList] = useState([]);
-  const [product, setproduct] = useState([])
 
   const fetchProduct = async () => {
     const res = await fetch('http://localhost:5000/product/getall');
@@ -363,133 +362,137 @@ const ManageProduct = () => {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-                      
-                      <tr className="bg-white hover:bg-gray-50 dark:bg-neutral-900 dark:hover:bg-neutral-800">
-                        <td className="size-px whitespace-nowrap align-top">
-                          <a className="block p-6" href="#">
-                            <div className="flex items-center gap-x-4">
-                              <img
-                                className="shrink-0 size-[38px] rounded-lg"
-                                src={product.image}
-                                alt="Product Image"
-                              />
-                              <div>
+                      {
+                        productList.map(product => (
+
+                          <tr className="bg-white hover:bg-gray-50 dark:bg-neutral-900 dark:hover:bg-neutral-800">
+                            <td className="size-px whitespace-nowrap align-top">
+                              <a className="block p-6" href="#">
+                                <div className="flex items-center gap-x-4">
+                                  <img
+                                    className="shrink-0 size-[38px] rounded-lg"
+                                    src={product.image}
+                                    alt="Product Image"
+                                  />
+                                  <div>
+                                    <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                                      {product.title}
+                                    </span>
+                                  </div>
+                                </div>
+                              </a>
+                            </td>
+                            <td className="size-px whitespace-nowrap align-top">
+                              <a className="block p-6" href="#">
+                                <div className="flex items-center gap-x-3">
+                                  <img
+                                    className="inline-block size-[38px] rounded-full"
+                                    src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+                                    alt="Product Image"
+                                  />
+                                  <div className="grow">
+                                    <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                                      Christina Bersh
+                                    </span>
+                                    <span className="block text-sm text-gray-500 dark:text-neutral-500">
+                                      christina@site.com
+                                    </span>
+                                  </div>
+                                </div>
+                              </a>
+                            </td>
+                            <td className="h-px w-72 min-w-72 align-top">
+                              <a className="block p-6" href="#">
+                                <div className="flex gap-x-1 mb-2">
+                                  <svg
+                                    className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={16}
+                                    height={16}
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                  </svg>
+                                  <svg
+                                    className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={16}
+                                    height={16}
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                  </svg>
+                                  <svg
+                                    className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={16}
+                                    height={16}
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                  </svg>
+                                  <svg
+                                    className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={16}
+                                    height={16}
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                  </svg>
+                                  <svg
+                                    className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={16}
+                                    height={16}
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                  </svg>
+                                </div>
                                 <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
-                                {product.title}
-                                </span>
-                              </div>
-                            </div>
-                          </a>
-                        </td>
-                        <td className="size-px whitespace-nowrap align-top">
-                          <a className="block p-6" href="#">
-                            <div className="flex items-center gap-x-3">
-                              <img
-                                className="inline-block size-[38px] rounded-full"
-                                src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
-                                alt="Product Image"
-                              />
-                              <div className="grow">
-                                <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
-                                  Christina Bersh
+                                  I just love it!
                                 </span>
                                 <span className="block text-sm text-gray-500 dark:text-neutral-500">
-                                  christina@site.com
+                                  I bought this hat for my boyfriend, but then i found out
+                                  he cheated on me so I kept it and I love it!! I wear it
+                                  all the time and there is no problem with the fit even
+                                  though its a mens" hat.
                                 </span>
-                              </div>
-                            </div>
-                          </a>
-                        </td>
-                        <td className="h-px w-72 min-w-72 align-top">
-                          <a className="block p-6" href="#">
-                            <div className="flex gap-x-1 mb-2">
-                              <svg
-                                className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={16}
-                                height={16}
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                              </svg>
-                              <svg
-                                className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={16}
-                                height={16}
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                              </svg>
-                              <svg
-                                className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={16}
-                                height={16}
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                              </svg>
-                              <svg
-                                className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={16}
-                                height={16}
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                              </svg>
-                              <svg
-                                className="shrink-0 size-3 text-gray-800 dark:text-neutral-200"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={16}
-                                height={16}
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                              </svg>
-                            </div>
-                            <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
-                              I just love it!
-                            </span>
-                            <span className="block text-sm text-gray-500 dark:text-neutral-500">
-                              I bought this hat for my boyfriend, but then i found out
-                              he cheated on me so I kept it and I love it!! I wear it
-                              all the time and there is no problem with the fit even
-                              though its a mens" hat.
-                            </span>
-                          </a>
-                        </td>
-                        <td className="size-px whitespace-nowrap align-top">
-                          <a className="block p-6" href="#">
-                            <span className="text-sm text-gray-600 dark:text-neutral-400">
-                              10 Jan 2022
-                            </span>
-                          </a>
-                        </td>
-                        <td className="size-px whitespace-nowrap align-top">
-                          <a className="block p-6" href="#">
-                            <span className="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full dark:bg-teal-500/10 dark:text-teal-500">
-                              <svg
-                                className="size-2.5"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={16}
-                                height={16}
-                                fill="currentColor"
-                                viewBox="0 0 16 16"
-                              >
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                              </svg>
-                              Published
-                            </span>
-                          </a>
-                        </td>
-                      </tr>
+                              </a>
+                            </td>
+                            <td className="size-px whitespace-nowrap align-top">
+                              <a className="block p-6" href="#">
+                                <span className="text-sm text-gray-600 dark:text-neutral-400">
+                                  10 Jan 2022
+                                </span>
+                              </a>
+                            </td>
+                            <td className="size-px whitespace-nowrap align-top">
+                              <a className="block p-6" href="#">
+                                <span className="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full dark:bg-teal-500/10 dark:text-teal-500">
+                                  <svg
+                                    className="size-2.5"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={16}
+                                    height={16}
+                                    fill="currentColor"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                  </svg>
+                                  Published
+                                </span>
+                              </a>
+                            </td>
+                          </tr>
+                        ))
+                      }
 
                     </tbody>
                   </table>
