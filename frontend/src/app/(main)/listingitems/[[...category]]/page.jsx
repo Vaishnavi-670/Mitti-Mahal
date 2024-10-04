@@ -38,9 +38,9 @@ const ListingItems = () => {
         console.table(data);
         setproducts(data);
     }
-    useEffect(() => {
+    useEffect(() => {  
         fetchProducts();
-    }, []);
+      }, [category]);
 
     const displayProducts = () => {
         return products.map((product, index) => (
@@ -87,7 +87,7 @@ const ListingItems = () => {
                             {/* Search Form */}
                             <form>
                                 <div className="relative z-10 flex gap-x-3 p-2 bg-white border rounded-3xl shadow-lg shadow-gray-100 dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-gray-900/20">
-                                    <div className="w-full">
+                                    {/* <div className="w-full">
                                         <label
                                             htmlFor="search-insights"
                                             className="block text-sm text-gray-700 font-medium "
@@ -101,7 +101,21 @@ const ListingItems = () => {
                                             className="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                             placeholder="Search articles or tips"
                                         />
-                                    </div>
+                                    </div> */}
+                                     <div className="search-bar mb-4">
+        <input
+          type="text"
+          ref={searchRef}
+          placeholder="Search by category"
+          className="p-2 border border-gray-300 rounded-md"
+        />
+        <button
+          onClick={handleSearch}
+          className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+        >
+          Search
+        </button>
+      </div>
                                     <div>
                                         <Link
                                             className="size-[46px] inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
