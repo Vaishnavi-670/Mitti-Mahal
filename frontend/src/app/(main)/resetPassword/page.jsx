@@ -1,32 +1,20 @@
 'use client'
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 const ResetPassword = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    const [emailRef, setEmailRef] = useState();
-
-    //   const handlePasswordReset = (e) => {
-    //     e.preventDefault();
-    //     if (password === confirmPassword) {
-    //       setSuccess('Your password has been successfully reset.');
-    //       setError('');
-    //     } else {
-    //       setError('Passwords do not match.');
-    //       setSuccess('');
-    //     }
-    //   };
-
+    const emailRef = useRef();
+    
     const handleSendOtp = (e) => {
         // e.preventDefault(); 
-        axios.post('http://localhost:5000/sendotpmail', { recipient: emailRef.current.value })
+        axios.post('http://localhost:5000/utils/sendotpmail', { recipient: emailRef.current.value })
             .then(response => {
                 setSuccess('OTP sent successfully.');
                 console.log(response.data);
-
                 setError('');
             })
             .catch(error => {
@@ -34,7 +22,6 @@ const ResetPassword = () => {
                 setSuccess('');
             });
     };
-
     return (
         <div className='flex justify-center items-center h-screen'>
             <form >
@@ -91,7 +78,6 @@ const ResetPassword = () => {
                                 Confirm Password
                             </label>
                         </div>
-
                     </div>
                     <div className="p-6 pt-3">
                         <button
@@ -103,15 +89,10 @@ const ResetPassword = () => {
                         >
                             Submit
                         </button>
-
-
                     </div>
                 </div>
             </form>
-
         </div>
-
     );
 };
-
 export default ResetPassword;

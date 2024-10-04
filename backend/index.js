@@ -5,6 +5,8 @@ const userRouter =  require('./routers/userRouter');
 const productRouter =  require('./routers/productRouter');
 const reviewRouter =  require('./routers/reviewRouter');
 
+const utilRouter = require('./routers/utilRouter');  
+
 const app = express();
 const port =5000;
 
@@ -16,6 +18,8 @@ app.use('/user', userRouter);
 app.use('/product', productRouter);
 app.use('/order', orderRouter);
 app.use('/review', reviewRouter);
+app.use('/utils', utilRouter);
+
 
 app.get('/',(req, res) => {
     res.send('Response from server')
