@@ -1,16 +1,25 @@
 'use client';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { enqueueSnackbar } from 'notistack';
-import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router';
+import React, { useEffect, useRef, useState } from 'react'
 
 const ListingItems = () => {
+
     const [products, setproducts] = useState([]);
     const [isWishlisted, setIsWishlisted] = useState(false);
+    const searchRef = useRef();
+  const router = useRouter();
 
   const handleWishlistClick = () => {
     setIsWishlisted(!isWishlisted);
     // Here you can also add functionality to save the wishlist state in a database or local storage
+  };
+  const handleSearch = () => {
+    const search = searchRef.current.value;
+    if (search) {
+      router.push(`/browseplace/${search}`);
+    }
   };
 
     const { category } = useParams();
