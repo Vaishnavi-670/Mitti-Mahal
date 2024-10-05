@@ -300,7 +300,7 @@ const ListingItems = () => {
                 <div className="grid lg:grid-cols-3 mt-8 lg:gap-y-16 gap-10">
                     {displayProducts()}
                 </div>
-                {/* End Grid */}
+                
             </div>
         </>
     )
