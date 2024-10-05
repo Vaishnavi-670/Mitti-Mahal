@@ -8,7 +8,7 @@ const categories = [
     products: [
       { id: 1, name: "Earthen Clay Pot", price: "$20", image: "https://i.pinimg.com/236x/fb/3a/d3/fb3ad3e591a3f91461ffee7243e7638c.jpg" },
       { id: 2, name: "Handmade Clay Pot", price: "$25", image: "https://i.pinimg.com/236x/6b/f9/00/6bf9002706e630c66ca2feb955cfbf49.jpg" },
-      { id: 3, name: "Decorative Clay Pot", price: "$25", image: "https://i.pinimg.com/236x/04/7d/5f/047d5fb090a9d99382a67657816a7e3c.jpg" },
+      // { id: 3, name: "Decorative Clay Pot", price: "$25", image: "https://i.pinimg.com/236x/04/7d/5f/047d5fb090a9d99382a67657816a7e3c.jpg" },
       { id: 4, name: "Aesthetic Clay Pot", price: "$25", image: "https://i.pinimg.com/236x/38/55/39/3855391293372869e0b6ffe1c93a44a8.jpg" },
     ],
   },
