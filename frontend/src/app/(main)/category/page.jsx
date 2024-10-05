@@ -19,7 +19,7 @@ const categories = [
       { id: 5, name: "Decorative Clay Vase", price: "$30", image: "https://i.pinimg.com/236x/56/ff/12/56ff126534a4501e14538ffd2fca3325.jpg" },
       { id: 6, name: "Handcrafted Clay Vase", price: "$35", image: "https://i.pinimg.com/236x/b8/df/ef/b8dfef4cc70c3f2f8e922019e14b2c87.jpg" },
       // { id: 7, name: "Earthen Clay Vase", price: "$35", image: "vase3.jpg" },
-      { id: 8, name: "Aesthetic Clay Vase", price: "$35", image: "vase4.jpg" },
+      // { id: 8, name: "Aesthetic Clay Vase", price: "$35", image: "vase4.jpg" },
     ],
   },
 
