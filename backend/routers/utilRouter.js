@@ -49,4 +49,15 @@ router.post('/sendotpmail', (req, res) => {
     });
 })
 
+router.post('/verifyotp', (req, res) => {
+    const {recipient, otp} = req.body;
+
+    if (generatedOTPs[recipient] === otp) {
+        return res.status(200).json({message: 'OTP verified successfully'});
+    } else {
+        return res.status(400).json({message: 'Invalid OTP'});
+    }
+    
+})
+
 module.exports = router;

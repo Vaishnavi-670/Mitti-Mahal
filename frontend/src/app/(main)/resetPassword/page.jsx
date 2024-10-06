@@ -8,7 +8,8 @@ const ResetPassword = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const emailRef = useRef();
-    
+    const otpRef = useRef();
+
     const handleSendOtp = (e) => {
         // e.preventDefault(); 
         axios.post('http://localhost:5000/utils/sendotpmail', { recipient: emailRef.current.value })
@@ -22,20 +23,7 @@ const ResetPassword = () => {
                 setSuccess('');
             });
     };
-    const handleOtpSubmit = (e) => {
-        e.preventDefault();
-        // Implement OTP verification logic here
-        // For example, you can send the OTP to the backend for verification
-        axios.post('http://localhost:5000/utils/verifyotp', { recipient: emailRef.current.value, otp })
-          .then(response => {
-            setSuccess('OTP verified successfully.');
-            setError('');
-          })
-          .catch(error => {
-            setError('Failed to verify OTP.');
-            setSuccess('');
-          });
-      };
+
     return (
         <div className='flex justify-center items-center h-screen'>
             <form >
@@ -65,8 +53,8 @@ const ResetPassword = () => {
                             {error && <p className="mt-4 text-red-500">{error}</p>}
                         </div>
                         <div className="relative h-16 mt-1 w-full min-w-[200px]">
-                            <input type='number'required id='otp' onChange={(e) => setOtp(e.target.value)}
-                                placeholder="Enter OTP"
+                            <input type='number' required ref={otpRef}
+                                placeholder=" "
                                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-cyan-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             />
                             <label className="before:content[' '] py-3 after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] 
@@ -75,12 +63,11 @@ const ResetPassword = () => {
                     peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-cyan-500 peer-focus:before:border-t-2 
                     peer-focus:before:border-l-2  peer-focus:before:!border-cyan-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-cyan-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent 
                     peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                                Enter OTP 
+                                Enter OTP
                             </label>
 
-                            <button type='submit' onSubmit={handleOtpSubmit} className=''>Submit </button>
-                            {success && <p className="mt-4 text-green-500">{success}</p>}
-                            {error && <p className="mt-4 text-red-500">{error}</p>}
+                            <button type='button' className=''>Submit </button>
+
                         </div>
                         <div className="relative h-16 mt-1 w-full min-w-[200px]">
                             <input id='password' onChange={(e) => setPassword(e.target.value)}
