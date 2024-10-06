@@ -11,6 +11,7 @@ function ProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
   const [rating, setRating] = useState(0);
+  const [reviewList, setReviewList] = useState([]);
   const commentRef = useRef();
 
   const { addToCart, checkItemInCart } = useCartContext();
@@ -27,17 +28,16 @@ function ProductPage() {
 
   useEffect(() => {
     fetchProductId();
+    fetchReview();
   }, []);
+
   const fetchReview = async () => {
     const res = await fetch('http://localhost:5000/review/getbyproduct/' + id);
     console.log(res.status);
     const data = await res.json();
     console.table(data);
-    setProduct(data);
+    setReviewList(data);
   }
-  useEffect(() => {
-    fetchReview();
-  }, []);
 
   const handleQuantityChange = (e) => {
     const value = parseInt(e.target.value, 10);
@@ -159,7 +159,7 @@ function ProductPage() {
               </button>
 
             </div>
-            
+
             <button
               disabled={checkItemInCart(product)}
               onClick={() => {
@@ -169,6 +169,29 @@ function ProductPage() {
             >
               {checkItemInCart(product) ? 'Item already in cart' : 'Add to Cart'}
             </button>
+
+            {
+              reviewList.length > 0 ? (
+                reviewList.map(review => (
+                  <div key={review._id}>
+                    <StarRatings
+                      readOnly
+                      rating={review.rating}
+                      starRatedColor="red"
+                      starEmptyColor="gray"
+                      numberOfStars={5}
+                      starDimension="20px"
+
+                    />
+                    {review.comment}
+                    {review.user.name}
+                    {new Date(review.createdAt).toLocaleDateString()}
+                  </div>
+                ))
+              ) : (
+                <h2 className="text-xl text-gray-800 mb-4">No reviews found yet.</h2>
+              )
+            }
           </div>
         </div>
       );

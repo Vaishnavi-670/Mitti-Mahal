@@ -45,7 +45,7 @@ router.get('/getbyid/:id', (req, res) => {
 
 // Get reviews by product ID
 router.get('/getbyproduct/:productId', (req, res) => {
-    Model.find({ product: req.params.productId })
+    Model.find({ product: req.params.productId }).populate('user')
         .then((result) => {
             res.status(200).json(result);
         })
