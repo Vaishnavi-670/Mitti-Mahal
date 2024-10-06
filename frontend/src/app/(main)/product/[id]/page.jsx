@@ -172,22 +172,35 @@ function ProductPage() {
 
             {
               reviewList.length > 0 ? (
+
                 reviewList.map(review => (
                   <div key={review._id}>
-                    <StarRatings
-                      readOnly
-                      rating={review.rating}
-                      starRatedColor="red"
-                      starEmptyColor="gray"
-                      numberOfStars={5}
-                      starDimension="20px"
+                    <div className="bg-white shadow-md rounded-lg p-6 mb-4 transition duration-300 ease-in-out hover:shadow-lg">
+                      {/* User Name and Date */}
+                      <div className="flex justify-between items-center mb-4">
+                        <h2 className="text-xl font-bold text-gray-800">{review.user.name}</h2>
+                        <p className="text-sm text-gray-500">{new Date(review.createdAt).toLocaleDateString()}</p>
+                      </div>
 
-                    />
-                    {review.comment}
-                    {review.user.name}
-                    {new Date(review.createdAt).toLocaleDateString()}
+                      {/* Rating Section */}
+                      <div className="flex items-center mb-4">
+                        <StarRatings
+                          readOnly
+                          rating={review.rating}
+                          starRatedColor="red"
+                          starEmptyColor="gray"
+                          numberOfStars={5}
+                          starDimension="20px"
+                        />
+                      </div>
+
+                      {/* Comment Section */}
+                      <p className="text-gray-700 text-lg italic">"{review.comment}"</p>
+                    </div>
                   </div>
+
                 ))
+
               ) : (
                 <h2 className="text-xl text-gray-800 mb-4">No reviews found yet.</h2>
               )
