@@ -1,8 +1,32 @@
 'use client'
 import axios from 'axios';
+import { useFormik } from 'formik';
 import React, { useRef, useState } from 'react';
+import toast from 'react-hot-toast';
 
 const ResetPassword = () => {
+    const resetForm = useFormik({
+        initialValues: {
+            otp: '',
+            password: '',
+            confirmPassword: ''
+        },
+        onSubmit: (values) => {
+            console.log(values);
+            axios.post('http://localhost:5000/utils/verifyotp', values)
+                .then(response => {
+                    toast.success('Password updated successfully');
+                    setError('');
+                })
+                .catch(error => {
+                    setError('Failed to verify OTP.');
+                    setSuccess('');
+                    toast.error('Failed to verify OTP.');
+                });
+        }
+
+    });
+
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
@@ -10,32 +34,46 @@ const ResetPassword = () => {
     const emailRef = useRef();
     const otpRef = useRef();
 
-    const handleSendOtp = (e) => {
-        // e.preventDefault(); 
-        axios.post('http://localhost:5000/utils/sendotpmail', { recipient: emailRef.current.value })
-            .then(response => {
-                setSuccess('OTP sent successfully.');
-                console.log(response.data);
-                setError('');
-            })
-            .catch(error => {
-                setError('Failed to send OTP.');
-                setSuccess('');
-            });
-    };
+    const handleSendOtp = async (e) => {
 
+        axios.get('http://localhost:5000/user/getbyemail/' + emailRef.current.value)
+            .then((result) => {
+
+                axios.post('http://localhost:5000/utils/sendotpmail', { recipient: emailRef.current.value })
+                    .then(response => {
+                        setSuccess('OTP sent successfully.');
+                        console.log(response.data);
+                        setError('');
+                    })
+                    .catch(error => {
+                        setError('Failed to send OTP.');
+                        setSuccess('');
+                    });
+            }).catch((err) => {
+                if (err?.response?.status === 404) {
+                    setError('User not found');
+                    toast.error('Email not found');
+                } else {
+                    console.log(err);
+                    toast.error('Failed to fetch user details');
+                }
+
+            });
+
+        // e.preventDefault(); 
+    };
     return (
         <div className='flex justify-center items-center h-screen'>
-            <form >
-                <div className="relative h-96 flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-gray-400 shadow-md">
-                    <div className="relative mx-4 -mt-6 mb-4 grid h-20 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 bg-clip-border text-white shadow-lg shadow-cyan-500/40">
+            <form onSubmit={resetForm.handleSubmit}>
+                <div className="relative h-[500px] flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-gray-400 shadow-md">
+                    <div className="relative mx-4 -mt-6 h-32 mb-4 grid  place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 bg-clip-border text-white shadow-lg shadow-cyan-500/40">
                         <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
                             ResetPassword
                         </h3>
                     </div>
                     <div className="flex flex-col gap-4 p-6">
                         <div className="relative h-16 mt-1 w-full min-w-[200px]">
-                            <input type='email' ref={emailRef}
+                            <input type='email' ref={emailRef} id='email' onChange={resetForm.handleChange} value={resetForm.values.email}
                                 placeholder=""
                                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-cyan-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             />
@@ -53,7 +91,7 @@ const ResetPassword = () => {
                             {error && <p className="mt-4 text-red-500">{error}</p>}
                         </div>
                         <div className="relative h-16 mt-1 w-full min-w-[200px]">
-                            <input type='number' required ref={otpRef}
+                            <input type='number' onChange={resetForm.handleChange} value={resetForm.values.otp} id='otp'
                                 placeholder=" "
                                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-cyan-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             />
@@ -66,12 +104,11 @@ const ResetPassword = () => {
                                 Enter OTP
                             </label>
 
-                            <button type='button' className=''>Submit </button>
 
                         </div>
                         <div className="relative h-16 mt-1 w-full min-w-[200px]">
-                            <input id='password' onChange={(e) => setPassword(e.target.value)}
-                                value={password}
+                            <input id='password' onChange={resetForm.handleChange}
+                                value={resetForm.values.password}
                                 placeholder=""
                                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-cyan-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             />
@@ -85,7 +122,7 @@ const ResetPassword = () => {
                             </label>
                         </div>
                         <div className="relative mt-3 h-16 w-full min-w-[200px]">
-                            <input type='password' id='confirmpassword' onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}
+                            <input type='password' id='confirmPassword' onChange={resetForm.handleChange} value={resetForm.values.confirmPassword}
                                 placeholder=""
                                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-cyan-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                             />

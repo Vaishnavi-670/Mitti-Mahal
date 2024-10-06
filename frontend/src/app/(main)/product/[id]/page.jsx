@@ -28,6 +28,16 @@ function ProductPage() {
   useEffect(() => {
     fetchProductId();
   }, []);
+  const fetchReview = async () => {
+    const res = await fetch('http://localhost:5000/review/getbyproduct/' + id);
+    console.log(res.status);
+    const data = await res.json();
+    console.table(data);
+    setProduct(data);
+  }
+  useEffect(() => {
+    fetchReview();
+  }, []);
 
   const handleQuantityChange = (e) => {
     const value = parseInt(e.target.value, 10);
@@ -57,6 +67,8 @@ function ProductPage() {
         toast.error('Something went wrong');
       });
   }
+
+
 
 
   const showProductDetails = () => {

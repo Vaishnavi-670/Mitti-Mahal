@@ -3,6 +3,8 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
+const userModel = require('../models/userModel');
+
 const generatedOTPs = {};
 
 let transporter = nodemailer.createTransport({
@@ -50,14 +52,19 @@ router.post('/sendotpmail', (req, res) => {
 })
 
 router.post('/verifyotp', (req, res) => {
-    const {recipient, otp} = req.body;
+    const {email, otp, password} = req.body;
 
-    if (generatedOTPs[recipient] === otp) {
-        return res.status(200).json({message: 'OTP verified successfully'});
+    if (generatedOTPs[email] == otp) {
+        userModel.findOneAndUpdate({email}, {password})
+        .then((result) => {
+            return res.status(200).json({message: 'Password updated successfully'});
+        }).catch((err) => {
+            return res.status(500).json(err);
+        });
     } else {
         return res.status(400).json({message: 'Invalid OTP'});
     }
-    
+
 })
 
 module.exports = router;
