@@ -68,12 +68,10 @@ function ProductPage() {
       });
   }
 
-
-
-
   const showProductDetails = () => {
     if (product !== null) {
       return (
+        <>
         <div className="max-w-6xl w-full flex h-[100vh] flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12">
           <div className="w-full md:w-1/2 h-[90vh] flex justify-center">
             <img
@@ -175,7 +173,7 @@ function ProductPage() {
 
                 reviewList.map(review => (
                   <div key={review._id}>
-                    <div className="bg-white shadow-md rounded-lg p-6 mb-4 transition duration-300 ease-in-out hover:shadow-lg">
+                    <div className="bg-white  shadow-md rounded-lg p-6 mb-4 transition duration-300 ease-in-out hover:shadow-lg">
                       {/* User Name and Date */}
                       <div className="flex justify-between items-center mb-4">
                         <h2 className="text-xl font-bold text-gray-800">{review.user.name}</h2>
@@ -206,7 +204,10 @@ function ProductPage() {
               )
             }
           </div>
+          
         </div>
+        
+        </>
       );
     } else {
       return <h2>Loading ... </h2>;
