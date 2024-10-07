@@ -13,10 +13,7 @@ const ListingItems = () => {
     const searchRef = useRef();
     const router = useRouter();
 
-    const handleWishlistClick = () => {
-        setIsWishlisted(!isWishlisted);
-        // Here you can also add functionality to save the wishlist state in a database or local storage
-    };
+    
     const handleSearch = () => {
         const search = searchRef.current.value;
         if (search) {
