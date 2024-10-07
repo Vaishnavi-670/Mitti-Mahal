@@ -1,5 +1,6 @@
 'use client';
 import useCartContext from '@/context/CartContext';
+import useWishlistContext from '@/context/WishlistContext';
 import axios from 'axios';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
@@ -8,6 +9,8 @@ import { Rating } from 'react-simple-star-rating';
 import StarRatings from 'react-star-ratings';
 
 function ProductPage() {
+  const { addToWishlist,checkItemInWishlist} = useWishlistContext();
+
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
   const [rating, setRating] = useState(0);
@@ -166,6 +169,15 @@ function ProductPage() {
               className="w-full border md:w-auto px-6 py-3 bg-black text-white text-lg font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300 disabled:bg-white disabled:text-gray-400 disabled:border-gray-400"
             >
               {checkItemInCart(product) ? 'Item already in cart' : 'Add to Cart'}
+            </button>
+            <button
+            disabled={checkItemInWishlist(product._id)}                    
+                        onClick={() => {
+                          addToWishlist(product);
+                        }}
+                        className='px-4 py-2 rounded-full bg-gray-200 text-black transition-all ease-in disabled:bg-red-500 disabled:text-white '
+                    >
+                         {checkItemInWishlist(product._id) ? 'Item already in wishlist' : 'Add to Wishlist'}
             </button>
 
             {

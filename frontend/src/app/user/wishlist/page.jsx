@@ -4,8 +4,8 @@ import React, { useState } from "react";
 
 
 const Wishlist = () => {
-    const {wishlist}= useWishlistContext();
-    
+  const { wishlist } = useWishlistContext();
+
 
   return (
     <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8">
@@ -23,7 +23,7 @@ const Wishlist = () => {
             />
             <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
             <p className="text-gray-600">{product.description}</p>
-            
+
           </div>
         ))}
       </div>
