@@ -1,11 +1,12 @@
 'use client';
+import useCartContext from '@/context/CartContext';
 import { IconSearch } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
 
 const ListingItems = () => {
-
+    const { addToWishlist} = useCartContext();
     const [products, setproducts] = useState([]);
     const [masterList, setMasterList] = useState([]);
     const [isWishlisted, setIsWishlisted] = useState(false);
@@ -67,8 +68,10 @@ const ListingItems = () => {
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <div className="mt-4 flex mb-1 justify-between items-center">
                     <span className="text-lg font-semibold text-gray-900">${product.price}</span>
-                    <button
-                        onClick={handleWishlistClick}
+                    <button                       
+                        onClick={() => {
+                          addToWishlist(product);
+                        }}
                         className={`px-4 py-2  rounded-full ${isWishlisted ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-900'
                             } hover:bg-red-500 hover:text-white transition duration-300`}
                     >

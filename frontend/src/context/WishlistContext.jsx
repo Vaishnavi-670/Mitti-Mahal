@@ -1,41 +1,37 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 const WishlistContext = createContext();
 
-const WishlistProvider = ({ children }) => {
+export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
-
-  // Function to fetch the wishlist from the backend
-  const fetchWishlist = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/wishlist');
-      setWishlist(response.data);
-    } catch (error) {
-      console.error('Failed to fetch wishlist:', error);
-    }
-  };
+  
 
   // Function to add an item to the wishlist
-  const addToWishlist = async (item) => {
-    try {
-      const response = await axios.post('http://localhost:5000/wishlist', item);
-      setWishlist((prevWishlist) => [...prevWishlist, response.data]);
-    } catch (error) {
-      console.error('Failed to add item to wishlist:', error);
-    }
+  const addToWishlist = (newItem) => {
+    setWishlist((prevWishlist) => {
+      const itemIndex = prevWishlist.findIndex(item => item._id === newItem._id);
+      if (itemIndex !== -1) {
+        // Item already exists in the wishlist
+        return prevWishlist;
+      } else {
+        // Item does not exist, add it to the wishlist
+        return [...prevWishlist, newItem];
+      }
+    });
   };
 
   // Fetch the wishlist when the component mounts
-  useEffect(() => {
-    fetchWishlist();
-  }, []);
+//   useEffect(() => {
+//     fetchWishlist();
+//   }, []);
 
   return (
-    <WishlistContext.Provider value={{ wishlist, addToWishlist, fetchWishlist }}>
+    <WishlistContext.Provider value={{ wishlist, addToWishlist }}>
       {children}
     </WishlistContext.Provider>
   );
 };
+const useWishlistContext = () => useContext(WishlistContext);
 
-export { WishlistContext, WishlistProvider };
+export default useWishlistContext;
