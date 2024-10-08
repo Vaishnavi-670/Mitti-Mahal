@@ -13,25 +13,25 @@ const UserProfile = () => {
     switch (activeSection) {
       case 'wallet':
         return (
-          <Wallet/>
+          <Wallet />
         );
       case 'wishlist':
         return (
-          <Wishlist/>
+          <Wishlist />
 
         );
       case 'orders':
         return (
-          <Orders/>
+          <Orders />
 
         );
       case 'account':
         return (
-          <Account/>
+          <Account />
         );
       case 'settings':
         return (
-          <Settings/>
+          <Settings />
         );
       default:
         return <div>Welcome to your profile!</div>;
