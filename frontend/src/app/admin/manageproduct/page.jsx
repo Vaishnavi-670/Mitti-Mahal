@@ -1,8 +1,12 @@
 'use client'
+import Loading from '@/Components/Loading';
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 
 const ManageProduct = () => {
   const [productList, setproductList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
 
   const fetchProduct = async () => {
     const res = await fetch('http://localhost:5000/product/getall');
@@ -13,22 +17,25 @@ const ManageProduct = () => {
   }
   useEffect(() => {
     fetchProduct();
+    setLoading(false);
   }, []);
 
   const deleteProduct = async (id) => {
     console.log(id);
     const res = await fetch('http://localhost:5000/product/delete/' + id, { method: 'DELETE' })
     if (res.status === 200) {
-      enqueueSnackbar('Product Deleted Successfully', { variant: 'success' });
+      toast.success('Product Deleted Successfully', { variant: 'success' });
       fetchProduct();
     }
   }
-  
+  if (loading ){
+    return <Loading />
+  }
   return (
     
       <>
         {/* Table Section */}
-        <div className=" px-4 py-5 mt-0 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div className=" px-4 py-5  mt-0 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Card */}
           <div className="flex flex-col">
             <div className=" overflow-x-auto">
