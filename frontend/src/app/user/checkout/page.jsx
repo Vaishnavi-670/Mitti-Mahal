@@ -86,13 +86,8 @@ const CheckoutPage = () => {
                                     </a>
                                 </span>
                             </label>
-                        </div>
-
-                        
-                        
+                        </div>                      
                     </div>
-
-
                     {/* Right Section - Shipping Details and Payment */}
                     <div className="bg-white p-8 rounded-2xl w-[73%] transform transition-transform">
                         <h2 className="text-3xl font-semibold border-b pb-4 mb-8 text-gray-700">
