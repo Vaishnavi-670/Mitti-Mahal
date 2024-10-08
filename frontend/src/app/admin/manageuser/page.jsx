@@ -26,25 +26,25 @@ const ManageUser = () => {
     }
   }
 
-  const displayUserData = () => {
-    return userList.map((user, index) => (
-      <tr key={index}>
-        <td>{user.name}</td>
-        <td>{user.email}</td>
-        <td>{user.age}</td>
-        <td><button onClick={() => deleteUser(user._id)}>Delete</button></td>
-      </tr>
-    ))
-  }
+  // const displayUserData = () => {
+  //   return userList.map((user, index) => (
+  //     <tr key={index}>
+  //       <td>{user.name}</td>
+  //       <td>{user.email}</td>
+  //       <td>{user.age}</td>
+  //       <td><button onClick={() => deleteUser(user._id)}>Delete</button></td>
+  //     </tr>
+  //   ))
+  // }
 
   return (
     <>
       <>
         {/* Table Section */}
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div className=" px-4 py-10 sm:px-6  mx-auto">
           {/* Card */}
           <div className="flex flex-col">
-            <div className="-m-1.5 overflow-x-auto">
+            <div className=" overflow-x-auto">
               <div className="p-1.5 min-w-full inline-block align-middle">
                 <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
                   {/* Header */}
@@ -207,25 +207,7 @@ const ManageUser = () => {
                                 </span>
                               </div>
                             </td>
-                            {/* <td className="size-px whitespace-nowrap">
-                              <div className="px-6 py-3">
-                                <div className="flex items-center gap-x-3">
-                                  <span className="text-xs text-gray-500 dark:text-neutral-500">
-                                    1/5
-                                  </span>
-                                  <div className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700">
-                                    <div
-                                      className="flex flex-col justify-center overflow-hidden bg-gray-800 dark:bg-neutral-200"
-                                      role="progressbar"
-                                      style={{ width: "25%" }}
-                                      aria-valuenow={25}
-                                      aria-valuemin={0}
-                                      aria-valuemax={100}
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            </td> */}
+                            
                             <td className="h-px w-72 whitespace-nowrap">
                               <div className="px-6 py-3">
                                 <span className="block text-sm font-semibold text-gray-800 dark:text-neutral-200">
@@ -245,7 +227,7 @@ const ManageUser = () => {
                               <div className="px-6 py-1.5">
                                 <button
                                   className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-
+ 
                                   onClick={() => deleteUser(user._id)}
                                 >
                                   delete

@@ -15,7 +15,7 @@ const ManageProduct = () => {
     fetchProduct();
   }, []);
 
-  const deleteUser = async (id) => {
+  const deleteProduct = async (id) => {
     console.log(id);
     const res = await fetch('http://localhost:5000/product/delete/' + id, { method: 'DELETE' })
     if (res.status === 200) {
@@ -478,6 +478,17 @@ const ManageProduct = () => {
                                   Published
                                 </span>
                               </a>
+                            </td>
+                            <td className="size-px whitespace-nowrap">
+                              <div className="px-6 py-1.5">
+                                <button
+                                  className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
+ 
+                                  onClick={() => deleteProduct(product._id)}
+                                >
+                                  delete
+                                </button>
+                              </div>
                             </td>
                           </tr>
                         ))
