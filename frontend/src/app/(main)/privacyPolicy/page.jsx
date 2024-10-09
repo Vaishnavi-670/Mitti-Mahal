@@ -55,7 +55,7 @@ function PrivacyPolicyPage() {
             </ul>
           </div>
 
-          {/* Section 2 */}
+         
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">2. How We Use Your Information</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -70,7 +70,7 @@ function PrivacyPolicyPage() {
             </ul>
           </div>
 
-          {/* Section 3 */}
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">3. How We Share Your Information</h2>
             <p className="text-gray-600 mb-4">
@@ -89,7 +89,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 4 */}
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">4. Payment Security</h2>
             <p className="text-gray-600">
