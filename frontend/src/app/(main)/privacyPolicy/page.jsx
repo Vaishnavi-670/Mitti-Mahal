@@ -32,7 +32,7 @@ function PrivacyPolicyPage() {
               <li>Customer Support Interactions (via email, chat, or phone)</li>
             </ul>
 
-            {/* 1.2 Additional Information */}
+            
             <h3 className="text-xl font-semibold text-gray-800 mb-2">1.2 Additional Information for Enhanced Experience</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
               <li>Preferences and Interests (such as favorite products or categories)</li>
@@ -42,7 +42,7 @@ function PrivacyPolicyPage() {
               <li>Referral Information (if referred by friends or affiliates)</li>
             </ul>
 
-            {/* 1.3 Non-Personal Information */}
+            
             <h3 className="text-xl font-semibold text-gray-800 mb-2">1.3 Non-Personal Information</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
               <li>IP Address</li>
