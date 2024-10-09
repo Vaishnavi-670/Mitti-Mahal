@@ -15,11 +15,11 @@ function PrivacyPolicyPage() {
         </div>
 
         <div className="space-y-8">
-          {/* Section 1 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">1. Information We Collect</h2>
 
-            {/* 1.1 Personal Information */}
+            
             <h3 className="text-xl font-semibold text-gray-800 mb-2">1.1 Personal Information</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
               <li>Full Name</li>
