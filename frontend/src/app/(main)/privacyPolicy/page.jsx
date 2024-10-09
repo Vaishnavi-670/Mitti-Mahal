@@ -97,7 +97,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 5 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">5. User Account Protection</h2>
             <p className="text-gray-600">
@@ -105,7 +105,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 6 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">6. Data Retention and Deletion</h2>
             <p className="text-gray-600">
@@ -113,7 +113,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 7 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">7. Customer Rights</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -129,7 +129,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 8 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">8. Data Security Measures</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -140,7 +140,7 @@ function PrivacyPolicyPage() {
             </ul>
           </div>
 
-          {/* Section 9 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">9. Third-Party Links and Services</h2>
             <p className="text-gray-600">
@@ -148,7 +148,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 10 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">10. International Data Transfers</h2>
             <p className="text-gray-600">
@@ -156,7 +156,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 11 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">11. Children’s Privacy</h2>
             <p className="text-gray-600">
@@ -164,7 +164,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 12 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">12. Loyalty Programs and Promotions</h2>
             <p className="text-gray-600">
@@ -172,7 +172,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 13 */}
+          
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">13. Changes to This Privacy Policy</h2>
             <p className="text-gray-600">
@@ -180,7 +180,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          {/* Section 14 */}
+         
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">14. Contact Us</h2>
             <p className="text-gray-600">
