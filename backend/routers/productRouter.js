@@ -45,6 +45,16 @@ router.get('/getbycategory/:category', (req, res) => {
             res.status(500).json(err);
         });
 })
+router.get('/getbytype/:type', (req, res) => {
+    Model.find({ type: req.params.type })
+        .then((result) => {
+            res.status(200).json(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+})
 router.get('/getbytitle:/title', (req, res) => {
     Model.findById({ title: req.params.title })
         .then((result) => {
