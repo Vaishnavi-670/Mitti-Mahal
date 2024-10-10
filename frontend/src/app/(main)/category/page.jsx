@@ -7,6 +7,7 @@ const Category = () => {
   const [category, setcategory] = useState([])
   const [potProducts, setPotProducts] = useState([]);
   const [vaseProducts, setVaseProducts] = useState([]);
+  const [bottolProducts, setbottolProducts] = useState([]);
 
   const fetchTypeData = async (type, setFunction) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/getbytype/${type}`);
@@ -17,6 +18,7 @@ const Category = () => {
   useEffect(() => {
     fetchTypeData('Pot', setPotProducts);
     fetchTypeData('vase', setVaseProducts);
+    fetchTypeData('bottol', setbottolProducts);
   }, [])
   
 
