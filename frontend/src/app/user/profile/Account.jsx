@@ -4,14 +4,15 @@ import { Formik } from 'formik';
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
+const ISSERVER = typeof window === undefined;
 
 const Account = () => {
 
     const [userData, setuserData] = useState(null)
-    const token = localStorage.getItem('token');
+    const token = !ISSERVER ? localStorage.getItem('token') : '';
 
     const fetchUserData = async () => {
-        const res = await axios.get('http://localhost:5000/user/getuser', {
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getuser`, {
             headers: {
                 'x-auth-token': token
             }
@@ -27,7 +28,7 @@ const Account = () => {
     const submitForm = (values) => {
         console.log(values);
 
-        axios.put('http://localhost:5000/user/update/' + id, values)
+        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update/` + id, values)
             .then((result) => {
                 router.push('/manageuser');
                 toast.success('User updated successfully');

@@ -32,9 +32,9 @@ const ListingItems = () => {
     const fetchProducts = async () => {
         let res;
         if (category && category[0]) {
-            res = await fetch('http://localhost:5000/product/getbycategory/' + category[0]);
+            res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/getbycategory/` + category[0]);
         } else {
-            res = await fetch('http://localhost:5000/product/getall');
+            res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/getall`);
         }
         console.log(res.status);
         const data = await res.json();

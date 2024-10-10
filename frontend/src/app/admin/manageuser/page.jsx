@@ -7,7 +7,7 @@ const ManageUser = () => {
   const [userList, setuserList] = useState([]);
 
   const fetchUser = async () => {
-    const res = await fetch('http://localhost:5000/user/getall');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/getall`);
     console.log(res.status);
     const data = await res.json();
     console.table(data);
@@ -19,7 +19,7 @@ const ManageUser = () => {
 
   const deleteUser = async (id) => {
     console.log(id);
-    const res = await fetch('http://localhost:5000/user/delete/' + id, { method: 'DELETE' })
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/delete/` + id, { method: 'DELETE' })
     if (res.status === 200) {
       toast.success('User Deleted Successfully');
       fetchUser();

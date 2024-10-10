@@ -6,6 +6,8 @@ import Orders from './Orders';
 import Account from './Account';
 import Settings from './Settings';
 
+
+
 const UserProfile = () => {
   const [activeSection, setActiveSection] = useState('wallet');
 

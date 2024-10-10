@@ -17,7 +17,7 @@ const ThankYou = () => {
     const bookingDetails = JSON.parse(sessionStorage.getItem("bookingDetails"));
     const paymentDetails = await retrievePaymentIntent();
     const response = await fetch(
-      `http://localhost:5000/booking/add`,
+      `${process.env.NEXT_PUBLIC_API_URL}/booking/add`,
       {
         method: "POST",
         headers: {
@@ -39,7 +39,7 @@ const ThankYou = () => {
 
   const retrievePaymentIntent = async () => {
     const response = await fetch(
-      `http://localhost:5000/retrieve-payment-intent`,
+      `${process.env.NEXT_PUBLIC_API_URL}/retrieve-payment-intent`,
       {
         method: "POST",
         body: JSON.stringify({

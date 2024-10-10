@@ -15,11 +15,11 @@ function PrivacyPolicyPage() {
         </div>
 
         <div className="space-y-8">
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">1. Information We Collect</h2>
 
-            
+
             <h3 className="text-xl font-semibold text-gray-800 mb-2">1.1 Personal Information</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
               <li>Full Name</li>
@@ -32,7 +32,7 @@ function PrivacyPolicyPage() {
               <li>Customer Support Interactions (via email, chat, or phone)</li>
             </ul>
 
-            
+
             <h3 className="text-xl font-semibold text-gray-800 mb-2">1.2 Additional Information for Enhanced Experience</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
               <li>Preferences and Interests (such as favorite products or categories)</li>
@@ -42,7 +42,7 @@ function PrivacyPolicyPage() {
               <li>Referral Information (if referred by friends or affiliates)</li>
             </ul>
 
-            
+
             <h3 className="text-xl font-semibold text-gray-800 mb-2">1.3 Non-Personal Information</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
               <li>IP Address</li>
@@ -55,7 +55,7 @@ function PrivacyPolicyPage() {
             </ul>
           </div>
 
-         
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">2. How We Use Your Information</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -97,7 +97,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">5. User Account Protection</h2>
             <p className="text-gray-600">
@@ -105,7 +105,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">6. Data Retention and Deletion</h2>
             <p className="text-gray-600">
@@ -113,7 +113,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">7. Customer Rights</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -129,7 +129,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">8. Data Security Measures</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
@@ -140,7 +140,7 @@ function PrivacyPolicyPage() {
             </ul>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">9. Third-Party Links and Services</h2>
             <p className="text-gray-600">
@@ -148,7 +148,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">10. International Data Transfers</h2>
             <p className="text-gray-600">
@@ -156,7 +156,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">11. Children’s Privacy</h2>
             <p className="text-gray-600">
@@ -164,7 +164,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">12. Loyalty Programs and Promotions</h2>
             <p className="text-gray-600">
@@ -172,7 +172,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-          
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">13. Changes to This Privacy Policy</h2>
             <p className="text-gray-600">
@@ -180,7 +180,7 @@ function PrivacyPolicyPage() {
             </p>
           </div>
 
-         
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">14. Contact Us</h2>
             <p className="text-gray-600">
@@ -189,7 +189,7 @@ function PrivacyPolicyPage() {
             <p className="text-gray-600 mt-4">
               <strong>Mitti Mahal</strong><br />
               123 Artisan Lane,<br />
-                  Clayville, CA 90210<br />
+              Clayville, CA 90210<br />
               Email: <strong>mittimahal@gmail.com</strong><br />
               Phone: <strong>(+62) 81234567890</strong>
             </p>

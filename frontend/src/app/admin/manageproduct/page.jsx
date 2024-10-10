@@ -9,7 +9,7 @@ const ManageProduct = () => {
 
 
   const fetchProduct = async () => {
-    const res = await fetch('http://localhost:5000/product/getall');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/getall`);
     console.log(res.status);
     const data = await res.json();
     console.table(data);
@@ -22,7 +22,7 @@ const ManageProduct = () => {
 
   const deleteProduct = async (id) => {
     console.log(id);
-    const res = await fetch('http://localhost:5000/product/delete/' + id, { method: 'DELETE' })
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/delete/` + id, { method: 'DELETE' })
     if (res.status === 200) {
       toast.success('Product Deleted Successfully', { variant: 'success' });
       fetchProduct();

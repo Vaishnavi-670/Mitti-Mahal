@@ -18,7 +18,7 @@ const AddProduct = () => {
         onSubmit: async (values, { setSubmitting, resetForm }) => {
             console.log(values);
             setSubmitting(true);
-            const res = await fetch('http://localhost:5000/product/add', {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/add`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(values)

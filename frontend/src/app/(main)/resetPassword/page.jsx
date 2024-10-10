@@ -36,10 +36,10 @@ const ResetPassword = () => {
 
     const handleSendOtp = async (e) => {
 
-        axios.get('http://localhost:5000/user/getbyemail/' + emailRef.current.value)
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getbyemail/` + emailRef.current.value)
             .then((result) => {
 
-                axios.post('http://localhost:5000/utils/sendotpmail', { recipient: emailRef.current.value })
+                axios.post(`${process.env.NEXT_PUBLIC_API_URL}/utils/sendotpmail`, { recipient: emailRef.current.value })
                     .then(response => {
                         setSuccess('OTP sent successfully.');
                         console.log(response.data);

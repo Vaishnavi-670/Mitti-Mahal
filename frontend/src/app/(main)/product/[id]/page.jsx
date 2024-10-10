@@ -22,7 +22,7 @@ function ProductPage() {
   const { id } = useParams();
 
   const fetchProductId = async () => {
-    const res = await fetch('http://localhost:5000/product/getbyid/' + id);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/getbyid/` + id);
     console.log(res.status);
     const data = await res.json();
     console.table(data);
@@ -53,7 +53,7 @@ function ProductPage() {
   };
 
   const sendReview = () => {
-    axios.post('http://localhost:5000/review/add', {
+    axios.post(`${process.env.NEXT_PUBLIC_API_URL}/review/add`, {
       product: id,
       images: [],
       comment: commentRef.current.value,

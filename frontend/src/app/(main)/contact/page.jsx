@@ -2,6 +2,7 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandTwitter, IconPhoneCall 
 import Link from 'next/link';
 import React from 'react';
 
+
 const Contact = () => {
     return (
         <div className="bg-white py-16 px-8 md:px-16 lg:px-32">
