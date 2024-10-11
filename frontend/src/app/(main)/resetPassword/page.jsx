@@ -13,7 +13,7 @@ const ResetPassword = () => {
         },
         onSubmit: (values) => {
             console.log(values);
-            axios.post('http://localhost:5000/utils/verifyotp', values)
+            axios.post(`${process.env.NEXT_PUBLIC_API_URL}/utils/verifyotp`, values)
                 .then(response => {
                     toast.success('Password updated successfully');
                     setError('');
