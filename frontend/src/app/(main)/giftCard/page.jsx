@@ -46,7 +46,7 @@ const GiftCardPage = () => {
             </p>
           </div>
 
-          {/* Details 2 */}
+          
           <div className="bg-white shadow-md p-6 rounded-lg">
             <h3 className="text-2xl font-bold text-gray-800">Instant Delivery</h3>
             <p className="mt-4 text-gray-600">
