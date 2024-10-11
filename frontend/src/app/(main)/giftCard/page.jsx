@@ -34,7 +34,7 @@ const GiftCardPage = () => {
         </div>
       </div>
 
-      {/* Gift Card Details Section */}
+     
       <div className="mt-16">
         <h2 className="text-3xl font-semibold text-gray-800 text-center mb-8">Gift Card Details</h2>
         <div className="grid md:grid-cols-2 gap-8">
