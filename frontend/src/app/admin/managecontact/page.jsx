@@ -16,9 +16,9 @@ const ManageContact = () => {
   };
 
   return (
-    <div className="min-h-screen p-6">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Manage Contacts</h2>
+    <div className="min-h-screen  mx-11">
+      <div className="bg-white p-6 rounded-lg shadow-md w-full ">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Manage Contacts</h2>
         {contacts.length === 0 ? (
           <p className="text-center text-gray-500">No contact messages available.</p>
         ) : (
@@ -34,7 +34,7 @@ const ManageContact = () => {
               </thead>
               <tbody>
                 {contacts.map((contact) => (
-                  <tr key={contact.id} className="hover:bg-gray-50">
+                  <tr key={contact._id} className="hover:bg-gray-50">
                     <td className="p-3 border-b">{contact.fullName}</td>
                     <td className="p-3 border-b">{contact.email}</td>
                     <td className="p-3 border-b">{contact.message}</td>
