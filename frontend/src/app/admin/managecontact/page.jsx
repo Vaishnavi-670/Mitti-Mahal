@@ -16,30 +16,40 @@ const ManageContact = () => {
   };
 
   return (
-    <div className="min-h-screen  p-6">
+    <div className="min-h-screen p-6">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl mx-auto">
         <h2 className="text-2xl font-semibold mb-6 text-center">Manage Contacts</h2>
         {contacts.length === 0 ? (
           <p className="text-center text-gray-500">No contact messages available.</p>
         ) : (
-          <div className="space-y-4">
-            {contacts.map((contact) => (
-              <div key={contact.id} className="p-4 border border-gray-300 rounded-lg">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-lg font-medium">{contact.fullName}</p>
-                    <p className="text-sm text-gray-500">{contact.email}</p>
-                    <p className="mt-2">{contact.message}</p>
-                  </div>
-                  <button
-                    onClick={() => handleDelete(contact.id)}
-                    className="bg-red-600 text-white py-1 px-3 rounded-lg hover:bg-red-700 focus:outline-none"
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="p-3 border-b font-medium text-gray-700">Full Name</th>
+                  <th className="p-3 border-b font-medium text-gray-700">Email</th>
+                  <th className="p-3 border-b font-medium text-gray-700">Message</th>
+                  <th className="p-3 border-b font-medium text-gray-700">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {contacts.map((contact) => (
+                  <tr key={contact.id} className="hover:bg-gray-50">
+                    <td className="p-3 border-b">{contact.fullName}</td>
+                    <td className="p-3 border-b">{contact.email}</td>
+                    <td className="p-3 border-b">{contact.message}</td>
+                    <td className="p-3 border-b">
+                      <button
+                        onClick={() => handleDelete(contact.id)}
+                        className="bg-red-600 text-white py-1 px-3 rounded-lg hover:bg-red-700 focus:outline-none"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </div>
