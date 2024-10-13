@@ -5,7 +5,7 @@ const ManageContact = () => {
   // Sample data for demonstration. You can replace this with your data fetching logic.
   const [contacts, setContacts] = useState([
     { id: 1, fullName: 'John Doe', email: 'john@example.com', message: 'I am interested in your products.' },
-    { id: 2, fullName: 'Jane Smith', email: 'jane@example.com', message: 'Can I get a custom pot design?' },
+    { id: 2, fullName: 'Jane Smith', email: 'jane@example.com', message: 'Can I get a custom pot design?' }, 
   ]);
 
   // Function to delete a contact message by ID
