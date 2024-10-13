@@ -8,7 +8,6 @@ const ManageContact = () => {
     { id: 2, fullName: 'Jane Smith', email: 'jane@example.com', message: 'Can I get a custom pot design?' }, 
   ]);
 
-  // Function to delete a contact message by ID
   const handleDelete = (id) => {
     const updatedContacts = contacts.filter(contact => contact.id !== id);
     setContacts(updatedContacts);
