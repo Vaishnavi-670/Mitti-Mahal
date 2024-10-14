@@ -12,6 +12,7 @@ const ManageContact = () => {
     setContacts(updatedContacts);
     alert('Contact has been deleted.');
   };
+    
 
   return (
     <div className="min-h-screen  mx-11">
