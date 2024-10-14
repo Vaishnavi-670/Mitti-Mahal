@@ -4,10 +4,29 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useRef } from 'react';
 
-const contactRef = useRef();
-const {id} = useParams();
 
 const Contact = () => {
+    const contactRef = useRef();
+    const { id } = useParams();
+
+    const sendReview = () => {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contact/add`, {
+          product: id,         
+          comment: commentRef.current.value,
+          rating: rating
+        }, {
+          headers: {
+            'x-auth-token': localStorage.getItem('token')
+          }
+        })
+          .then((result) => {
+            toast.success('Review added successfully');
+          }).catch((err) => {
+            console.log(err);
+            toast.error('Something went wrong');
+          });
+      }
+
     return (
         <div className="bg-white py-16 px-8 md:px-16 lg:px-32">
             <div className="max-w-7xl mx-auto shadow-gray-400">
