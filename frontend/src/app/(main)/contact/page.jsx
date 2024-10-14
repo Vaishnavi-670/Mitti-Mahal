@@ -1,7 +1,11 @@
+'use client'
 import { IconBrandFacebook, IconBrandInstagram, IconBrandTwitter, IconPhoneCall } from '@tabler/icons-react';
 import Link from 'next/link';
-import React from 'react';
+import { useParams } from 'next/navigation';
+import React, { useRef } from 'react';
 
+const contactRef = useRef();
+const {id} = useParams();
 
 const Contact = () => {
     return (
