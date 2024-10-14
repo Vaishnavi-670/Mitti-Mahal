@@ -9,7 +9,7 @@ const Contact = () => {
     const contactRef = useRef();
     const { id } = useParams();
 
-    const sendReview = () => {
+    const sendMessage = () => {
         axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contact/add`, {
           product: id,         
           comment: commentRef.current.value,
@@ -88,6 +88,7 @@ const Contact = () => {
                         </div>
                         <div className="text-right">
                             <button
+                            onclick={sendMessage}
                                 type="submit"
                                 className="bg-gray-800 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-700"
                             >
