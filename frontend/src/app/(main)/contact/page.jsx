@@ -98,7 +98,6 @@ const Contact = () => {
                     </form>
                 </div>
 
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
                     <div>
                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Contact Information</h2>
