@@ -80,6 +80,7 @@ const AboutUs = () => {
             >
               Your browser does not support the video tag.
             </video>
+            
           </div>
           <div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Celebrating Our Artisans</h2>
