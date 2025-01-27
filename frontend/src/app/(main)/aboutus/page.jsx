@@ -1,5 +1,4 @@
 import React from 'react';
-
 const AboutUs = () => {
   return (
     <div className="bg-white py-14 w-full px-5 md:px-10 lg:px-20">

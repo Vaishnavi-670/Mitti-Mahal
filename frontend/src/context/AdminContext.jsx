@@ -1,6 +1,8 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React, { createContext, useState, useEffect, useContext } from 'react';
+const ISSERVER = typeof window === undefined;
+
 
 const AdminContext = createContext();
 
@@ -10,7 +12,7 @@ export const AdminProvider = ({ children }) => {
 
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(() => {
     // Load admin login state from localStorage
-    const savedAdminLoginState = localStorage.getItem('admin');
+    const savedAdminLoginState = !ISSERVER ? localStorage.getItem('admin') : '';
     return savedAdminLoginState ? JSON.parse(savedAdminLoginState) : false;
   });
 
@@ -22,7 +24,7 @@ export const AdminProvider = ({ children }) => {
 
   const adminLogout = () => {
     document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    localStorage.removeItem('admin');
+    !ISSERVER ? localStorage.removeItem('admin') :'';
     setIsAdminLoggedIn(false);
     router.replace('/login');
   };
