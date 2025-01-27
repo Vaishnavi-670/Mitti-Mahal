@@ -11,7 +11,6 @@ const AboutUs = () => {
             Each product at Mitti Mahal is crafted by skilled artisans with love and dedication. From elegant home décor to functional tableware and unique gifts, our collections reflect the perfect blend of artistry, quality, and sustainability.
           </p>
         </div>
-
         {/* Our Mission Section */}
         <div className='flex  items-center justify-center gap-10'>
           <div className="grid w-[90%]  gap-10 items-center">
