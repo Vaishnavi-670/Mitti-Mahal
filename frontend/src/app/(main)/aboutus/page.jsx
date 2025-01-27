@@ -30,6 +30,7 @@ const AboutUs = () => {
                 className="rounded-lg h-80 shadow-lg w-full object-cover"
               />
             </div>
+            
           </div>
           <div className="grid w-[90%] gap-10 items-center">
             <div className="md:order-2">
