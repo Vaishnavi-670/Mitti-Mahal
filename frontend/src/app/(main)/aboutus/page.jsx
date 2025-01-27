@@ -22,6 +22,7 @@ const AboutUs = () => {
               {/* <p className="text-lg text-gray-600">
               Each piece in our collection is designed and meticulously crafted by skilled artisans. We are dedicated to preserving traditional techniques while integrating innovative design elements, making every product functional and beautiful.
             </p> */}
+            
             </div>
             <div className="order-1 md:order-2">
               <img
@@ -30,7 +31,7 @@ const AboutUs = () => {
                 className="rounded-lg h-80 shadow-lg w-full object-cover"
               />
             </div>
-            
+
           </div>
           <div className="grid w-[90%] gap-10 items-center">
             <div className="md:order-2">
