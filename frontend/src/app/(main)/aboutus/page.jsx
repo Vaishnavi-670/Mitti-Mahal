@@ -22,7 +22,7 @@ const AboutUs = () => {
               {/* <p className="text-lg text-gray-600">
               Each piece in our collection is designed and meticulously crafted by skilled artisans. We are dedicated to preserving traditional techniques while integrating innovative design elements, making every product functional and beautiful.
             </p> */}
-            
+
             </div>
             <div className="order-1 md:order-2">
               <img
@@ -39,6 +39,7 @@ const AboutUs = () => {
               <p className="text-lg text-gray-600 mb-4">
                 We are committed to preserving traditional pottery techniques while embracing modern design. Each piece is crafted with care and dedication, blending the old with the new to create unique and meaningful items.
               </p>
+              
               {/* <p className="text-lg text-gray-600">
               Thank you for being a part of the Mitti Mahal journey. Explore our collection and discover the stories behind each piece, crafted with care by our talented artisans.
             </p> */}
