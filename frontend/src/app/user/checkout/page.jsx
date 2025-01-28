@@ -1,8 +1,22 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
+import Script from 'next/script';
+
+declare global {
+    interface Window {
+        razorpay: any;
+    }
+}
 
 const CheckoutPage = () => {
-    
+    const AMOUNT = 5000; // Amount in paise (100 paise = 1 Rs)
+    const [isProcessing, setisProcessing] = useState(false);
+    const handlePayment = async ()=>{
+        setisProcessing(true);
+        try {
+            
+        }
+    }
 
     return (
         <div className="min-h-screen bg-gray-50 py-12">
