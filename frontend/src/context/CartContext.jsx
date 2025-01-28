@@ -19,7 +19,6 @@ export const CartProvider = ({ children }) => {
         !ISSERVER ? localStorage.setItem('cart', JSON.stringify(cart)) : [];
     }, [cart]);
 
-
     const addToCart = (newItem) => {
         setCart((prevCart) => {
             const itemIndex = prevCart.findIndex(item => item._id === newItem._id);

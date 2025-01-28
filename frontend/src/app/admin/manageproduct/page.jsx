@@ -6,8 +6,6 @@ import toast from 'react-hot-toast';
 const ManageProduct = () => {
   const [productList, setproductList] = useState([]);
   const [loading, setLoading] = useState(true);
-
-
   const fetchProduct = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/getall`);
     console.log(res.status);
