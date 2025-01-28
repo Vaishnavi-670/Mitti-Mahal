@@ -7,7 +7,6 @@ declare global {
         razorpay: any;
     }
 }
-
 const CheckoutPage = () => {
     const AMOUNT = 5000; // Amount in paise (100 paise = 1 Rs)
     const [isProcessing, setisProcessing] = useState(false);
