@@ -27,7 +27,6 @@ const CheckoutPage = () => {
                         <h2 className="text-3xl font-semibold border-b pb-4 mb-8 text-gray-700">
                             Your Order
                         </h2>
-
                         {/* Product Information */}
                         <div className="flex flex-col mb-6">
                             <img
