@@ -50,7 +50,6 @@ const CheckoutPage = () => {
                                 <p className="text-gray-600">Shipping:</p>
                                 <p className="text-gray-800 font-bold">$5.00</p>
                             </div>
-
                             {/* Discount Code  */}
                             <div className="mt-4">
                                 <label
