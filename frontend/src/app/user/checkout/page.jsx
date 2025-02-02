@@ -21,7 +21,6 @@ const CheckoutPage = () => {
             <div className="container mx-auto ">
                 <h1 className="text-4xl font-bold mb-10 text-center  text-gray-800"> Checkout
                 </h1>
-
                 <div className="flex gap-12">
 
                     {/* Left Section  Product Details */}
