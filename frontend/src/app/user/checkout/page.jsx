@@ -22,7 +22,6 @@ const CheckoutPage = () => {
                 <h1 className="text-4xl font-bold mb-10 text-center  text-gray-800"> Checkout
                 </h1>
                 <div className="flex gap-12">
-
                     {/* Left Section  Product Details */}
                     <div className="bg-white p-14 rounded-2xl w-[27%] shadow-xl transform transition-transform hover:scale-105">
                         <h2 className="text-3xl font-semibold border-b pb-4 mb-8 text-gray-700">
