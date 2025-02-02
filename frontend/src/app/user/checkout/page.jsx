@@ -40,7 +40,6 @@ const CheckoutPage = () => {
                                 <p className="text-lg font-semibold mt-2 text-red-600">Price: $50.00</p>
                             </div> */}
                         </div>
-
                         {/* Pricing Detail */}
                         <div className="space-y-4">
                             <div className="flex justify-between text-lg">
