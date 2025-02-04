@@ -130,7 +130,7 @@ const CheckoutPage = () => {
                             city: '',
                             postalCode: '',
                             address: '',
-                            delivery: ''
+                            delivery: '',
                         }} onSubmit={(values) => handlePayment(values)}>
                             {(values) => (
                                 <form className="space-y-6">
