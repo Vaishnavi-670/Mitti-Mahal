@@ -9,7 +9,7 @@ const CheckoutPage = () => {
     const handlePayment = async () => {
         setisProcessing(true);
         try {
-            const response = await fetch("http://localhost:5000/routers/paymentRouter", { method: "POST" });
+            const response = await fetch("http://localhost:5000/payment/create-order", { method: "POST" });
             const data = await response.json();
 
             const options = {

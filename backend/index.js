@@ -4,6 +4,7 @@ const orderRouter =  require('./routers/orderRouter');
 const userRouter =  require('./routers/userRouter');
 const productRouter =  require('./routers/productRouter');
 const reviewRouter =  require('./routers/reviewRouter');
+const paymentRouter =  require('./routers/paymentRouter');
 
 const utilRouter = require('./routers/utilRouter');  
 
@@ -19,6 +20,7 @@ app.use('/product', productRouter);
 app.use('/order', orderRouter);
 app.use('/review', reviewRouter);
 app.use('/utils', utilRouter);
+app.use('/payment', paymentRouter);
 
 
 app.get('/',(req, res) => {
