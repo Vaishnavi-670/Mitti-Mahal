@@ -1,28 +1,49 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
+import useCartContext from '@/context/CartContext';
+import { Formik } from 'formik';
 
 
 const CheckoutPage = () => {
+    const { cart, calculateTotalPrice } = useCartContext();
+
+
+
     const AMOUNT = 5000; // Amount in paise (100 paise = 1 Rs)
     const [isProcessing, setisProcessing] = useState(false);
     const handlePayment = async () => {
         setisProcessing(true);
         try {
-            const response = await fetch("http://localhost:5000/payment/create-order", { method: "POST" });
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payment/create-order`, {
+                method: "POST"
+            });
             const data = await response.json();
 
             const options = {
                 key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-                amount: AMOUNT,
+                amount: calculateTotalPrice(),
                 currency: "INR",
                 name: "Mitti Mahal",
                 description: "Product Purchase",
                 order_id: data.orderId,
                 handler: async (response) => {
                     console.log("Payment successful", response);
-                    
-                },              
+                    // save new order
+                    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/add`, {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            products: cart,
+                            amount: AMOUNT,
+                            paymentId: response.razorpay_payment_id,
+
+                        })
+                    });
+                    const data = await res.json();
+                },
                 prefill: {
                     name: "User",
                     email: "user@example.com",
@@ -54,54 +75,26 @@ const CheckoutPage = () => {
                         <h2 className="text-3xl font-semibold border-b pb-4 mb-8 text-gray-700">
                             Your Order
                         </h2>
-                        {/* Product Information */}
-                        <div className="flex flex-col mb-6">
-                            <img
-                                src="https://i.pinimg.com/236x/fa/84/12/fa8412953fc0e81715ab628daf7e5947.jpg"
-                                alt="Clay Product"
-                                className="w-full h-60 object-cover rounded-xl"
-                            />
-                            {/* <div className="mt-5">
-                                <h3 className="text-2xl font-semibold text-gray-700">Bowl</h3>
-                                <p className="text-gray-500">Short description of the product you ordered.</p>
-                                <p className="text-lg font-semibold mt-2 text-red-600">Price: $50.00</p>
-                            </div> */}
-                        </div>
-                        {/* Pricing Detail */}
-                        <div className="space-y-4">
-                            <div className="flex justify-between text-lg">
-                                <p className="text-gray-600">Subtotal:</p>
-                                <p className="text-gray-800 font-bold">$50.00</p>
-                            </div>
-                            <div className="flex justify-between text-lg">
-                                <p className="text-gray-600">Shipping:</p>
-                                <p className="text-gray-800 font-bold">$5.00</p>
-                            </div>
-                            {/* Discount Code  */}
-                            <div className="mt-4">
-                                <label
-                                    htmlFor="discount-code"
-                                    className="block text-gray-600 text-lg font-medium"
-                                >
-                                    Discount Code:
-                                </label>
-                                <div className="flex items-center space-x-4 mt-2">
-                                    <input
-                                        type="text"
-                                        id="discount-code"
-                                        placeholder="Enter code"
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-gray-500 focus:border-gray-500"
-                                    />
-                                    <button className="bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition-all duration-300">
-                                        Apply
-                                    </button>
-                                </div>
-                                <p className="text-sm text-gray-500 mt-2">Apply a discount code if you have one.</p>
-                            </div>
 
-                            <div className="flex justify-between text-lg font-semibold border-t pt-4">
-                                <p className="text-gray-700">Total:</p>
-                                <p className="text-gray-900 font-bold">$55.00</p>
+                        <div>
+                            {cart.map((item) => (
+                                <div key={item._id} className="flex items-center justify-between mb-4">
+                                    <div className="flex items-center space-x-4">
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="w-16 h-16 object-cover rounded-lg"
+                                        />
+                                        <div>
+                                            <h3 className="text-lg font-semibold">{item.title}</h3>
+                                            <p className="text-gray-500">₹{item.price}</p>
+                                        </div>
+                                    </div>
+                                    <p className="text-gray-500">x{item.qty}</p>
+                                </div>
+                            ))}
+                            <div className="text-right text-lg font-bold text-gray-800">
+                                Total: ₹{calculateTotalPrice()}
                             </div>
                         </div>
 
@@ -129,135 +122,150 @@ const CheckoutPage = () => {
                             <img src="https://i.pinimg.com/236x/a7/5e/2f/a75e2f85004206915e5430120f9a65d2.jpg" alt="Standard" className="inline-block object-cover w-14 h-16 mr-2" />
 
                         </h2>
-                        <form className="space-y-6">
-                            <h2 className="text-2xl font-semibold mt-8 text-gray-700">
-                                <img src="https://i.pinimg.com/236x/b4/92/94/b4929462e87b63e20537bc5ec702d0cc.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />
-                                Contact Information</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <Formik initialValues={{
+                            firstName: '',
+                            lastName: '',
+                            number: '',
+                            email: '',
+                            city: '',
+                            postalCode: '',
+                            address: '',
+                            delivery: ''
+                        }} onSubmit={(values) => handlePayment(values)}>
+                            {(values) => (
+                                <form className="space-y-6">
+                                    <h2 className="text-2xl font-semibold mt-8 text-gray-700">
+                                        <img src="https://i.pinimg.com/236x/b4/92/94/b4929462e87b63e20537bc5ec702d0cc.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />
+                                        Contact Information</h2>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                                <div>
-                                    <label
-                                        htmlFor="firstName"
-                                        className="block text-lg font-medium text-gray-700 "
-                                    >
-                                        First Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="firstName"
-                                        className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                        placeholder="Your First Name"
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <label
-                                        htmlFor="lastName"
-                                        className="block text-lg font-medium text-gray-700"
-                                    >
-                                        Last Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="lastName"
-                                        className="mt-2 p-4 w-full border rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                        placeholder="Your Last Name"
-                                        required
-                                    />
-                                </div>
-                            </div>
+                                        <div>
+                                            <label
+                                                htmlFor="firstName"
+                                                className="block text-lg font-medium text-gray-700 "
+                                            >
+                                                First Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="firstName"
+                                                className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
+                                                placeholder="Your First Name"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label
+                                                htmlFor="lastName"
+                                                className="block text-lg font-medium text-gray-700"
+                                            >
+                                                Last Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="lastName"
+                                                className="mt-2 p-4 w-full border rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
+                                                placeholder="Your Last Name"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label
-                                        htmlFor="number"
-                                        className="block text-lg font-medium  text-gray-700"
-                                    >
-                                        Phone Number
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="number"
-                                        className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                        placeholder="Your Phone Number"
-                                        required
-                                    />
-                                </div>
-                                <div>
-                                    <label
-                                        htmlFor="email"
-                                        className="block text-lg font-medium text-gray-700"
-                                    >
-                                        Email
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300"
-                                        placeholder="Your Email"
-                                        required
-                                    />
-                                </div>
-                            </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label
+                                                htmlFor="number"
+                                                className="block text-lg font-medium  text-gray-700"
+                                            >
+                                                Phone Number
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="number"
+                                                className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
+                                                placeholder="Your Phone Number"
+                                                required
+                                            />
+                                        </div>
+                                        <div>
+                                            <label
+                                                htmlFor="email"
+                                                className="block text-lg font-medium text-gray-700"
+                                            >
+                                                Email
+                                            </label>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300"
+                                                placeholder="Your Email"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
 
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-600">City</label>
-                                    <input
-                                        type="text"
-                                        className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                        placeholder="City"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-600">
-                                        Postal Code
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                        placeholder="Postal Code"
-                                    />
-                                </div>
-                            </div>
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-600">City</label>
+                                            <input
+                                                type="text"
+                                                className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
+                                                placeholder="City"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-600">
+                                                Postal Code
+                                            </label>
+                                            <input
+                                                type="text"
+                                                className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
+                                                placeholder="Postal Code"
+                                            />
+                                        </div>
+                                    </div>
 
-                            <div>
-                                <label className="block text-sm font-medium text-gray-600">
-                                    Shipping Address
-                                </label>
-                                <input
-                                    type="text"
-                                    className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
-                                    placeholder="Enter your shipping address"
-                                />
-                            </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-600">
+                                            Shipping Address
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
+                                            placeholder="Enter your shipping address"
+                                        />
+                                    </div>
 
 
-                            <h2 className="text-2xl font-semibold mt-8 text-gray-700">
-                                <img src="https://i.pinimg.com/236x/f3/99/f4/f399f4c3a5662fcbf8a1a7e8fb69a181.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />
-                                Delivery Method</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                                <div className="flex items-center space-x-4">
-                                    <input type="radio" name="delivery" id="standard" className="h-5 w-5" />
-                                    <label htmlFor="standard" className="text-lg font-medium text-gray-700">
-                                        Standard Delivery (3-5 days)
-                                    </label>
-                                </div>
-                                <div className="flex items-center space-x-4">
-                                    <input type="radio" name="delivery" id="express" className="h-5 w-5" />
-                                    <label htmlFor="express" className="text-lg font-medium text-gray-700">
-                                        Express Delivery (1-2 days)
-                                    </label>
-                                </div>
-                            </div>
-                            <Script src='https://checkout.razorpay.com/v1/checkout.js' />
-                            <button onClick={handlePayment}
-                                disabled={isProcessing}
-                                className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg mt-6">
-                                {isProcessing ? <span className="text-gray-300">Processing...</span> : 'Proceed to Payment'}
+                                    <h2 className="text-2xl font-semibold mt-8 text-gray-700">
+                                        <img src="https://i.pinimg.com/236x/f3/99/f4/f399f4c3a5662fcbf8a1a7e8fb69a181.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />
+                                        Delivery Method</h2>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                                        <div className="flex items-center space-x-4">
+                                            <input type="radio" name="delivery" id="standard" className="h-5 w-5" />
+                                            <label htmlFor="standard" className="text-lg font-medium text-gray-700">
+                                                Standard Delivery (3-5 days)
+                                            </label>
+                                        </div>
+                                        <div className="flex items-center space-x-4">
+                                            <input type="radio" name="delivery" id="express" className="h-5 w-5" />
+                                            <label htmlFor="express" className="text-lg font-medium text-gray-700">
+                                                Express Delivery (1-2 days)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <Script src='https://checkout.razorpay.com/v1/checkout.js' />
+                                    <button onClick={handlePayment}
+                                        disabled={isProcessing}
+                                        className="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition-all ease-in-out duration-300 shadow-lg mt-6">
+                                        {isProcessing ? <span className="text-gray-300">Processing...</span> : 'Proceed to Payment'}
 
-                            </button>
-                        </form>
+                                    </button>
+                                </form>
+                            )}
+
+
+                        </Formik>
                     </div>
                 </div>
             </div>
