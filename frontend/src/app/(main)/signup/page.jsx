@@ -23,7 +23,6 @@ const Signup = () => {
                     headers: {
                         'Content-Type': 'application/json'
                     }
-
                 }
             );
             setSubmitting(false);
