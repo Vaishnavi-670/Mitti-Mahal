@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Add a new order
 router.post('/add', (req, res) => {
+    req.body.user = req.user._id;
     console.log(req.body);
     new OrderModel(req.body)
         .save()
