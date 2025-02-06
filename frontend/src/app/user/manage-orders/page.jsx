@@ -4,15 +4,20 @@ import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 const ManageOrdersPage = () => {
-  const { cart, calculateTotalPrice } = useCartContext();
+  const { cart,  } = useCartContext();
 
   const [orderList, setorderList] = useState([])
   const fetchProduct = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getall`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyuser`,
+    //   {
+    //   headers: {
+    //     'x-auth-token': localStorage.getItem('token'),
+    //   },
+    // }
+  );
     console.log(res.status);
     const data = await res.json();
     console.table(data);
-    setorderList(data);
   }
   useEffect(() => {
     fetchProduct();
