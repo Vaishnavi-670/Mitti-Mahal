@@ -1,7 +1,10 @@
 'use client'
+import useCartContext from '@/context/CartContext';
 import React, { useEffect, useState } from 'react';
 
 const ManageOrdersPage = () => {
+  const { cart, calculateTotalPrice } = useCartContext();
+
   const [orderList, setorderList] = useState([])
   const fetchProduct = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getall`);
@@ -31,28 +34,28 @@ const ManageOrdersPage = () => {
               </tr>
             </thead>
             <tbody>
-              {orderList.map((order) => (
-                <tr key={order._id} className="text-center hover:bg-gray-50 transition">
+              {cart.map((item) => (
+                <tr key={item._id} className="text-center hover:bg-gray-50 transition">
                   <td className="px-4 py-2 border">             
                          <img
-                    src={order.image}
-                    alt={order.name}
+                    src={item.image}
+                    alt={item.title}
                     className="w-20 h-20 rounded-md object-cover mx-auto"
                   />
                   </td>
-                  <td className="px-4 py-2 border">{order.name}</td>
-                  <td className="px-4 py-2 border">${order.price}</td>
-                  <td className="px-4 py-2 border">{order.qty}</td>
+                  <td className="px-4 py-2 border">{item.title}</td>
+                  <td className="px-4 py-2 border">${item.price}</td>
+                  <td className="px-4 py-2 border">{item.qty}</td>
                   <td className="px-4 py-2 border">
                     <span
-                      className={`px-3 py-1 rounded-md text-sm ${order.status === 'Delivered'
-                          ? 'bg-green-200 text-green-800'
-                          : order.status === 'In Transit'
+                      className={`px-3 py-1 rounded-md text-sm ${item.status === 'Delivered'
+                          ? 'bg-green-200  text-green-800'
+                          : item.status === 'In Transit'
                             ? 'bg-yellow-200 text-yellow-800'
                             : 'bg-blue-200 text-blue-800'
                         }`}
                     >
-                      {order.status}
+                      {item.status}
                     </span>
                   </td>
                   <td className="px-4 py-2 border">

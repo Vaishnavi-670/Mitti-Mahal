@@ -14,7 +14,7 @@ const CheckoutPage = () => {
             lastName: '',
             email: '',
             phone: '',
-            shippingaddress: '',
+            address: '',
             city: '',
             postalCode: ''
         },
@@ -42,17 +42,20 @@ const CheckoutPage = () => {
                 order_id: data.orderId,
                 handler: async (response) => {
                     console.log("Payment successful", response);
+                    console.log(checkoutForm.values);
+                    
                     // save new order
                     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/add`, {
                         method: "POST",
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'x-auth-token': JSON.parse(localStorage.getItem('user'))?.token
                         },
                         body: JSON.stringify({
                             products: cart,
                             amount: calculateTotalPrice(),
                             paymentId: response.razorpay_payment_id,
-                            shippingaddress: checkoutForm.values
+                            shippingAddress: checkoutForm.values
                         })
                     });
                     const data = await res.json();
@@ -135,7 +138,7 @@ const CheckoutPage = () => {
                             <img src="https://i.pinimg.com/236x/a7/5e/2f/a75e2f85004206915e5430120f9a65d2.jpg" alt="Standard" className="inline-block object-cover w-14 h-16 mr-2" />
 
                         </h2>
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={checkoutForm.handleSubmit}>
                             <h2 className="text-2xl font-semibold mt-8 text-gray-700">
                                 <img src="https://i.pinimg.com/236x/b4/92/94/b4929462e87b63e20537bc5ec702d0cc.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />
                                 Contact Information</h2>
@@ -154,7 +157,8 @@ const CheckoutPage = () => {
                                         className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                         placeholder="Your First Name"
                                         required
-                                        onChange={checkoutForm.handleChange} value={checkoutForm.values.firstName}
+                                        onChange={checkoutForm.handleChange}
+                                        value={checkoutForm.values.firstName}
 
                                     />
                                 </div>
@@ -186,7 +190,7 @@ const CheckoutPage = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        id="number"
+                                        id="phone"
                                         className="mt-2 p-4 w-full border  rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                         placeholder="Your Phone Number"
                                         required
@@ -216,9 +220,11 @@ const CheckoutPage = () => {
                                     <label className="block text-sm font-medium text-gray-600">City</label>
                                     <input
                                         type="text"
+                                        id='city'
                                         className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                         placeholder="City"
-                                        onChange={checkoutForm.handleChange} value={checkoutForm.values.city}
+                                        onChange={checkoutForm.handleChange}
+                                        value={checkoutForm.values.city}
                                     />
                                 </div>
                                 <div>
@@ -228,6 +234,7 @@ const CheckoutPage = () => {
                                     </label>
                                     <input
                                         type="text"
+                                        id='postalCode'
                                         className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                         placeholder="Postal Code"
                                         onChange={checkoutForm.handleChange} value={checkoutForm.values.postalCode}
@@ -241,9 +248,10 @@ const CheckoutPage = () => {
                                 </label>
                                 <input
                                     type="text"
+                                    id='address'
                                     className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                     placeholder="Enter your shipping address"
-                                    onChange={checkoutForm.handleChange} value={checkoutForm.values.shippingaddress}
+                                    onChange={checkoutForm.handleChange} value={checkoutForm.values.address}
                                 />
                             </div>
 

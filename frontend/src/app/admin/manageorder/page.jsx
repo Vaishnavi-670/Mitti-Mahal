@@ -1,27 +1,33 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ManageOrder = () => {
-  const [orders, setOrders] = useState([
-    { id: 1, customer: 'John Doe', product: 'Clay Pot', quantity: 2, price: 20, status: 'Delivered' },
-    { id: 2, customer: 'Jane Smith', product: 'Clay Vase', quantity: 1, price: 35, status: 'Pending' },
-    { id: 3, customer: 'Alex Johnson', product: 'Clay Plate Set', quantity: 3, price: 50, status: 'Shipped' },
-  ]);
+ const [orderList, setorderList] = useState([])
+   const fetchProduct = async () => {
+     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getall`);
+     console.log(res.status);
+     const data = await res.json();
+     console.table(data);
+     setorderList(data);
+   }
+   useEffect(() => {
+     fetchProduct();
+   }, []);
 
-  const [searchTerm, setSearchTerm] = useState('');
+//   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
+//   const handleSearch = (e) => {
+//     setSearchTerm(e.target.value);
+//   };
 
-  const filteredOrders = orders.filter(order =>
-    order.customer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    order.product.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+//   const filteredOrders = orders.filter(order =>
+//     order.customer.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//     order.product.toLowerCase().includes(searchTerm.toLowerCase())
+//   );
 
-  const handleDelete = (id) => {
-    setOrders(orders.filter(order => order.id !== id));
-  };
+//   const handleDelete = (id) => {
+//     setorderList(orders.filter(order => order.id !== id));
+//   };
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
@@ -31,8 +37,8 @@ const ManageOrder = () => {
         <input
           type="text"
           placeholder="Search Orders..."
-          value={searchTerm}
-          onChange={handleSearch}
+        //   value={searchTerm}
+        //   onChange={handleSearch}
           className="px-4 py-2 border rounded-lg w-full md:w-1/3 shadow-sm"
         />
       </div>
@@ -51,7 +57,7 @@ const ManageOrder = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredOrders.map(order => (
+            {orderList.map((order) => (
               <tr key={order.id} className="text-center hover:bg-gray-50 transition">
                 <td className="px-4 py-2 border">{order.id}</td>
                 <td className="px-4 py-2 border">{order.customer}</td>
@@ -67,7 +73,7 @@ const ManageOrder = () => {
                 </td>
                 <td className="px-4 py-2 border">
                   <button
-                    onClick={() => handleDelete(order.id)}
+                    // onClick={() => handleDelete(order.id)}
                     className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
                   >
                     Delete
