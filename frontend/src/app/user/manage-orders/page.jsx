@@ -1,6 +1,7 @@
 'use client'
 import useCartContext from '@/context/CartContext';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 const ManageOrdersPage = () => {
   const { cart, calculateTotalPrice } = useCartContext();
@@ -17,6 +18,25 @@ const ManageOrdersPage = () => {
     fetchProduct();
   }, []);
 
+  // const handleStatusChange = async (orderId, status) => {
+  //   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/update/${orderId}`, {
+  //     method: 'PUT',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ status }),
+  //   });
+  //   if (res.ok) {
+  //     fetchProduct();
+  //   }
+    const deleteProduct = async (id) => {
+      console.log(id);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/delete/` + id, { method: 'DELETE' })
+      if (res.status === 200) {
+        toast.success('Product Deleted Successfully', { variant: 'success' });
+        fetchProduct();
+      }
+    }
   return (
     <div className='flex flex-col items-center justify-center'>
       <div className="p-8 w-[90%] min-h-screen">
@@ -59,7 +79,9 @@ const ManageOrdersPage = () => {
                     </span>
                   </td>
                   <td className="px-4 py-2 border">
-                    <button className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">
+                    <button
+                    onClick={() => deleteProduct(item._id)}
+                     className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">
                       Cancel Order
                     </button>
                   </td>
