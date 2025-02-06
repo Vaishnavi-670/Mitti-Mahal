@@ -1,5 +1,6 @@
 'use client'
 import useCartContext from '@/context/CartContext';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
@@ -8,16 +9,16 @@ const ManageOrdersPage = () => {
 
   const [orderList, setorderList] = useState([])
   const fetchProduct = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyuser`,
-    //   {
-    //   headers: {
-    //     'x-auth-token': localStorage.getItem('token'),
-    //   },
-    // }
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyuser`,
+      {
+      headers: {
+        'x-auth-token': JSON.parse(localStorage.getItem('user'))?.token
+      },
+    }
   );
     console.log(res.status);
-    const data = await res.json();
-    console.table(data);
+    // const data = await res.json();
+    console.table(res.data);
   }
   useEffect(() => {
     fetchProduct();
@@ -46,6 +47,9 @@ const ManageOrdersPage = () => {
     <div className='flex flex-col items-center justify-center'>
       <div className="p-8 w-[90%] min-h-screen">
         <h2 className="text-3xl font-bold mb-6 text-center">Manage Orders</h2>
+        {cart.length === 0 ? (
+        <p>No orders found.</p>
+      ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
             <thead className="bg-gray-200">
@@ -95,6 +99,7 @@ const ManageOrdersPage = () => {
             </tbody>
           </table>
         </div>
+      )};
       </div>
     </div>
   );
