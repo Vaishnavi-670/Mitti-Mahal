@@ -43,6 +43,7 @@ const ManageOrdersPage = () => {
         fetchProduct();
       }
     }
+    
   return (
     <div className='flex flex-col items-center justify-center'>
       <div className="p-8 w-[90%] min-h-screen">
