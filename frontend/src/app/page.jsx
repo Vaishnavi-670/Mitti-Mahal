@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { IconHeart, IconUserCircle } from '@tabler/icons-react';
 
 const Home = () => {
-
   const scrollRef = useRef(null);
 
   useEffect(() => {
