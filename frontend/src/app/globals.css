@@ -8,7 +8,6 @@ img {
 	display: inline-block;
 }
 
-/* Main CSS */
 .grid-wrapper > div {
 	display: flex;
 	justify-content: center;
