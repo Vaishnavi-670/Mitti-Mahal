@@ -20,7 +20,6 @@ const Home = () => {
         smooth: true,
       },
     });
-
     return () => {
       if (scroll) scroll.destroy();
     };
