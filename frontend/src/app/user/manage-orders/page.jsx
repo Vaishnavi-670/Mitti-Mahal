@@ -24,17 +24,7 @@ const ManageOrdersPage = () => {
     fetchProduct();
   }, []);
 
-  // const handleStatusChange = async (orderId, status) => {
-  //   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/update/${orderId}`, {
-  //     method: 'PUT',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ status }),
-  //   });
-  //   if (res.ok) {
-  //     fetchProduct();
-  //   }
+  
     const deleteProduct = async (id) => {
       console.log(id);
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/delete/` + id, { method: 'DELETE' })
