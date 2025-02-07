@@ -8,7 +8,6 @@ import { IconHeart, IconUserCircle } from '@tabler/icons-react';
 
 const Home = () => {
   const scrollRef = useRef(null);
-
   useEffect(() => {
     const scroll = new LocomotiveScroll({
       el: scrollRef.current,
