@@ -27,8 +27,9 @@ const Home = () => {
     };
 
   }, []);
-  
+
   return (
+    
     <div data-scroll-container ref={scrollRef}>
       <nav className="bg-white px-6 mt-2 w-full">
       <div className="  flex items-center justify-between h-20">
