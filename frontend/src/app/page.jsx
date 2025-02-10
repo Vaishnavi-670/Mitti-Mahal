@@ -19,8 +19,9 @@ const Home = () => {
       smartphone: {
         smooth: true,
       },
+      
     });
-    
+
     return () => {
       if (scroll) scroll.destroy();
     };
