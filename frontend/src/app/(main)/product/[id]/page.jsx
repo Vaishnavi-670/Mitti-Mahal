@@ -18,7 +18,7 @@ function ProductPage() {
   const commentRef = useRef();
 
   const { addToCart, checkItemInCart } = useCartContext();
-
+  
   const { id } = useParams();
 
   const fetchProductId = async () => {
