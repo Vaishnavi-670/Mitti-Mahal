@@ -24,7 +24,6 @@ export const AdminProvider = ({ children }) => {
     setIsAdminLoggedIn(false);
     router.replace('/login');
   };
-
   return (
     <AdminContext.Provider value={{ isAdminLoggedIn,setIsAdminLoggedIn, adminLogout }}>
       {children}
