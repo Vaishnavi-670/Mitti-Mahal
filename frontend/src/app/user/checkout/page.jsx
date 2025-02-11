@@ -16,7 +16,9 @@ const CheckoutPage = () => {
             phone: '',
             address: '',
             city: '',
-            postalCode: ''
+            postalCode: '',
+            
+
         },
         onSubmit: (values) => {
             console.log(values);
@@ -35,7 +37,7 @@ const CheckoutPage = () => {
 
             const options = {
                 key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-                amount: calculateTotalPrice(),
+                amount: calculateTotalPrice()*100,
                 currency: "INR",
                 name: "Mitti Mahal",
                 description: "Product Purchase",
@@ -52,7 +54,7 @@ const CheckoutPage = () => {
                             'x-auth-token': JSON.parse(localStorage.getItem('user'))?.token
                         },
                         body: JSON.stringify({
-                            products: cart,
+                            items: cart,
                             amount: calculateTotalPrice(),
                             paymentId: response.razorpay_payment_id,
                             shippingAddress: checkoutForm.values
@@ -254,7 +256,18 @@ const CheckoutPage = () => {
                                     onChange={checkoutForm.handleChange} value={checkoutForm.values.address}
                                 />
                             </div>
-
+                            {/* <div>
+                                <label className="block text-sm font-medium text-gray-600">
+                                    totalAmont
+                                </label>
+                                <input
+                                    type="hidden"
+                                    id='address'
+                                    className="w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
+                                    onChange={checkoutForm.handleChange} value={checkoutForm.values.totalAmont}
+                                />
+                            </div> */}
+                           
 
                             <h2 className="text-2xl font-semibold mt-8 text-gray-700">
                                 <img src="https://i.pinimg.com/236x/f3/99/f4/f399f4c3a5662fcbf8a1a7e8fb69a181.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />

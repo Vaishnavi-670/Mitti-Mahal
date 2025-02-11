@@ -32,14 +32,14 @@ const orderSchema = new Schema({
     enum: ['Processing', 'Shipped', 'Delivered', 'Cancelled'],
     default: 'Processing',
   },
-  // totalAmount: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // createdAt: {
-  //   type: Date,
-  //   default: Date.now,
-  // },
+  totalAmount: {
+    type: Number,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 module.exports = model('orders', orderSchema);
