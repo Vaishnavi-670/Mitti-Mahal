@@ -16,11 +16,7 @@ export const AdminProvider = ({ children }) => {
     return savedAdminLoginState ? JSON.parse(savedAdminLoginState) : false;
   });
 
-  // useEffect(() => {
-  //   // Save admin login state to localStorage whenever it changes
-  //   localStorage.setItem('admin', JSON.stringify(isAdminLoggedIn));
-  // }, [isAdminLoggedIn]);
-
+ 
 
   const adminLogout = () => {
     document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
