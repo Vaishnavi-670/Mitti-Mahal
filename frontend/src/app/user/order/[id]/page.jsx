@@ -63,7 +63,7 @@ const OrderDetails = () => {
 
               </ul>
             </div>
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <label
                 htmlFor="quantity"
                 className="text-lg font-medium text-gray-800 mr-4"
@@ -77,7 +77,7 @@ const OrderDetails = () => {
                 onChange={handleQuantityChange}
                 className="w-16 text-center py-2 border border-gray-300 rounded-md"
               />
-            </div>           
+            </div>            */}
           </div>
           
         </div>
