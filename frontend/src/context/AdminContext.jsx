@@ -28,6 +28,5 @@ export const AdminProvider = ({ children }) => {
     </AdminContext.Provider>
   );
 };
-
 const useAdminContext = () => useContext(AdminContext);
 export default useAdminContext;
