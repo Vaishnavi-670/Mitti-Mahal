@@ -15,7 +15,6 @@ export const AdminProvider = ({ children }) => {
     const savedAdminLoginState = !ISSERVER ? localStorage.getItem('admin') : '';
     return savedAdminLoginState ? JSON.parse(savedAdminLoginState) : false;
   });
-
   const adminLogout = () => {
     document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     !ISSERVER ? localStorage.removeItem('admin') :'';
