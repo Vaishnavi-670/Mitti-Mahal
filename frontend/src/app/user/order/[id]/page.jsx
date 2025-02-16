@@ -38,7 +38,7 @@ const OrderDetails = () => {
                 {/* Product Details */}
                 <div className="flex-1 space-y-2">
                   <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
-                  <p className="text-sm text-gray-600">{item.description}</p>
+                  <p className="text-base text-gray-600">{item.description}</p>
   
                   {/* Price */}
                   <div className="flex justify-between items-center mt-3">
