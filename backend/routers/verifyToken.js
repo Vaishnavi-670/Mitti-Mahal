@@ -9,8 +9,11 @@ const verifyToken = (req, res, next) => {
     jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
 
         if(err){
+            console.log(err);
             res.status(403).json(err);
         }else{
+            console.log(payload);
+            
             req.user = payload;
             next();
         }

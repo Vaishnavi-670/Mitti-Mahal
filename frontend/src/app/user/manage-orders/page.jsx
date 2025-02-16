@@ -8,6 +8,10 @@ import toast from 'react-hot-toast';
 const ManageOrdersPage = () => {
   const { cart, } = useCartContext();
 
+  const calculateItemsTotal = (items) => {
+    return items.reduce((acc, item) => acc + item.price * item.qty, 0);
+  }
+
   const [orderList, setorderList] = useState([])
   const fetchProduct = async () => {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyuser`,
@@ -68,9 +72,9 @@ const ManageOrdersPage = () => {
                         className="w-20 h-20 rounded-md object-cover mx-auto"
                       />
                     </td>
-                    <td className="px-4 py-2 border">{order.title}</td>
-                    <td className="px-4 py-2 border">₹{order.price}</td>
-                    <td className="px-4 py-2 border">{order.qty}</td>
+                    <td className="px-4 py-2 border">{order.items.length}</td>
+                    <td className="px-4 py-2 border">₹{calculateItemsTotal(order.items)}</td>
+                    {/* <td className="px-4 py-2 border">{order.qty}</td> */}
                     <td className="px-4 py-2 border">
                       <span
                         className={`px-3 py-1 rounded-md text-sm ${order.status === 'Delivered'

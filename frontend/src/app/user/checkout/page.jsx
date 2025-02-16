@@ -55,9 +55,10 @@ const CheckoutPage = () => {
                         },
                         body: JSON.stringify({
                             items: cart,
-                            amount: calculateTotalPrice(),
+                            totalAmount: calculateTotalPrice(),
                             paymentId: response.razorpay_payment_id,
-                            shippingAddress: checkoutForm.values
+                            shippingAddress: checkoutForm.values,
+                            paymentStatus: "Paid"
                         })
                     });
                     const data = await res.json();

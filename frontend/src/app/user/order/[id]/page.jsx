@@ -3,8 +3,8 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 const OrderDetails = () => {
-    const [order, setorder] = useState([])
-    const { id } = useParams();
+  const [order, setorder] = useState(null)
+  const { id } = useParams();
 
   const fetchProductId = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyid/` + id);
@@ -20,81 +20,111 @@ const OrderDetails = () => {
     if (order !== null) {
       return (
         <>
-        <div className="max-w-6xl w-full flex h-[100vh] flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12">
-          <div className="w-full md:w-1/2 h-[90vh] flex justify-center">
-            <img
-              src={order.image}
-              alt="Handcrafted Clay Pot"
-              className="w-full h-full rounded-lg shadow-md"
-            />
-          </div>
-
-          <div className="w-full md:w-1/2">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">{order.title}</h1>
-            <p className="text-lg text-gray-600 mb-6">{order.description}</p>
-
-            <div className="mb-6">
-              <span className="text-2xl font-semibold text-red-900">₹{order.price}</span>
+          {order?.items.map((item) => (
+            <div
+              key={item._id}
+              className="mb-6 border-b pb-6 last:border-none last:mb-0 bg-white shadow-sm rounded-lg p-4"
+            >
+              <div className="flex items-start space-x-6">
+                {/* Product Image */}
+                <div className="w-32 h-32 flex-shrink-0">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover rounded-lg shadow"
+                  />
+                </div>
+  
+                {/* Product Details */}
+                <div className="flex-1 space-y-2">
+                  <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
+                  <p className="text-sm text-gray-600">{item.description}</p>
+  
+                  {/* Price */}
+                  <div className="flex justify-between items-center mt-3">
+                    <div>
+                      <h3 className="text-sm font-medium text-gray-500">Price</h3>
+                      <p className="text-lg font-semibold text-gray-800">₹{item.price}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div className="mb-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">Product Features:</h2>
-              <ul className="list-disc list-inside text-gray-600 space-y-2">
-                <li>100% natural clay</li>
-                <li>Handcrafted by local artisans</li>
-                <li>Eco-friendly and sustainable</li>
-                <li>Perfect for indoor and outdoor use</li>
-                <li>Available in multiple sizes</li>
-              </ul>
-            </div>
-
-            <div className="mb-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">Specifications:</h2>
-              <ul className="text-gray-600 space-y-2">
-                <li>
-                  <strong>Dimensions:</strong> 10 x 8 inches
-                </li>
-                <li>
-                  <strong>Weight:</strong> 1.5 kg
-                </li>
-                <li>
-                  <strong>Material:</strong> Natural clay
-                </li>
-
-              </ul>
-            </div>
-            {/* <div className="mb-6">
-              <label
-                htmlFor="quantity"
-                className="text-lg font-medium text-gray-800 mr-4"
-              >
-                Quantity:
-              </label>
-              <input
-                type="number"
-                id="quantity"
-                value={quantity}
-                onChange={handleQuantityChange}
-                className="w-16 text-center py-2 border border-gray-300 rounded-md"
-              />
-            </div>            */}
-          </div>
-          
-        </div>
-        
+          ))}
         </>
       );
     } else {
-      return <h2>Loading ... </h2>;
+      return <h2 className="text-center text-xl font-semibold text-gray-600">Loading ...</h2>;
     }
   };
-
-    
-      return (
-        <div className="bg-white min-h-screen mt-10 flex h-[100vh] items-center justify-center p-6">
-      {showProductDetails()}
+  
+  return (
+    <div className=" min-h-screen  flex flex-col items-center">
+      {/* Order Details */}
+      <div className="w-full max-w-7xl p-6 bg-white shadow-md rounded-lg">
+        <h2 className="text-2xl text-center font-bold text-gray-800 border-b pb-4 mb-6">
+          Order Details
+        </h2>
+        {showProductDetails()}
+      </div>
+  
+      {/* Order Summary Section */}
+      <div className="w-full max-w-4xl mt-8">
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-bold text-gray-800 border-b pb-4 mb-6">
+            Order Summary
+          </h2>
+  
+          <div className="space-y-6">
+            {/* Total Amount */}
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-medium text-gray-700">Total Amount:</h3>
+              <p className="text-lg font-semibold text-green-600">₹{order?.totalAmount}</p>
+            </div>
+  
+            {/* Order Status */}
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-medium text-gray-700">Order Status:</h3>
+              <span className={`px-3 py-1 text-lg font-semibold rounded-full 
+                ${order?.orderStatus === "Delivered" ? "bg-green-200 text-green-800" :
+                  order?.orderStatus === "Processing" ? "bg-yellow-200 text-yellow-800" :
+                    "bg-red-200 text-red-800"}`}>
+                {order?.orderStatus}
+              </span>
+            </div>
+  
+            {/* Payment Status */}
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-medium text-gray-700">Payment Status:</h3>
+              <span className={`px-3 py-1 text-lg font-semibold rounded-full 
+                ${order?.paymentStatus === "Paid" ? "bg-green-200 text-green-800" : "bg-red-200 text-red-800"}`}>
+                {order?.paymentStatus}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      {/* Shipping Address Section */}
+      <div className="w-full max-w-4xl mt-8">
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-bold text-gray-800 border-b pb-4 mb-6">
+            Shipping Address
+          </h2>
+  
+          <div className="text-gray-700 space-y-3">
+            {/* <p className="text-lg"><span className="font-semibold">Name:</span> {order?.shippingAddress?.name}</p> */}
+            <p className="text-lg"><span className="font-semibold">Address:</span> {order?.shippingAddress?.address}</p>
+            <p className="text-lg"><span className="font-semibold">City:</span> {order?.shippingAddress?.city}</p>
+            {/* <p className="text-lg"><span className="font-semibold">State:</span> {order?.shippingAddress?.state}</p> */}
+            <p className="text-lg"><span className="font-semibold">Pincode:</span> {order?.shippingAddress?.postalCode}</p>
+            {/* <p className="text-lg"><span className="font-semibold">Phone:</span> {order?.shippingAddress?.phone}</p> */}
+          </div>
+        </div>
+      </div>
     </div>
-        );
+  );
+  
 }
 
 
