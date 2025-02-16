@@ -1,51 +1,45 @@
 'use client';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+// import { toast } from 'react-toastify';
 
 const ManageOrder = () => {
   const calculateItemsTotal = (items) => {
     return items.reduce((acc, item) => acc + item.price * item.qty, 0);
-  }
- const [orderList, setorderList] = useState([])
-   const fetchProduct = async () => {
-     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getall`);
-     console.log(res.status);
-     const data = await res.json();
-     console.table(data);
-     setorderList(data);
-   }
-   useEffect(() => {
-     fetchProduct();
-   }, []);
-   const cancelOrder = async (id) => {
-    console.log(id);
+  };
+
+  const [orderList, setOrderList] = useState([]);
+
+  const fetchOrders = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getall`);
+    console.log(res.status);
+    const data = await res.json();
+    console.table(data);
+    setOrderList(data);
+  };
+
+  useEffect(() => {
+    fetchOrders();
+  }, []);
+
+  // Function to update the order status
+  const updateOrderStatus = async (id, status) => {
+    console.log(`Updating order ${id} to status: ${status}`);
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/update/` + id, {
-      method: 'PUT', body:
-        JSON.stringify({ orderStatus: 'Cancelled' })
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderStatus: status }),
     });
+
     if (res.status === 200) {
-      toast.success('Product Deleted Successfully', { variant: 'success' });
-      fetchProduct();
+      toast.success('Order Status Updated Successfully', { variant: 'success' });
+      fetchOrders();
     }
-  }
-
-//   const [searchTerm, setSearchTerm] = useState('');
-
-//   const handleSearch = (e) => {
-//     setSearchTerm(e.target.value);
-//   };
-
-//   const filteredOrders = orders.filter(order =>
-//     order.customer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-//     order.product.toLowerCase().includes(searchTerm.toLowerCase())
-//   );
-
-//   const handleDelete = (id) => {
-//     setorderList(orders.filter(order => order.id !== id));
-//   };
+  };
 
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className="flex flex-col items-center justify-center">
       <div className="p-8 w-[90%] min-h-screen">
         <h2 className="text-3xl font-bold mb-6 text-center">Manage Orders</h2>
         {orderList.length === 0 ? (
@@ -55,54 +49,61 @@ const ManageOrder = () => {
             <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
               <thead className="bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 border">Product</th>
-                  <th className="px-4 py-2 border">No.of Products</th>
-                  <th className="px-4 py-2 border">Price</th>
-                  <th className="px-4 py-2 border">Quantity</th>
+                  {/* <th className="px-4 py-2 border">Product Image</th> */}
+                  <th className="px-4 py-2 border">No. of Products</th>
+                  <th className="px-4 py-2 border">Total Price</th>
                   <th className="px-4 py-2 border">Status</th>
-                  {/* <th className="px-4 py-2 border">Actions</th> */}
+                  <th className="px-4 py-2 border">Actions</th>
                   <th className="px-4 py-2 border">View Details</th>
                 </tr>
               </thead>
               <tbody>
                 {orderList.map((order) => (
                   <tr key={order._id} className="text-center hover:bg-gray-50 transition">
-                    <td className="px-4 py-2 border">
+                    {/* <td className="px-4 py-2 border">
                       <img
                         src={order.image}
                         alt={order.title}
                         className="w-20 h-20 rounded-md object-cover mx-auto"
                       />
-                    </td>
+                    </td> */}
                     <td className="px-4 py-2 border">{order.items.length}</td>
                     <td className="px-4 py-2 border">₹{calculateItemsTotal(order.items)}</td>
-                    {/* <td className="px-4 py-2 border">{order.qty}</td> */}
+                    
+                    {/* Order Status Dropdown */}
                     <td className="px-4 py-2 border">
-                      <span
-                        className={`px-3 py-1 rounded-md text-sm ${order.status === 'Delivered'
-                          ? 'bg-green-200  text-green-800'
-                          : order.status === 'In Transit'
-                            ? 'bg-yellow-200 text-yellow-800'
-                            : 'bg-blue-200 text-blue-800'
-                          }`}
+                      <select
+                        value={order.orderStatus}
+                        onChange={(e) => updateOrderStatus(order._id, e.target.value)}
+                        className="px-3 py-2 border rounded-lg text-gray-700 font-medium bg-gray-100 focus:outline-none"
                       >
-                        {order.status}
-                      </span>
-
+                        <option value="Processing">Processing</option>
+                        <option value="Shipped">Shipped</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="Cancelled">Cancelled</option>
+                      </select>
                     </td>
+
+                    {/* Cancel Order Button */}
                     <td className="px-4 py-2 border">
                       <button
-                        onClick={() => cancelOrder(order._id)}
-                        className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">
+                        onClick={() => updateOrderStatus(order._id, "Cancelled")}
+                        className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+                      >
                         Cancel Order
                       </button>
                     </td>
-                    <td>
-                      <Link href={`/user/order/${order._id}`}
-                        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+
+                    {/* View Details Button */}
+                    <td className="px-4 py-2 border">
+                      <Link
+                        href={`/user/order/${order._id}`}
+                        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                      >
                         View Details
                       </Link>
                     </td>
+                    
                   </tr>
                 ))}
               </tbody>
