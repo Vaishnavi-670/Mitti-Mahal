@@ -3,14 +3,12 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 // import { toast } from 'react-toastify';
-
 const ManageOrder = () => {
   const calculateItemsTotal = (items) => {
     return items.reduce((acc, item) => acc + item.price * item.qty, 0);
   };
 
   const [orderList, setOrderList] = useState([]);
-
   const fetchOrders = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getall`);
     console.log(res.status);
