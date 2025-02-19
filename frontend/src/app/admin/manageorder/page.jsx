@@ -16,7 +16,6 @@ const ManageOrder = () => {
     console.table(data);
     setOrderList(data);
   };
-
   useEffect(() => {
     fetchOrders();
   }, []);
