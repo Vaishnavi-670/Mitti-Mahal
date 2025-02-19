@@ -18,7 +18,6 @@ const ManageOrder = () => {
   useEffect(() => {
     fetchOrders();
   }, []);
-
   // Function to update the order status
   const updateOrderStatus = async (id, status) => {
     console.log(`Updating order ${id} to status: ${status}`);
