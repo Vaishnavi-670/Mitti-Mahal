@@ -6,7 +6,6 @@ const ISSERVER = typeof window === undefined;
 
 const AppContext = createContext();
 
-
 export const AppProvider = ({ children }) => {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
