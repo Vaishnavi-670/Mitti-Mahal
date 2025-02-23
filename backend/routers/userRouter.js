@@ -65,8 +65,8 @@ router.get('/getbyemail/:email', (req, res) => {
         });
 })
 
-router.put('/update/:id', (req, res) => {
-    Model.findByIdAndUpdate(req.params.id, req.body, { new: true }) //new true value is used to get the updated data from the database
+router.put('/update', verifyToken, (req, res) => {
+    Model.findByIdAndUpdate(req.user._id, req.body, { new: true }) //new true value is used to get the updated data from the database
         .then((result) => {
             res.status(200).json(result);
         })

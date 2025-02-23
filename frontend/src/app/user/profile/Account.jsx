@@ -25,10 +25,15 @@ const Account = () => {
     useEffect(() => {
         fetchUserData();
     }, []);
+
     const submitForm = (values) => {
         console.log(values);
 
-        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update/` + id, values)
+        axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update/`, values, {
+            headers: {
+                'x-auth-token': token
+            }
+        })
             .then((result) => {
                 router.push('/manageuser');
                 toast.success('User updated successfully');
@@ -47,7 +52,7 @@ const Account = () => {
                         <Formik initialValues={userData} onSubmit={submitForm} >
                             {
                                 (updateForm) => {
-                                    return <form className="space-y-6">
+                                    return <form className="space-y-6" onSubmit={updateForm.handleSubmit}>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div>
                                                 <label htmlFor="fullName" className="block text-lg font-medium text-gray-700">
@@ -86,12 +91,12 @@ const Account = () => {
                                                 </label>
                                                 <input
                                                     type="text"
-                                                    id="phoneNumber"
+                                                    id="contact"
                                                     className="mt-2 p-4 w-full border rounded-lg shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-300 transition ease-in-out"
                                                     placeholder="Your Phone Number"
                                                     required
                                                     onChange={updateForm.handleChange}
-                                                    value={updateForm.values.phoneNumber}
+                                                    value={updateForm.values.contact}
                                                 />
                                             </div>
                                             <div>
