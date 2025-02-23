@@ -8,7 +8,6 @@ const AppContext = createContext();
 
 
 export const AppProvider = ({ children }) => {
-
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     // Load login state from localStorage
