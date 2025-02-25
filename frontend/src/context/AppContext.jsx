@@ -21,7 +21,6 @@ export const AppProvider = ({ children }) => {
     setIsLoggedIn([]);
     router.replace('/login');
   };
-
   return (
     <AppContext.Provider value={{ isLoggedIn,setIsLoggedIn, logout }}>
       {children}
