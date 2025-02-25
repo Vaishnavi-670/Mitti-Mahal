@@ -16,7 +16,6 @@ export const AppProvider = ({ children }) => {
     !ISSERVER ? localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn)) :'';
   }, [isLoggedIn]);
 
-
   const logout = () => { 
     document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     localStorage.removeItem('user');
