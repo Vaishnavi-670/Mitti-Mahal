@@ -12,7 +12,7 @@ const ISSERVER = typeof window === undefined;
 
 const UserProfile = () => {
   const [activeSection, setActiveSection] = useState('wallet');
-  const [userData, setuserData] = useState(null)
+  const [userData, setuserData] = useState([])
   const token = !ISSERVER ? localStorage.getItem('token') : '';
 
   const fetchUserData = async () => {
@@ -65,11 +65,11 @@ const UserProfile = () => {
       <div className="w-1/4 bg-white p-6 shadow-2xl shadow-slate-300  transform transition-transform hover:scale-105">
         <div className="flex flex-col items-center">
           <img
-            src="https://i.pinimg.com/236x/fa/84/12/fa8412953fc0e81715ab628daf7e5947.jpg"
+            src={userData.avatar}
             alt="User"
             className="w-28 h-28   rounded-full object-cover mb-4"
           />
-          <h2 className="text-xl font-semibold"></h2>
+          <h2 className="text-xl font-semibold">{userData.name}</h2>
         </div>
         <div className="mt-4">
           {['wallet', 'wishlist', 'orders', 'account', 'settings'].map((section) => (
