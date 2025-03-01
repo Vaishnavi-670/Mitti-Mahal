@@ -16,18 +16,18 @@ const UserProfile = () => {
   const token = !ISSERVER ? localStorage.getItem('token') : '';
 
   const fetchUserData = async () => {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getuser`, {
-          headers: {
-              'x-auth-token': token
-          }
-      });
-      const data = res.data;
-      console.log(data);
-      setuserData(data);
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getuser`, {
+      headers: {
+        'x-auth-token': token
+      }
+    });
+    const data = res.data;
+    console.log(data);
+    setuserData(data);
 
   }
   useEffect(() => {
-      fetchUserData();
+    fetchUserData();
   }, []);
 
   const renderSectionContent = () => {
@@ -59,6 +59,29 @@ const UserProfile = () => {
     }
   };
 
+  const uploadToCloud = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('upload_preset', 'mittimahal');
+    fd.append('cloud_name', 'df7ifncgy');
+
+    axios.post('https://api.cloudinary.com/v1_1/df7ifncgy/image/upload',
+        fd,
+        { headers: { 'Content-Type': 'multipart/form-data' } }
+    )
+        .then((response) => {
+            console.log(response.data);
+            userData.setFieldValue('image', response.data.url);
+
+        }).catch((err) => {
+            console.log(err);
+        });
+}
+
+
   return (
     <div className="min-h-screen bg-gray-100 flex">
       {/* Left Sidebar */}
@@ -70,6 +93,7 @@ const UserProfile = () => {
             className="w-28 h-28   rounded-full object-cover mb-4"
           />
           <h2 className="text-xl font-semibold">{userData.name}</h2>
+          <input type="file" accept="image/*" className="mt-2" onChange={uploadToCloud}  />
         </div>
         <div className="mt-4">
           {['wallet', 'wishlist', 'orders', 'account', 'settings'].map((section) => (
