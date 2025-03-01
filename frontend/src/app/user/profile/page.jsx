@@ -1,15 +1,34 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Wishlist from '../wishlist/page';
 import Wallet from './Wallet';
 import Orders from './Orders';
 import Account from './Account';
 import Settings from './Settings';
+import axios from 'axios';
+const ISSERVER = typeof window === undefined;
 
 
 
 const UserProfile = () => {
   const [activeSection, setActiveSection] = useState('wallet');
+  const [userData, setuserData] = useState(null)
+  const token = !ISSERVER ? localStorage.getItem('token') : '';
+
+  const fetchUserData = async () => {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getuser`, {
+          headers: {
+              'x-auth-token': token
+          }
+      });
+      const data = res.data;
+      console.log(data);
+      setuserData(data);
+
+  }
+  useEffect(() => {
+      fetchUserData();
+  }, []);
 
   const renderSectionContent = () => {
     switch (activeSection) {
@@ -50,7 +69,7 @@ const UserProfile = () => {
             alt="User"
             className="w-28 h-28   rounded-full object-cover mb-4"
           />
-          <h2 className="text-xl font-semibold">John Doe</h2>
+          <h2 className="text-xl font-semibold"></h2>
         </div>
         <div className="mt-4">
           {['wallet', 'wishlist', 'orders', 'account', 'settings'].map((section) => (

@@ -62,7 +62,7 @@ const ListingItems = () => {
                     className="rounded-lg w-full h-64 object-cover mb-4"
                 />
                 <h2 className="text-xl font-semibold text-gray-800 mb-2">{product.title}</h2>
-                <p className="text-gray-600 mb-4">{product.description}</p>
+                <p className="text-gray-600 mb-4">{product.description.slice(0, 100)} ...</p>
                 <div className="mt-4 flex mb-1 justify-between items-center">
                     <span className="text-lg font-semibold text-gray-900">${product.price}</span>
                     <button   

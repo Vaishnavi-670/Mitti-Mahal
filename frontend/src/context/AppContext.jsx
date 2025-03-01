@@ -11,8 +11,7 @@ export const AppProvider = ({ children }) => {
     const savedLoginState = !ISSERVER ? localStorage.getItem('user') :'';
     return savedLoginState ? JSON.parse(savedLoginState) : false;
   });
-  useEffect(() => { 
-    
+  useEffect(() => {    
     // Save login state to localStorage whenever it changes
     !ISSERVER ? localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn)) :'';
   }, [isLoggedIn]);

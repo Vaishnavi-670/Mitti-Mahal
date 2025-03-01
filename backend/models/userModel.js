@@ -7,6 +7,7 @@ const mySchema = new Schema({
     contact: String,
     city: { type: String, default: 'unknown' },
     role: { type: String, default: 'user' },
+    avatar: {type : String},
     createdAt: { type: Date, default: Date.now }
 });
 
