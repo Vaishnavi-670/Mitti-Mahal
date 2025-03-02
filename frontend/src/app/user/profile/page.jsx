@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Wishlist from '../wishlist/page';
-import Wallet from './Wallet';
 import Orders from './Orders';
 import Account from './Account';
 import Settings from './Settings';
@@ -29,13 +28,25 @@ const UserProfile = () => {
   useEffect(() => {
     fetchUserData();
   }, []);
+//   const submitForm = (values) => {
+//     console.log(values);
+
+//     axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update/`, values, {
+//         headers: {
+//             'x-auth-token': token
+//         }
+//     })
+//         .then((result) => {
+//             router.push('/manageuser');
+//             toast.success('User updated successfully');
+//         }).catch((err) => {
+//             console.log(err);
+//             toast.error(err?.response?.data?.message || 'Something went wrong');
+//         });
+// }
 
   const renderSectionContent = () => {
-    switch (activeSection) {
-      case 'wallet':
-        return (
-          <Wallet />
-        );
+    switch (activeSection) {   
       case 'wishlist':
         return (
           <Wishlist />
@@ -96,7 +107,7 @@ const UserProfile = () => {
           <input type="file" accept="image/*" className="mt-2" onChange={uploadToCloud}  />
         </div>
         <div className="mt-4">
-          {['wallet', 'wishlist', 'orders', 'account', 'settings'].map((section) => (
+          {[ 'wishlist', 'orders', 'account', 'settings'].map((section) => (
             <button
               key={section}
               className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === section ? 'bg-red-900 text-white' : 'text-gray-700 hover:bg-gray-200'

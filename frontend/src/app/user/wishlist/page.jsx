@@ -22,7 +22,7 @@ const Wishlist = () => {
               className="w-full h-40 sm:h-48 object-cover rounded-lg mb-4"
             />
             <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
-            <p className="text-gray-600">{product.description}</p>
+            <p className="text-gray-600">{product.description.slice(0, 100)} ...</p>
 
           </div>
         ))}
