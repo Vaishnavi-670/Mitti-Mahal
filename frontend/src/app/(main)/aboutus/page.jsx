@@ -159,7 +159,6 @@ const AboutUs = () => {
             Continue Shopping
           </a>
         </div>
-
       </div>
     </div>
   );
