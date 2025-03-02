@@ -1,5 +1,6 @@
 'use client';
 import useCartContext from '@/context/CartContext';
+import { IconGardenCart } from '@tabler/icons-react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -30,12 +31,10 @@ const Navbar = () => {
         <div className="space-x-8 text-lg text-gray-700">
           <Link href="/aboutus" className="hover:text-gray-900">About Us</Link>
           <Link href="/contact" className="hover:text-gray-900">Contact</Link>
-          <Link href="/giftCard" className="hover:text-gray-900">Gift Card</Link>
           <Link href="/faq" className="hover:text-gray-900">FAQ</Link>
-          <Link href="/customerhelp" className="hover:text-gray-900">Customer Help</Link>
           <Link href="/features" className="hover:text-gray-900">Features</Link>
           <Link href="/user/cart" className="hover:text-gray-900">
-            Cart
+            <IconGardenCart className='inline-flex'/>
             ({cart.length}) </Link>
         </div>
 

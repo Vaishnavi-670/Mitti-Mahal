@@ -1,6 +1,6 @@
 'use client';
 import useWishlistContext from '@/context/WishlistContext';
-import { IconSearch } from '@tabler/icons-react';
+import { IconHeart, IconHeartFilled, IconSearch } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react'
@@ -72,7 +72,7 @@ const ListingItems = () => {
                         }}
                         className='px-4 py-2 rounded-full bg-gray-200 text-black transition-all ease-in disabled:bg-red-500 disabled:text-white '
                     >
-                        {checkItemInWishlist(product._id) ? 'Item already in wishlist' : 'Add to Wishlist'}
+                        {checkItemInWishlist(product._id) ? <IconHeartFilled/> :<IconHeart/>}
                     </button>
                 </div>
                 <Link
