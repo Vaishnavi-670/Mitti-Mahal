@@ -161,7 +161,6 @@ const AboutUs = () => {
           </a>
         </div>
 
-
       </div>
     </div>
   );
