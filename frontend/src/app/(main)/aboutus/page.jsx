@@ -147,7 +147,6 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-
         <div className="bg-gray-800 text-white py-16 px-8 md:px-16 lg:px-32 text-center rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold mb-4">Thank You for Your Support!</h2>
           <p className="text-lg mb-8">
