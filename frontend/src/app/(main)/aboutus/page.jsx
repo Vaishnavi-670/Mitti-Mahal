@@ -80,7 +80,6 @@ const AboutUs = () => {
               controls
               className="rounded-lg  shadow-lg w-full"
             >
-
               Your browser does not support the video tag.
             </video>
           </div>
