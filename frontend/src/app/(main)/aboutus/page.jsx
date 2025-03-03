@@ -96,7 +96,6 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-
         {/* Customer Reviews Section */}
         <div className="bg-gray-50 py-16 px-8 md:px-16 lg:px-32 text-center rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold text-gray-800 mb-8">What Our Customers Say</h2>
