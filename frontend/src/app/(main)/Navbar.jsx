@@ -28,7 +28,10 @@ const Navbar = () => {
 
         {/* Logo Section */}
         <div className="flex justify-center items-center">
-          <img className='h-[200px] w-[200px]' src="/Logo.jpg"></img>
+          <Link href="/">
+            <img className='h-[200px] w-[200px]' src="/Logo.jpg"></img>
+
+          </Link>
         </div>
         <button onClick={toggleMenu} className="md:hidden text-gray-700 text-sm md:text-base">
           ☰
@@ -42,7 +45,7 @@ const Navbar = () => {
           <Link href="/features" className="hover:text-gray-900 block py-2 px-4 md:inline">Features</Link>
           <Link href="/user/cart" className="hover:text-gray-900 block py-2 px-4 md:inline">
             <IconGardenCart className='inline-flex' />
-             </Link>
+          </Link>
         </div>
 
         {/* Login/Signup Section */}

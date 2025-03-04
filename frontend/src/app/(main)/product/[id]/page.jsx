@@ -32,6 +32,14 @@ function ProductPage() {
     fetchReview();
   }, []);
 
+  const getAverageRating = () => {
+    let sum = 0;
+    reviewList.forEach(review => {
+      sum += review.rating;
+    });
+    return sum / reviewList.length;
+  }
+
   const fetchReview = async () => {
     const res = await fetch('http://localhost:5000/review/getbyproduct/' + id);
     console.log(res.status);
@@ -133,6 +141,7 @@ function ProductPage() {
               </div>
 
               <div className="mb-6 items-center ">
+                {getAverageRating()}
 
                 <StarRatings
                   onClick={handleRating}
