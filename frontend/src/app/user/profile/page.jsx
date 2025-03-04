@@ -5,6 +5,7 @@ import Orders from './Orders';
 import Account from './Account';
 import Settings from './Settings';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 const ISSERVER = typeof window === undefined;
 
 
@@ -23,30 +24,32 @@ const UserProfile = () => {
     const data = res.data;
     console.log(data);
     setuserData(data);
+  };
 
-  }
   useEffect(() => {
     fetchUserData();
   }, []);
-//   const submitForm = (values) => {
-//     console.log(values);
 
-//     axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update/`, values, {
-//         headers: {
-//             'x-auth-token': token
-//         }
-//     })
-//         .then((result) => {
-//             router.push('/manageuser');
-//             toast.success('User updated successfully');
-//         }).catch((err) => {
-//             console.log(err);
-//             toast.error(err?.response?.data?.message || 'Something went wrong');
-//         });
-// }
+  const updateProfile = (values) => {
+    console.log(values);
+
+    axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/update/`, values, {
+      headers: {
+        'x-auth-token': token
+      }
+    })
+      .then((result) => {
+        // router.push('/manageuser');
+        toast.success('User updated successfully');
+        setuserData(values);
+      }).catch((err) => {
+        console.log(err);
+        toast.error(err?.response?.data?.message || 'Something went wrong');
+      });
+  }
 
   const renderSectionContent = () => {
-    switch (activeSection) {   
+    switch (activeSection) {
       case 'wishlist':
         return (
           <Wishlist />
@@ -80,17 +83,18 @@ const UserProfile = () => {
     fd.append('cloud_name', 'df7ifncgy');
 
     axios.post('https://api.cloudinary.com/v1_1/df7ifncgy/image/upload',
-        fd,
-        { headers: { 'Content-Type': 'multipart/form-data' } }
+      fd,
+      { headers: { 'Content-Type': 'multipart/form-data' } }
     )
-        .then((response) => {
-            console.log(response.data);
-            userData.setFieldValue('image', response.data.url);
+      .then((response) => {
+        console.log(response.data);
+        updateProfile({ ...userData, avatar: response.data.url });
+        // userData.setFieldValue('image', response.data.url);
 
-        }).catch((err) => {
-            console.log(err);
-        });
-}
+      }).catch((err) => {
+        console.log(err);
+      });
+  }
 
 
   return (
@@ -104,10 +108,10 @@ const UserProfile = () => {
             className="w-28 h-28   rounded-full object-cover mb-4"
           />
           <h2 className="text-xl font-semibold">{userData.name}</h2>
-          <input type="file" accept="image/*" className="mt-2" onChange={uploadToCloud}  />
+          <input type="file" accept="image/*" className="mt-2" onChange={uploadToCloud} />
         </div>
         <div className="mt-4">
-          {[ 'wishlist', 'orders', 'account', 'settings'].map((section) => (
+          {['wishlist', 'orders', 'account', 'settings'].map((section) => (
             <button
               key={section}
               className={`w-full text-left p-3 mb-4 rounded-lg ${activeSection === section ? 'bg-red-900 text-white' : 'text-gray-700 hover:bg-gray-200'
