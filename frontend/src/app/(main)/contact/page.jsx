@@ -3,6 +3,8 @@ import { IconBrandFacebook, IconBrandInstagram, IconBrandTwitter, IconPhoneCall 
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useRef } from 'react';
+const ISSERVER = typeof window === undefined;
+
 
 
 const Contact = () => {
@@ -16,7 +18,7 @@ const Contact = () => {
           rating: rating
         }, {
           headers: {
-            'x-auth-token': localStorage.getItem('token')
+            'x-auth-token': !ISSERVER && localStorage.getItem('token')
           }
         })
           .then((result) => {

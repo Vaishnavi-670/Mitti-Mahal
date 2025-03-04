@@ -4,6 +4,8 @@ import axios from 'axios';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+const ISSERVER = typeof window === undefined;
+
 
 const ManageOrdersPage = () => {
   const { cart, } = useCartContext();
@@ -17,7 +19,7 @@ const ManageOrdersPage = () => {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyuser`,
       {
         headers: {
-          'x-auth-token': JSON.parse(localStorage.getItem('user'))?.token
+          'x-auth-token': JSON.parse(!ISSERVER && localStorage.getItem('user'))?.token
         },
       }
     );

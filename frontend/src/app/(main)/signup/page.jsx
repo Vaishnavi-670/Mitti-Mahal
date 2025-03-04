@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { enqueueSnackbar } from 'notistack'
 import React from 'react'
 
+const ISSERVER = typeof window === undefined;
+
 const Signup = () => {
 
     const signupform = useFormik({
@@ -30,7 +32,7 @@ const Signup = () => {
                 enqueueSnackbar('Signed Up Successfully', { variant: 'success' });
 
                 const data = await res.json();
-                localStorage.setItem('user', JSON.stringify(data));
+                !ISSERVER && localStorage.setItem('user', JSON.stringify(data));
 
             }
 

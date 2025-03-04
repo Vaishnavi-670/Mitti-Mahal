@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import useCartContext from '@/context/CartContext';
 import { Formik, useFormik } from 'formik';
+const ISSERVER = typeof window === undefined;
+
 
 
 const CheckoutPage = () => {
@@ -51,7 +53,7 @@ const CheckoutPage = () => {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json',
-                            'x-auth-token': JSON.parse(localStorage.getItem('user'))?.token
+                            'x-auth-token': JSON.parse(!ISSERVER && localStorage.getItem('user'))?.token
                         },
                         body: JSON.stringify({
                             items: cart,
