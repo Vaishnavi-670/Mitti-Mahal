@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import React from 'react'
 import toast from 'react-hot-toast';
 
+const ISSERVER = typeof window === undefined;
+
 const Login = () => {
 
     const router = useRouter();
@@ -21,13 +23,13 @@ const Login = () => {
                 .then((result) => {
                     toast.success('  Successful');
                     console.log(result.data);
-                    localStorage.setItem('token', result.data.token);
+                    !ISSERVER && localStorage.setItem('token', result.data.token);
                     document.cookie = 'token=' + result.data.token;
                     if (result.data.role === 'admin') {
-                        localStorage.setItem('admin', JSON.stringify(result.data));
+                        !ISSERVER && localStorage.setItem('admin', JSON.stringify(result.data));
                         router.push('/admin/addProduct');
                     } else {
-                        localStorage.setItem('user', JSON.stringify(result.data));
+                        !ISSERVER && localStorage.setItem('user', JSON.stringify(result.data));
                         router.push('/');
                     }
                 }).catch((err) => {
