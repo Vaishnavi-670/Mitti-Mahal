@@ -346,9 +346,7 @@ const Home = () => {
                 <li className="mt-2">
                   <Link href="/contact" className="text-lg ">Contact</Link>
                 </li>
-                <li className="mt-2">
-                  <Link href="/giftCard" className="text-lg ">Gift Cards</Link>
-                </li>
+                
                 <li className="mt-2">
                   <Link href="/features" className="text-lg ">Features</Link>
                 </li>
@@ -358,15 +356,15 @@ const Home = () => {
                   <h3 className="text-3xl font-bold">Privacy</h3>
                 </li>
                 <li className="mt-4">
-                  <Link href="#" className="text-lg ">Privacy Policy</Link>
+                  <Link href="privacyPolicy" className="text-lg ">Privacy Policy</Link>
                 </li>
                 <li className="mt-2">
                   <Link href="#" className="text-lg ">Terms &amp; Condition</Link>
                 </li>
-                <li className="mt-2">
+                {/* <li className="mt-2">
                   <Link href="#" className="text-lg "> Cookies </Link>
                   
-                </li>
+                </li> */}
                 <li className="mt-2">
                   <Link href="/customerhelp" className="text-lg "> Help </Link>
                   

@@ -149,10 +149,8 @@ const ManageUser = () => {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
-
                       {
                         userList.map(user => (
-
                           <tr key={user._id}>
                             <td className="size-px whitespace-nowrap">
                               <div className="ps-6 py-3">
