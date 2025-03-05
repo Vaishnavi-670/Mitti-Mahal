@@ -3,7 +3,15 @@ import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 const ManageContact = () => {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([
+    {
+      _id: '',
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    },
+  ]);
 
   const fetchContact = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact/getall`);
@@ -36,27 +44,31 @@ const ManageContact = () => {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="p-3 border-b font-medium text-gray-700">Full Name</th>
-                  <th className="p-3 border-b font-medium text-gray-700">Email</th>
-                  <th className="p-3 border-b font-medium text-gray-700">Message</th>
-                  <th className="p-3 border-b font-medium text-gray-700">Actions</th>
+                  <th className="p-6 border-b font-medium text-gray-700"> Name</th>
+                  <th className="p-6 border-b font-medium text-gray-700">Email</th>
+                  <th className="p-6 border-b font-medium text-gray-700">Subject</th>
+                  <th className="p-6 border-b font-medium text-gray-700">Message</th>
+                  <th className="p-6 border-b font-medium text-gray-700">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {contacts.map((contact) => (
                   <tr key={contact._id} className="border-b dark:border-neutral-700">
-                    <td className="px-6 py-3 text-sm font-medium text-gray-800 dark:text-neutral-200">
-                      {contact.fullName}
+                    <td className="px-6 py-3 text-sm font-medium text-gray-700 ">
+                      {contact.name}
                     </td>
-                    <td className="px-6 py-3 text-sm text-gray-800 dark:text-neutral-200">
+                    <td className="px-6 py-3 text-sm text-gray-700 "> 
                       {contact.email}
                     </td>
-                    <td className="px-6 py-3 text-sm text-gray-600 dark:text-neutral-400">
+                    <td className="px-6 py-3 text-sm text-gray-700 ">
+                      {contact.subject}
+                    </td>
+                    <td className="px-6 py-3 text-sm text-gray-500 ">
                       {contact.message}
                     </td>
                     <td className="px-6 py-3">
                       <button
-                        className="text-sm text-red-600 hover:underline focus:outline-none dark:text-red-500"
+                        className="px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
                         onClick={() => deleteContact(contact._id)}
                       >
                         Delete
@@ -64,6 +76,7 @@ const ManageContact = () => {
                     </td>
                   </tr>
                 ))}
+
               </tbody>
             </table>
           </div>

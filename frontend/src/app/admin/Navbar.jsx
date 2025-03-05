@@ -30,9 +30,10 @@ const Navbar = () => {
         {/* Links Section */}
         <div className="space-x-8 text-lg text-gray-700">
           <Link href="/aboutus" className="hover:text-gray-900">AboutUs</Link>
-          <Link href="/manageuser" className="hover:text-gray-900">ManageUser</Link>
-          <Link href="/manageproduct" className="hover:text-gray-900">ManageProduct</Link>
-          <Link href="/manageorder" className="hover:text-gray-900">ManageOrder</Link>
+          <Link href="/admin/manageuser" className="hover:text-gray-900">ManageUser</Link>
+          <Link href="/admin/manageproduct" className="hover:text-gray-900">ManageProduct</Link>
+          <Link href="/admin/manageorder" className="hover:text-gray-900">ManageOrder</Link>
+          <Link href="/admin/managecontact" className="hover:text-gray-900">ManageContact</Link>
 
         </div>
 
