@@ -11,7 +11,6 @@ const ISSERVER = typeof window === undefined;
 const Login = () => {
 
     const router = useRouter();
-
     const loginform = useFormik({
         initialValues: {
             email: '',

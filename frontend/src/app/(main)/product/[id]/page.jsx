@@ -1,6 +1,7 @@
 'use client';
 import useCartContext from '@/context/CartContext';
 import useWishlistContext from '@/context/WishlistContext';
+import { IconHeart, IconHeartFilled, IconStarFilled } from '@tabler/icons-react';
 import axios from 'axios';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
@@ -15,12 +16,13 @@ function ProductPage() {
   const [product, setProduct] = useState(null);
   const [rating, setRating] = useState(0);
   const [reviewList, setReviewList] = useState([]);
-  const commentRef = useRef();
   const { addToCart, checkItemInCart } = useCartContext();
 
+  const commentRef = useRef();
   const { id } = useParams();
 
   const fetchProductId = async () => {
+
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/getbyid/` + id);
     console.log(res.status);
     const data = await res.json();
@@ -32,6 +34,8 @@ function ProductPage() {
     fetchProductId();
     fetchReview();
   }, []);
+
+  const totalRatings = reviewList.length;
 
   const getAverageRating = () => {
     let sum = 0;
@@ -141,10 +145,42 @@ function ProductPage() {
                 />
               </div>
 
-              <div className="mb-6 items-center ">
-                {getAverageRating()}
+              <div className="mb-6 items-center   ">
+                {/* <span
+                  className={`text-2xl font-bold bg-slate-50 py-2 px-6 rounded-3xl border borde flex items-center space-x-1 ${getAverageRating() >= 4 ? "text-green-900" : "text-yellow-500"
+                    }`}
+                >
+                  <span>{getAverageRating()}</span>
+                  <IconStarFilled
+                    className={`text-2xl ${getAverageRating() >= 4 ? "text-green-900" : "text-yellow-500"
+                      }`}
+                  />
+                </span> */}
+
+                <div className="flex  items-center  ">
+                  {/* Average Rating with Star Icon */}
+                  <div className="flex items-center border rounded-3xl shadow-md py-2 px-6 bg-gray-100 space-x-2">
+                    <span   className={`text-2xl font-bold ${getAverageRating() >= 4 ? "text-green-900" : "text-yellow-500 "
+                        }`}>
+                      {getAverageRating()}
+                    </span>
+                    <IconStarFilled
+                      className={`text-2xl ${getAverageRating() >= 4 ? "text-green-900" : "text-yellow-500"
+                        }`}
+                    />
+                  </div>
+
+                  {/* Total Number of Ratings */}
+                  <span className="text-gray-600 text-sm mx-2 mt-1">
+                    ({totalRatings} Reviews)
+                  </span>
+                </div>
+
+
+
 
                 <StarRatings
+                className="mt-5"
                   onClick={handleRating}
                   rating={rating}
                   starRatedColor="red"
@@ -169,12 +205,17 @@ function ProductPage() {
 
               </div>
 
+
+
+
+
+
               <button
                 disabled={checkItemInCart(product)}
                 onClick={() => {
                   addToCart(product);
                 }}
-                className="w-full border md:w-auto px-6 py-3 bg-black text-white text-lg font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300 disabled:bg-white disabled:text-gray-400 disabled:border-gray-400"
+                className="w-full border md:w-auto px-4 py-2 bg-black text-white text-lg font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300 disabled:bg-white disabled:text-gray-400 disabled:border-gray-400"
               >
                 {checkItemInCart(product) ? 'Item already in cart' : 'Add to Cart'}
               </button>
@@ -183,9 +224,9 @@ function ProductPage() {
                 onClick={() => {
                   addToWishlist(product);
                 }}
-                className='px-4 py-2 rounded-full bg-gray-200 text-black transition-all ease-in disabled:bg-red-500 disabled:text-white '
+                className='px-4 py-2 mx-2 rounded-full bg-gray-200 text-black transition-all ease-in disabled:bg-red-500 disabled:text-white '
               >
-                {checkItemInWishlist(product._id) ? 'Item already in wishlist' : 'Add to Wishlist'}
+                {checkItemInWishlist(product._id) ? <IconHeartFilled /> : <IconHeart />}
               </button>
 
               {
