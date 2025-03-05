@@ -2,14 +2,13 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 const ISSERVER = typeof window === undefined;
 
-
 const WishlistContext = createContext();
 
 export const WishlistProvider = ({ children }) => {
     const [wishlist, setWishlist] = useState(
         () => {
             // Load cart data from localStorage
-            const savedCart = !ISSERVER ? localStorage.getItem('wishlist') : '';
+            const savedCart = !ISSERVER && localStorage.getItem('wishlist');
             return savedCart ? JSON.parse(savedCart) : [];
         }
     );
@@ -37,7 +36,7 @@ export const WishlistProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        !ISSERVER && localStorage.setItem('wishlist', JSON.stringify(wishlist));
     }, [wishlist]);
 
     return (

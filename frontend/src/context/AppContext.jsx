@@ -19,7 +19,7 @@ export const AppProvider = ({ children }) => {
   const logout = () => { 
 
     document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    localStorage.removeItem('user');
+    !ISSERVER ? localStorage.removeItem('user') :'';
     setIsLoggedIn([]);
     router.replace('/login');
   };
