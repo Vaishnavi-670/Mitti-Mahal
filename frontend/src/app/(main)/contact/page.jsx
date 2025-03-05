@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React, { useRef } from 'react';
 import toast from 'react-hot-toast';
-const ISSERVER = typeof window === undefined;
+// const ISSERVER = typeof window === undefined;
 
 
 
