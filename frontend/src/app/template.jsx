@@ -10,7 +10,6 @@ const Template = ({ children }) => {
       <SnackbarProvider anchorOrigin={{ horizontal: 'center', vertical: 'top' }}>
         <CartProvider>
           <WishlistProvider>
-
           {children}
           </WishlistProvider>
         </CartProvider>
