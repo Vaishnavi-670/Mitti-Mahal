@@ -3,18 +3,20 @@ import { IconCircleCheck, IconCircleX } from "@tabler/icons-react";
 import React, { useEffect, useRef, useState } from "react";
 // import { useLocation } from "next/navigation";
 import Link from "next/link";
+const ISSERVER = typeof window === "undefined"; 
+
 const ThankYou = () => {
   const hasRun = useRef();
 
   const [currentUser, setCurrentUser] = useState(
-    JSON.parse(sessionStorage.getItem("user"))
+    JSON.parse(!ISSERVER && sessionStorage.getItem("user"))
   );
 
   let params = new URLSearchParams(location.search);
   console.log(params.get("payment_intent"));
 
   const savePayment = async () => {
-    const bookingDetails = JSON.parse(sessionStorage.getItem("bookingDetails"));
+    const bookingDetails = JSON.parse(!ISSERVER && sessionStorage.getItem("bookingDetails"));
     const paymentDetails = await retrievePaymentIntent();
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/booking/add`,
@@ -32,8 +34,8 @@ const ThankYou = () => {
     );
     console.log(response.status);
     if (response.status === 200) {
-      sessionStorage.removeItem("bookingDetails");
-      sessionStorage.removeItem("carDetails");
+      !ISSERVER && sessionStorage.removeItem("bookingDetails");
+      !ISSERVER && sessionStorage.removeItem("carDetails");
     }
   };
 
