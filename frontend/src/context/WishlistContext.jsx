@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-const ISSERVER = typeof window === undefined;
+const ISSERVER = typeof window === "undefined";
 
 const WishlistContext = createContext();
 

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-const ISSERVER = typeof window === undefined;
+const ISSERVER = typeof window === "undefined";
 
 
 // Create the context

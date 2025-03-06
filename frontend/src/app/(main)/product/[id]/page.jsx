@@ -8,7 +8,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Rating } from 'react-simple-star-rating';
 import StarRatings from 'react-star-ratings';
-const ISSERVER = typeof window === undefined;
+const ISSERVER = typeof window === "undefined";
 
 function ProductPage() {
   const { addToWishlist, checkItemInWishlist } = useWishlistContext();

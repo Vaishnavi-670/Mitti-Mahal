@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { cookies } from "next/headers";
 
-
+// Middleware to check if user is authenticated before allowing access to protected routes.
 export async function middleware(req, res) {
     console.log('middleware');
     const cookieStore = cookies()

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import useCartContext from '@/context/CartContext';
 import { Formik, useFormik } from 'formik';
-const ISSERVER = typeof window === undefined;
+const ISSERVER = typeof window === "undefined";
 
 
 

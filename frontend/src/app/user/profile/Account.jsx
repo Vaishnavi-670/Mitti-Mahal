@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
-const ISSERVER = typeof window === undefined;
+const ISSERVER = typeof window === "undefined";
 
 const Account = () => {
 
