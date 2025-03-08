@@ -1,10 +1,14 @@
 'use client'
 import React from 'react'
 import { useEffect, useRef, useState } from 'react';
-import LocomotiveScroll from 'locomotive-scroll';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { IconHeart, IconUserCircle } from '@tabler/icons-react';
+
+// Dynamically import LocomotiveScroll with no SSR
+const LocomotiveScroll = dynamic(() => import('locomotive-scroll'), {
+  ssr: false
+});
 
 const useBrowserObject = () => {
   const [isClient, setIsClient] = useState(false);
@@ -16,62 +20,76 @@ const useBrowserObject = () => {
   return { isClient };
 };
 
-const Home = () => {
+const ScrollContainer = ({ children }) => {
   const scrollRef = useRef(null);
-  const { isClient } = useBrowserObject();
+  const [locomotiveScroll, setLocomotiveScroll] = useState(null);
 
   useEffect(() => {
-    if (!isClient) return;
-    
-    const initScroll = () => {
-      if (typeof document !== 'undefined' && scrollRef.current) {
-        const scroll = new LocomotiveScroll({
-          el: scrollRef.current,
-          smooth: true,
-          smoothMobile: true,
-          tablet: { smooth: true },
-          smartphone: { smooth: true }
-        });
+    if (!scrollRef.current) return;
 
-        return () => scroll?.destroy();
-      }
+    // Import the CSS only on client-side
+    import('locomotive-scroll/dist/locomotive-scroll.css');
+
+    const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+      smoothMobile: true,
+      tablet: { smooth: true },
+      smartphone: { smooth: true }
+    });
+
+    setLocomotiveScroll(scroll);
+
+    return () => {
+      if (scroll) scroll.destroy();
     };
-
-    initScroll();
-  }, [isClient]);
+  }, []);
 
   return (
-    
     <div data-scroll-container ref={scrollRef}>
-      <nav className="bg-white px-6 mt-2 w-full">
-      <div className="  flex items-center justify-between h-20">
-        <div className="flex items-center">
-         <img className='h-[200px] w-[200px]'  src="./Logo.jpg"></img>
-        </div>
-        <div className="hidden md:flex space-x-8">
-          <Link href="/" className="text-gray-900 font-semibold hover:text-black px-3 py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Home</Link>
-          <Link href="/listingitems" className="text-gray-900 hover:text-black px-3 font-semibold py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Shop</Link>
-          <Link href="/aboutus" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">About Us</Link>
-          <Link href="/contact" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Contact</Link>
-          <Link href="/faq" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">FAQ</Link>
-        </div>
-        <div className="flex items-center space-x-4">
-          <Link href='/login' className="text-gray-600 hover:text-black font-semibold text-xl">Log in</Link>
-          <Link href='/signup' className="bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-black transition duration-300 ease-in-out">Sign Up</Link>
-          
-          <Link href='/user/cart' className="text-gray-600 hover:text-black ">
-          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-garden-cart"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17.5 17.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" /><path d="M6 8v11a1 1 0 0 0 1.806 .591l3.694 -5.091v.055" /><path d="M6 8h15l-3.5 7l-7.1 -.747a4 4 0 0 1 -3.296 -2.493l-2.853 -7.13a1 1 0 0 0 -.928 -.63h-1.323" /></svg></Link>
-          <Link href='/user/wishlist' className="text-gray-600 hover:text-black ">
-          <IconHeart/>
-          </Link>
-          <Link href='/user/profile' className="text-gray-600 hover:text-black ">
-          <IconUserCircle/>
-          </Link>
+      {children}
+    </div>
+  );
+};
 
+const Home = () => {
+  const { isClient } = useBrowserObject();
+
+  if (!isClient) {
+    return null; // or a loading state
+  }
+
+  return (
+    <ScrollContainer>
+      <nav className="bg-white px-6 mt-2 w-full">
+        <div className="  flex items-center justify-between h-20">
+          <div className="flex items-center">
+            <img className='h-[200px] w-[200px]' src="./Logo.jpg"></img>
+          </div>
+          <div className="hidden md:flex space-x-8">
+            <Link href="/" className="text-gray-900 font-semibold hover:text-black px-3 py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Home</Link>
+            <Link href="/listingitems" className="text-gray-900 hover:text-black px-3 font-semibold py-2 rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Shop</Link>
+            <Link href="/aboutus" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">About Us</Link>
+            <Link href="/contact" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">Contact</Link>
+            <Link href="/faq" className="text-gray-900 hover:text-black px-3 py-2 font-semibold rounded-full hover:bg-gray-200 transition duration-500 ease-in-out text-xl">FAQ</Link>
+          </div>
+          <div className="flex items-center space-x-4">
+            <Link href='/login' className="text-gray-600 hover:text-black font-semibold text-xl">Log in</Link>
+            <Link href='/signup' className="bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-black transition duration-300 ease-in-out">Sign Up</Link>
+
+            <Link href='/user/cart' className="text-gray-600 hover:text-black ">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-garden-cart"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M17.5 17.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" /><path d="M6 8v11a1 1 0 0 0 1.806 .591l3.694 -5.091v.055" /><path d="M6 8h15l-3.5 7l-7.1 -.747a4 4 0 0 1 -3.296 -2.493l-2.853 -7.13a1 1 0 0 0 -.928 -.63h-1.323" /></svg></Link>
+            <Link href='/user/wishlist' className="text-gray-600 hover:text-black ">
+              <IconHeart />
+            </Link>
+            <Link href='/user/profile' className="text-gray-600 hover:text-black ">
+              <IconUserCircle />
+            </Link>
+
+          </div>
         </div>
-      </div>
-    </nav>
-      <section  className="pt-20">
+      </nav>
+      <section className="pt-20">
         <div className=" mx-auto max-w-7xl">
           <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
             <h1 className=" mb-12 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
@@ -325,7 +343,7 @@ const Home = () => {
           </div>
         </div>
         <div className=" h-[73vh]">
-        <div className="relative top-20 z-10 w-3/4 mx-auto p-10 flex justify-between bg-white rounded-b-3xl shadow-2xl" data-scroll="" data-scroll-speed="5">
+          <div className="relative top-20 z-10 w-3/4 mx-auto p-10 flex justify-between bg-white rounded-b-3xl shadow-2xl" data-scroll="" data-scroll-speed="5">
             <h1 className="text-4xl font-black mt-5 text-gray-900">Subscribe To Our Newsletter</h1>
             <div className="w-2/5 mt-3">
               <input type="email" placeholder="enter your email here" className="mr-7 p-3.5 bg-gray-100 w-2/5 rounded-2xl border-none text-black font-semibold outline-none" />
@@ -358,7 +376,7 @@ const Home = () => {
                 <li className="mt-2">
                   <Link href="/contact" className="text-lg ">Contact</Link>
                 </li>
-                
+
                 <li className="mt-2">
                   <Link href="/features" className="text-lg ">Features</Link>
                 </li>
@@ -379,7 +397,7 @@ const Home = () => {
                 </li> */}
                 <li className="mt-2">
                   <Link href="/customerhelp" className="text-lg "> Help </Link>
-                  
+
                 </li>
 
               </ul>
@@ -398,7 +416,7 @@ const Home = () => {
         </div>
 
       </section>
-    </div>
+    </ScrollContainer>
   )
 }
 
