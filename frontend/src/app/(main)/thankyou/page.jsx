@@ -1,22 +1,24 @@
 "use client";
 import { IconCircleCheck, IconCircleX } from "@tabler/icons-react";
 import React, { useEffect, useRef, useState } from "react";
-// import { useLocation } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 const ISSERVER = typeof window === "undefined"; 
 
 const ThankYou = () => {
   const hasRun = useRef();
-
+  const searchParams = useSearchParams();
+  
   const [currentUser, setCurrentUser] = useState(
-    JSON.parse(!ISSERVER && sessionStorage.getItem("user"))
+    !ISSERVER ? JSON.parse(sessionStorage.getItem("user") || "null") : null
   );
 
-  let params = new URLSearchParams(location.search);
-  console.log(params.get("payment_intent"));
+  // Use searchParams instead of directly accessing location
+  const paymentIntentId = searchParams.get("payment_intent");
+  const redirectStatus = searchParams.get("redirect_status");
 
   const savePayment = async () => {
-    const bookingDetails = JSON.parse(!ISSERVER && sessionStorage.getItem("bookingDetails"));
+    const bookingDetails = !ISSERVER ? JSON.parse(sessionStorage.getItem("bookingDetails") || "null") : null;
     const paymentDetails = await retrievePaymentIntent();
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/booking/add`,
@@ -28,7 +30,7 @@ const ThankYou = () => {
         body: JSON.stringify({
           ...bookingDetails,
           paymentDetails: paymentDetails,
-          intentId: params.get("payment_intent")
+          intentId: paymentIntentId
         }),
       }
     );
@@ -45,7 +47,7 @@ const ThankYou = () => {
       {
         method: "POST",
         body: JSON.stringify({
-          paymentIntentId: params.get("payment_intent"),
+          paymentIntentId: paymentIntentId,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -61,12 +63,12 @@ const ThankYou = () => {
   useEffect(() => {
     if (!hasRun.current) {
       hasRun.current = true;
-      if (params.get("redirect_status") === "succeeded") {
+      if (redirectStatus === "succeeded") {
         savePayment();
-
       }
     }
-  }, []);
+  }, [redirectStatus]);
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
       <img
@@ -93,9 +95,6 @@ const ThankYou = () => {
       >
         Back to Home Page
       </Link>
-
-      
-      
     </div>
   );
 };
