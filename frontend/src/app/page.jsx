@@ -58,7 +58,6 @@ const Home = () => {
   if (!isClient) {
     return null; // or a loading state
   }
-
   return (
     <ScrollContainer>
       <nav className="bg-white px-6 mt-2 w-full">
