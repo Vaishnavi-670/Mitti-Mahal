@@ -85,7 +85,6 @@ const Home = () => {
             <Link href='/user/profile' className="text-gray-600 hover:text-black ">
               <IconUserCircle />
             </Link>
-
           </div>
         </div>
       </nav>
