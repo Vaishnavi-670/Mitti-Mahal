@@ -51,7 +51,6 @@ const ScrollContainer = ({ children }) => {
     </div>
   );
 };
-
 const Home = () => {
   const { isClient } = useBrowserObject();
 
