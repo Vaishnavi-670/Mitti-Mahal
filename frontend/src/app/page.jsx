@@ -21,23 +21,23 @@ const Home = () => {
   const { isClient } = useBrowserObject();
 
   useEffect(() => {
-    if (isClient && typeof document !== 'undefined') {
-      const scroll = new LocomotiveScroll({
-        el: scrollRef.current,
-        smooth: true,
-        smoothMobile: true, 
-        tablet: {
-          smooth: true, 
-        },
-        smartphone: {
+    if (!isClient) return;
+    
+    const initScroll = () => {
+      if (typeof document !== 'undefined' && scrollRef.current) {
+        const scroll = new LocomotiveScroll({
+          el: scrollRef.current,
           smooth: true,
-        },
-      });
+          smoothMobile: true,
+          tablet: { smooth: true },
+          smartphone: { smooth: true }
+        });
 
-      return () => {
-        if (scroll) scroll.destroy();
-      };
-    }
+        return () => scroll?.destroy();
+      }
+    };
+
+    initScroll();
   }, [isClient]);
 
   return (

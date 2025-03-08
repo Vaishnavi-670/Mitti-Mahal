@@ -1,11 +1,19 @@
 "use client";
 import { IconCircleCheck, IconCircleX } from "@tabler/icons-react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 const ISSERVER = typeof window === "undefined"; 
 
 const ThankYou = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ThankYouContent />
+    </Suspense>
+  );
+};
+
+const ThankYouContent = () => {
   const hasRun = useRef();
   const searchParams = useSearchParams();
   
