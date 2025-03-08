@@ -1,18 +1,24 @@
 'use client';
 import useCartContext from '@/context/CartContext';
+import { useUserContext } from '@/context/AppContext';
 import { IconGardenCart } from '@tabler/icons-react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
 const Navbar = () => {
-  const { cart, isLoggedIn } = useCartContext();
-  const [menuOpen, setMenuOpen] = useState([]);
+  const { cart } = useCartContext();
+  const context = useUserContext();
+  const isLoggedIn = context?.isLoggedIn;
+  const logout = context?.logout;
+  const [menuOpen, setMenuOpen] = useState(false);
+  
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  
   const showLoggedInOptions = () => {
     if (isLoggedIn) {
-      return <button onClick={logout} href="/signup" className="px-4 py-3 bg-red-900 text-white rounded-3xl hover:bg-red-500 text-sm md:text-base">Logout</button>
+      return <button onClick={logout} className="px-4 py-3 bg-red-900 text-white rounded-3xl hover:bg-red-500 text-sm md:text-base">Logout</button>
     } else {
       return <>
         <Link href="/login" className="px-4 py-2 text-black rounded-2xl md:text-base">Login</Link>
@@ -21,7 +27,6 @@ const Navbar = () => {
     }
   }
 
-
   return (
     <nav className="bg-white py-2 flex justify-center items-center px-4 md:px-8 lg:px-16 relative">
       <div className="container h-20 w-[100%] flex justify-between items-center">
@@ -29,8 +34,7 @@ const Navbar = () => {
         {/* Logo Section */}
         <div className="flex justify-center items-center">
           <Link href="/">
-            <img className='h-[200px] w-[200px]' src="/Logo.jpg"></img>
-
+            <img className='h-[200px] w-[200px]' src="/Logo.jpg" alt="Logo" />
           </Link>
         </div>
         <button onClick={toggleMenu} className="md:hidden text-gray-700 text-sm md:text-base">
@@ -43,6 +47,7 @@ const Navbar = () => {
           <Link href="/contact" className="hover:text-gray-900 block py-2 px-4 md:inline">Contact</Link>
           <Link href="/faq" className="hover:text-gray-900 block py-2 px-4 md:inline">FAQ</Link>
           <Link href="/features" className="hover:text-gray-900 block py-2 px-4 md:inline">Features</Link>
+          <Link href="/user/wishlist" className="hover:text-gray-900 block py-2 px-4 md:inline">Wishlist</Link>
           <Link href="/user/cart" className="hover:text-gray-900 block py-2 px-4 md:inline">
             <IconGardenCart className='inline-flex' />
           </Link>

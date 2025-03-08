@@ -1,25 +1,16 @@
-import { NextResponse } from "next/server"
-import { cookies } from "next/headers";
+import { NextResponse } from 'next/server';
 
-// Middleware to check if user is authenticated before allowing access to protected routes.
-export async function middleware(req, res) {
-    console.log('middleware');
-    const cookieStore = cookies()
-    const token = cookieStore.get('token') || '';
-    console.log(token);
-    const ApiResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/authorise`, {
-        headers: {
-            'x-auth-token': token.value
-        }
-    });
-    console.log(ApiResponse.status);
-    if (ApiResponse.status !== 200) {
-        return NextResponse.redirect(new URL('/login', req.url));
-    } else {
-        return NextResponse.next();
-    }
+export function middleware(request) {
+  // This middleware just allows the request to proceed
+  // but ensures these paths are client-side rendered
+  return NextResponse.next();
 }
 
 export const config = {
-    matcher: ['/user/:path*', '/admin/:path*']
-}
+  matcher: [
+    // Paths that will use client-side rendering only
+    '/user/:path*',
+    '/admin/:path*',
+    '/checkout',
+  ],
+};

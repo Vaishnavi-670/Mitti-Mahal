@@ -15,7 +15,7 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         // Save cart data to localStorage whenever it changes
-        !ISSERVER ? localStorage.setItem('cart', JSON.stringify(cart)) : [];
+        !ISSERVER && localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
 
     const addToCart = (newItem) => {
@@ -28,64 +28,49 @@ export const CartProvider = ({ children }) => {
                 return updatedCart;
             } else {
                 // Item does not exist, add it to the cart with quantity 1
-                return [...prevCart, { ...newItem, qty: 1 }];
+                return [...prevCart, {...newItem, qty: 1}];
             }
         });
     };
 
-    const removeFromCart = (itemId) => {
-        setCart((prevCart) => prevCart.filter(item => item._id !== itemId));
-    };
-
-    const clearCart = () => {
-        setCart([]);
+    const checkItemInCart = (item) => {
+        if (!item) return false;
+        return cart.some(cartItem => cartItem._id === item._id);
     };
 
     const incrementQty = (itemId) => {
-        setCart((prevCart) => {
-            const updatedCart = prevCart.map(item => {
-                if (item._id === itemId) {
-                    return { ...item, qty: item.qty + 1 };
-                }
-                return item;
-            });
-            return updatedCart;
-        });
+        setCart(prevCart => 
+          prevCart.map(item => 
+            item._id === itemId ? {...item, qty: item.qty + 1} : item
+          )
+        );
     };
-
+    
     const decrementQty = (itemId) => {
-        setCart((prevCart) => {
-            const updatedCart = prevCart.map(item => {
-                if (item._id === itemId) {
-                    return { ...item, qty: item.qty - 1 };
-                }
-                return item;
-            }).filter(item => item.qty > 0);
-            return updatedCart;
-        });
+        setCart(prevCart => 
+          prevCart.map(item => 
+            item._id === itemId && item.qty > 1 ? {...item, qty: item.qty - 1} : item
+          )
+        );
     };
-
-    const checkItemInCart = (item) => {
-        const itemIndex = cart.findIndex(i => i._id === item._id);
-        if (itemIndex === -1) {
-            return false;
-        }
-        return true;
-    };
-
+    
     const calculateTotalPrice = () => {
-        return cart.reduce((total, item) => {
-          return total + item.price * item.qty;
-        }, 0);
-      };
+        return cart.reduce((total, item) => total + (item.price * item.qty), 0);
+    };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, incrementQty, decrementQty, checkItemInCart,calculateTotalPrice }}>
+        <CartContext.Provider value={{ 
+            cart, 
+            addToCart, 
+            checkItemInCart,
+            incrementQty,
+            decrementQty,
+            calculateTotalPrice
+        }}>
             {children}
         </CartContext.Provider>
     );
 };
 
-const useCartContext = () => useContext(CartContext); // this is a custom hook for use with the components of this component that need to access the cart context
-
+const useCartContext = () => useContext(CartContext);
 export default useCartContext;
