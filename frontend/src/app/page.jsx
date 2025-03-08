@@ -53,7 +53,6 @@ const ScrollContainer = ({ children }) => {
 };
 const Home = () => {
   const { isClient } = useBrowserObject();
-
   if (!isClient) {
     return null; // or a loading state
   }
