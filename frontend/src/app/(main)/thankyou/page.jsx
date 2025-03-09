@@ -19,6 +19,7 @@ const ThankYouContent = () => {
   const [currentUser, setCurrentUser] = useState(
     !ISSERVER ? JSON.parse(sessionStorage.getItem("user") || "null") : null
   );
+  
   // Use searchParams instead of directly accessing location
   const paymentIntentId = searchParams.get("payment_intent");
   const redirectStatus = searchParams.get("redirect_status");
