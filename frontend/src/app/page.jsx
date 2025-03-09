@@ -22,11 +22,14 @@ const useBrowserObject = () => {
 
 const ScrollContainer = ({ children }) => {
   const scrollRef = useRef(null);
+  console.log(scrollRef.current);
+  
   const [locomotiveScroll, setLocomotiveScroll] = useState(null);
 
   useEffect(() => {
     if (!scrollRef.current) return;
-
+    console.log(scrollRef.current);
+    
     // Import the CSS only on client-side
     import('locomotive-scroll/dist/locomotive-scroll.css');
 
@@ -40,10 +43,12 @@ const ScrollContainer = ({ children }) => {
 
     setLocomotiveScroll(scroll);
 
-    return () => {
-      if (scroll) scroll.destroy();
-    };
-  }, []);
+    // return () => {
+    //   console.log(scroll);
+      
+    //   if (scroll) scroll.destroy();
+    // };
+  }, [scrollRef]);
 
   return (
     <div data-scroll-container ref={scrollRef}>
@@ -51,6 +56,7 @@ const ScrollContainer = ({ children }) => {
     </div>
   );
 };
+
 const Home = () => {
   const { isClient } = useBrowserObject();
   if (!isClient) {
