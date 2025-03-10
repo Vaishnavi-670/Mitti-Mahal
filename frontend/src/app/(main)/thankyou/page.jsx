@@ -1,5 +1,4 @@
 "use client";
-import { IconCircleCheck, IconCircleX } from "@tabler/icons-react";
 import React, { useEffect, useRef, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
