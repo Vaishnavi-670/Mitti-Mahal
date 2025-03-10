@@ -55,7 +55,7 @@ const ManageOrdersPage = () => {
             <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
               <thead className="bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 border">Product</th>
+                  <th className="px-4 py-2 border">Product Id</th>
                   <th className="px-4 py-2 border">Product Name</th>
                   <th className="px-4 py-2 border">Price</th>
                   <th className="px-4 py-2 border">Quantity</th>
@@ -68,12 +68,14 @@ const ManageOrdersPage = () => {
                 {orderList.map((order) => (
                   <tr key={order._id} className="text-center hover:bg-gray-50 transition">
                     <td className="px-4 py-2 border">
-                      <img
+                      {/* <img
                         src={order.image}
                         alt={order.title}
                         className="w-20 h-20 rounded-md object-cover mx-auto"
-                      />
+                      /> */}
+                      {order._id}
                     </td>
+                    <td className="px-4 py-2 border">{order.items.title}</td>
                     <td className="px-4 py-2 border">{order.items.length}</td>
                     <td className="px-4 py-2 border">₹{calculateItemsTotal(order.items)}</td>
                     {/* <td className="px-4 py-2 border">{order.qty}</td> */}
