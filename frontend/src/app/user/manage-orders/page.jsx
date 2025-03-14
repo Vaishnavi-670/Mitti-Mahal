@@ -75,7 +75,7 @@ const ManageOrdersPage = () => {
                       /> */}
                       {order._id}
                     </td>
-                    
+               
                     <td className="px-4 py-2 border">{order.items.title}</td>
                     <td className="px-4 py-2 border">{order.items.length}</td>
                     <td className="px-4 py-2 border">₹{calculateItemsTotal(order.items)}</td>
