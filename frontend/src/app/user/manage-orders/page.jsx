@@ -63,8 +63,9 @@ const ManageOrdersPage = () => {
                   <th className="px-4 py-2 border">Actions</th>
                   <th className="px-4 py-2 border">View Details</th>
                 </tr>
+                
               </thead>
-              
+
               <tbody>
                 {orderList.map((order) => (                  
                   <tr key={order._id} className="text-center hover:bg-gray-50 transition">
