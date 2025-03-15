@@ -55,6 +55,7 @@ const ManageOrdersPage = () => {
             <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
               <thead className="bg-gray-200">
                 <tr>
+                  
                   <th className="px-4 py-2 border">Product Id</th>
                   <th className="px-4 py-2 border">Product Name</th>
                   <th className="px-4 py-2 border">Price</th>
@@ -62,7 +63,7 @@ const ManageOrdersPage = () => {
                   <th className="px-4 py-2 border">Status</th>
                   <th className="px-4 py-2 border">Actions</th>
                   <th className="px-4 py-2 border">View Details</th>
-                  
+
                 </tr>
 
               </thead>
