@@ -45,6 +45,7 @@ const ManageOrdersPage = () => {
   }
 
   return (
+    
     <div className='flex flex-col items-center justify-center'>
       <div className="p-8 w-[90%] min-h-screen">
         <h2 className="text-3xl font-bold mb-6 text-center">Manage Orders</h2>
@@ -52,7 +53,7 @@ const ManageOrdersPage = () => {
           <p>No orders found.</p>
         ) : (          
           <div className="overflow-x-auto">
-            
+
             <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
               <thead className="bg-gray-200">
                 <tr>
