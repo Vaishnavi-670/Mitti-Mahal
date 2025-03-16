@@ -103,7 +103,6 @@ const OrderDetails = () => {
           </div>
         </div>
       </div>
- 
       {/* Shipping Address Section */}
       <div className="w-full max-w-4xl mt-8">
         <div className="bg-white p-6 rounded-lg shadow-md">
