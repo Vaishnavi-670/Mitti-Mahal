@@ -92,7 +92,6 @@ const OrderDetails = () => {
                 {order?.orderStatus}
               </span>
             </div>
-
             {/* Payment Status */}
             <div className="flex justify-between items-center">
               <h3 className="text-lg font-medium text-gray-700">Payment Status:</h3>
