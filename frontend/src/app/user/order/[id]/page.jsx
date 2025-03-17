@@ -120,8 +120,7 @@ const OrderDetails = () => {
         </div>
       </div>
     </div>
-  );
-  
+  ); 
 }
 
 
