@@ -14,6 +14,7 @@ const OrderDetails = () => {
     setorder(data);
   };
   useEffect(() => {
+    
     fetchProductId();
   }, [id]);
   const showProductDetails = () => {
@@ -23,7 +24,7 @@ const OrderDetails = () => {
 
           {order?.items.map((item) => (
             <div
-            
+
               key={item._id}
               className="mb-6 border-b pb-6 last:border-none last:mb-0 bg-white shadow-sm rounded-lg p-4"
             >
