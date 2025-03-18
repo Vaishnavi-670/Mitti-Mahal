@@ -19,8 +19,7 @@ const OrderDetails = () => {
   const showProductDetails = () => {
     if (order !== null) {
       return (
-        <>
-        
+        <>       
           {order?.items.map((item) => (
             <div
               key={item._id}
