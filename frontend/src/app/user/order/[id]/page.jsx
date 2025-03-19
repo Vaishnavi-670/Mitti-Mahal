@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 const OrderDetails = () => {
   const [order, setorder] = useState(null)
   const { id } = useParams();
-
   const fetchProductId = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyid/` + id);
     console.log(res.status);    
