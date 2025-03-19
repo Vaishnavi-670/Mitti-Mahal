@@ -22,7 +22,6 @@ const OrderDetails = () => {
     if (order !== null) {
       return (
         <>  
-
           {order?.items.map((item) => (
             <div
 
