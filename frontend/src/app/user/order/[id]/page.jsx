@@ -8,8 +8,7 @@ const OrderDetails = () => {
 
   const fetchProductId = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyid/` + id);
-    console.log(res.status);
-    
+    console.log(res.status);    
     const data = await res.json();
     console.table(data);
     setorder(data);
