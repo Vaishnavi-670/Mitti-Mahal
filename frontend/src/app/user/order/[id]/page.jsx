@@ -32,8 +32,7 @@ const OrderDetails = () => {
                     alt={item.title}
                     className="w-full h-full object-cover rounded-lg shadow"
                   />
-                </div>
-  
+                </div>  
                 {/* Product Details */}
                 <div className="flex-1 space-y-2">
                   <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
