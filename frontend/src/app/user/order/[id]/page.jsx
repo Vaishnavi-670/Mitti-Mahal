@@ -15,7 +15,6 @@ const OrderDetails = () => {
     setorder(data);
   };
   useEffect(() => {
-
     fetchProductId();
   }, [id]);
   const showProductDetails = () => {
