@@ -15,7 +15,6 @@ const ThankYou = () => {
 const ThankYouContent = () => {
   const hasRun = useRef();
   const searchParams = useSearchParams();
-  
   const [currentUser, setCurrentUser] = useState(
     !ISSERVER ? JSON.parse(sessionStorage.getItem("user") || "null") : null
   );
