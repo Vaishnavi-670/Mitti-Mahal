@@ -11,6 +11,7 @@ const ThankYou = () => {
     </Suspense>
   );
 };
+
 const ThankYouContent = () => {
   const hasRun = useRef();
   const searchParams = useSearchParams();
