@@ -21,8 +21,7 @@ const ThankYouContent = () => {
   const paymentIntentId = searchParams.get("payment_intent");
   const redirectStatus = searchParams.get("redirect_status");
 
-  const savePayment = async () => {
-    
+  const savePayment = async () => {   
     const bookingDetails = !ISSERVER ? JSON.parse(sessionStorage.getItem("bookingDetails") || "null") : null;
     const paymentDetails = await retrievePaymentIntent();
     const response = await fetch(
