@@ -38,7 +38,7 @@ const ThankYouContent = () => {
         }),
       }
     );
-    
+   
     console.log(response.status);
     if (response.status === 200) {
       !ISSERVER && sessionStorage.removeItem("bookingDetails");
