@@ -11,16 +11,17 @@ const ThankYou = () => {
     </Suspense>
   );
 };
+
 const ThankYouContent = () => {
   const hasRun = useRef();
   const searchParams = useSearchParams();
   const [currentUser, setCurrentUser] = useState(
     !ISSERVER ? JSON.parse(sessionStorage.getItem("user") || "null") : null
   );  
+  
   // Use searchParams instead of directly accessing location
   const paymentIntentId = searchParams.get("payment_intent");
   const redirectStatus = searchParams.get("redirect_status");
-  
   const savePayment = async () => {   
     const bookingDetails = !ISSERVER ? JSON.parse(sessionStorage.getItem("bookingDetails") || "null") : null;
     const paymentDetails = await retrievePaymentIntent();
@@ -38,7 +39,6 @@ const ThankYouContent = () => {
         }),
       }
     );
-  
     console.log(response.status);
     if (response.status === 200) {
       !ISSERVER && sessionStorage.removeItem("bookingDetails");
