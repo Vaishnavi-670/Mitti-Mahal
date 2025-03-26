@@ -12,6 +12,7 @@ const ThankYou = () => {
   );
 };
 const ThankYouContent = () => {
+  
   const hasRun = useRef();
   const searchParams = useSearchParams();
   const [currentUser, setCurrentUser] = useState(
