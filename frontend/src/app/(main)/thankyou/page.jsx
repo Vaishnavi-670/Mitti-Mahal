@@ -23,21 +23,22 @@ const ThankYouContent = () => {
   const redirectStatus = searchParams.get("redirect_status");
   const savePayment = async () => {   
     const bookingDetails = !ISSERVER ? JSON.parse(sessionStorage.getItem("bookingDetails") || "null") : null;
+
     const paymentDetails = await retrievePaymentIntent();
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/booking/add`,
-      {
-        
+      {   
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        
+
         body: JSON.stringify({
           ...bookingDetails,
           paymentDetails: paymentDetails,
           intentId: paymentIntentId
         }),
+        
       }
     );
     console.log(response.status);
