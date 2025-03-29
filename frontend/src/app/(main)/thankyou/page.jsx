@@ -26,8 +26,7 @@ const ThankYouContent = () => {
     const paymentDetails = await retrievePaymentIntent();
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/booking/add`,
-      {  
-         
+      {   
         method: "POST",
         headers: {
           "Content-Type": "application/json",
