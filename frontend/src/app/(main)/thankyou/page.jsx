@@ -36,8 +36,7 @@ const ThankYouContent = () => {
           ...bookingDetails,
           paymentDetails: paymentDetails,
           intentId: paymentIntentId
-        }),
-        
+        }),      
       }
     );
     console.log(response.status);
@@ -46,7 +45,6 @@ const ThankYouContent = () => {
       !ISSERVER && sessionStorage.removeItem("carDetails");
     }
   };
-
   const retrievePaymentIntent = async () => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/retrieve-payment-intent`,
