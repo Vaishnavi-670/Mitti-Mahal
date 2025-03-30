@@ -37,6 +37,7 @@ const ThankYouContent = () => {
           intentId: paymentIntentId
         }),      
       }
+      
     );
     console.log(response.status);
     if (response.status === 200) {
