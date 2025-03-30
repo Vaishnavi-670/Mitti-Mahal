@@ -38,13 +38,12 @@ const ThankYouContent = () => {
         }),      
       }
     );
-    
+
     console.log(response.status);
     if (response.status === 200) {
       !ISSERVER && sessionStorage.removeItem("bookingDetails");
       !ISSERVER && sessionStorage.removeItem("carDetails");
-    }
-    
+    } 
   };
   const retrievePaymentIntent = async () => {
     const response = await fetch(
