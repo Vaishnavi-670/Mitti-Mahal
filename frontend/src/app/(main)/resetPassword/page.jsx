@@ -33,7 +33,6 @@ const ResetPassword = () => {
     const [success, setSuccess] = useState('');
     const emailRef = useRef();
     const otpRef = useRef();
-
     const handleSendOtp = async (e) => {
         axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getbyemail/` + emailRef.current.value)
             .then((result) => {
