@@ -58,7 +58,6 @@ const ResetPassword = () => {
                     toast.error('Failed to fetch user details');
                 }
             });
-
         // e.preventDefault(); 
     };
     return (
