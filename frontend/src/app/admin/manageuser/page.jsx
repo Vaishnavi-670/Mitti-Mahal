@@ -36,7 +36,6 @@ const ManageUser = () => {
   //     </tr>
   //   ))
   // }
-
   return (
     <>
       <>
