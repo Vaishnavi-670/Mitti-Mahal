@@ -16,7 +16,6 @@ const ManageUser = () => {
   useEffect(() => {
     fetchUser();
   }, []);
-
   const deleteUser = async (id) => {
     console.log(id);
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/delete/` + id, { method: 'DELETE' })
