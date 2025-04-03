@@ -25,7 +25,6 @@ const ManageUser = () => {
       fetchUser();
     }
   }
-
   // const displayUserData = () => {
   //   return userList.map((user, index) => (
   //     <tr key={index}>
