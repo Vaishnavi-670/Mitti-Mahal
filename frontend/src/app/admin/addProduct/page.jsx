@@ -55,6 +55,7 @@ const AddProduct = () => {
                 console.log(err);
             });
     }
+    
     return (
         <>
             <div className='flex justify-center  items-center h-screen'>
