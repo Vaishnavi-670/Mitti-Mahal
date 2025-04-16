@@ -65,8 +65,9 @@ const AddProduct = () => {
                             <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
                                 Add Products
                             </h3>
+                            
                         </div>
-                        
+
                         <div className="flex flex-col gap-4 p-6">
                             <div className="relative h-14 w-full min-w-[200px]">
                                 <input id='title' onChange={addProduct.handleChange} value={addProduct.values.title}
