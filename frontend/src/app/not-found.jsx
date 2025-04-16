@@ -4,10 +4,8 @@ import React from 'react';
 const NotFoundPage = () => {
     return (
         <>
-        
             <div className='w-[100%]'>
                 <div className='flex h-[100vh] pl-10  w-[90%] '>
-
                     <div className='flex w-1/2 justify-center items-center ml-20'>
                         <img className='h-[80vh] mt-10' src="/notfound.jpg" alt="" />
                     </div>
@@ -23,7 +21,6 @@ const NotFoundPage = () => {
                                 className="w-80 h-32 object-cover"
                             />
                         </div>
-
                         <p className="text-lg text-center w-[450px] mb-8">
                             Sorry, we couldn't find the page you're looking for.
                             But don't worry, you can explore more clay products on our homepage.
