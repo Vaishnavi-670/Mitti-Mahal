@@ -13,7 +13,6 @@ export const WishlistProvider = ({ children }) => {
         }
     );
 
-
     // Function to add an item to the wishlist
     const addToWishlist = (newItem) => {
         console.log(wishlist);
