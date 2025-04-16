@@ -4,6 +4,7 @@ import React from 'react';
 const NotFoundPage = () => {
     return (
         <>
+        
             <div className='w-[100%]'>
                 <div className='flex h-[100vh] pl-10  w-[90%] '>
 

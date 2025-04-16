@@ -3,11 +3,10 @@ import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import useCartContext from '@/context/CartContext';
 import { Formik, useFormik } from 'formik';
-const ISSERVER = typeof window === undefined;
-
-
+const ISSERVER = typeof window === "undefined";
 
 const CheckoutPage = () => {
+
     const { cart, calculateTotalPrice } = useCartContext();
 
     const checkoutForm = useFormik({
@@ -19,7 +18,6 @@ const CheckoutPage = () => {
             address: '',
             city: '',
             postalCode: '',
-            
 
         },
         onSubmit: (values) => {
@@ -39,7 +37,7 @@ const CheckoutPage = () => {
 
             const options = {
                 key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-                amount: calculateTotalPrice()*100,
+                amount: calculateTotalPrice() * 100,
                 currency: "INR",
                 name: "Mitti Mahal",
                 description: "Product Purchase",
@@ -47,7 +45,7 @@ const CheckoutPage = () => {
                 handler: async (response) => {
                     console.log("Payment successful", response);
                     console.log(checkoutForm.values);
-                    
+
                     // save new order
                     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/add`, {
                         method: "POST",
@@ -82,6 +80,7 @@ const CheckoutPage = () => {
         } finally {
             setisProcessing(false);
         }
+
     };
 
 
@@ -270,7 +269,7 @@ const CheckoutPage = () => {
                                     onChange={checkoutForm.handleChange} value={checkoutForm.values.totalAmont}
                                 />
                             </div> */}
-                           
+
 
                             <h2 className="text-2xl font-semibold mt-8 text-gray-700">
                                 <img src="https://i.pinimg.com/236x/f3/99/f4/f399f4c3a5662fcbf8a1a7e8fb69a181.jpg" alt="Standard" className="inline-block object-cover w-10 h-9 mr-2" />

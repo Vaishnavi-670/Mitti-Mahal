@@ -16,7 +16,6 @@ const ManageUser = () => {
   useEffect(() => {
     fetchUser();
   }, []);
-
   const deleteUser = async (id) => {
     console.log(id);
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/delete/` + id, { method: 'DELETE' })
@@ -25,7 +24,6 @@ const ManageUser = () => {
       fetchUser();
     }
   }
-
   // const displayUserData = () => {
   //   return userList.map((user, index) => (
   //     <tr key={index}>
@@ -36,7 +34,6 @@ const ManageUser = () => {
   //     </tr>
   //   ))
   // }
-
   return (
     <>
       <>
@@ -89,8 +86,6 @@ const ManageUser = () => {
                       </div>
                     </div>
                   </div>
-                  {/* End Header */}
-                  {/* Table */}
                   <table className="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
                     <thead className="bg-gray-50 dark:bg-neutral-800">
                       <tr>

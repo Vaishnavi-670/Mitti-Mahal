@@ -4,10 +4,9 @@ import Link from 'next/link'
 import { enqueueSnackbar } from 'notistack'
 import React from 'react'
 
-const ISSERVER = typeof window === undefined;
+const ISSERVER = typeof window === "undefined";
 
 const Signup = () => {
-
     const signupform = useFormik({
         initialValues: {
             name: '',

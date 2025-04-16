@@ -29,8 +29,8 @@ const ManageProduct = () => {
   if (loading ){
     return <Loading />
   }
-  return (
-    
+  
+  return ( 
       <>
         {/* Table Section */}
         <div className=" px-4 py-5  mt-0 sm:px-6 lg:px-8 lg:py-14 mx-auto">

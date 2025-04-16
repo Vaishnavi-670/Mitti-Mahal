@@ -1,7 +1,6 @@
 'use client'
 import useWishlistContext from "@/context/WishlistContext";
-import React, { useState } from "react";
-
+import React from "react";
 
 const Wishlist = () => {
   const { wishlist } = useWishlistContext();

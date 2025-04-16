@@ -5,10 +5,9 @@ import React, { useEffect, useState } from 'react'
 const OrderDetails = () => {
   const [order, setorder] = useState(null)
   const { id } = useParams();
-
   const fetchProductId = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/order/getbyid/` + id);
-    console.log(res.status);
+    console.log(res.status);    
     const data = await res.json();
     console.table(data);
     setorder(data);
@@ -19,7 +18,7 @@ const OrderDetails = () => {
   const showProductDetails = () => {
     if (order !== null) {
       return (
-        <>
+        <>  
           {order?.items.map((item) => (
             <div
               key={item._id}
@@ -33,13 +32,11 @@ const OrderDetails = () => {
                     alt={item.title}
                     className="w-full h-full object-cover rounded-lg shadow"
                   />
-                </div>
-  
+                </div>  
                 {/* Product Details */}
                 <div className="flex-1 space-y-2">
                   <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
-                  <p className="text-base text-gray-600">{item.description}</p>
-  
+                  <p className="text-base text-gray-600">{item.description}</p>  
                   {/* Price */}
                   <div className="flex justify-between items-center mt-3">
                     <div>
@@ -92,7 +89,6 @@ const OrderDetails = () => {
                 {order?.orderStatus}
               </span>
             </div>
-  
             {/* Payment Status */}
             <div className="flex justify-between items-center">
               <h3 className="text-lg font-medium text-gray-700">Payment Status:</h3>
@@ -104,14 +100,12 @@ const OrderDetails = () => {
           </div>
         </div>
       </div>
-  
       {/* Shipping Address Section */}
       <div className="w-full max-w-4xl mt-8">
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-gray-800 border-b pb-4 mb-6">
             Shipping Address
-          </h2>
-  
+          </h2> 
           <div className="text-gray-700 space-y-3">
             {/* <p className="text-lg"><span className="font-semibold">Name:</span> {order?.shippingAddress?.name}</p> */}
             <p className="text-lg"><span className="font-semibold">Address:</span> {order?.shippingAddress?.address}</p>
@@ -123,8 +117,7 @@ const OrderDetails = () => {
         </div>
       </div>
     </div>
-  );
-  
+  ); 
 }
 
 

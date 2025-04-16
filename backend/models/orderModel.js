@@ -24,7 +24,7 @@ const orderSchema = new Schema({
     type: String,
     required: true,
     enum: ['Pending', 'Paid', 'Failed'],
-    default: 'Pending',
+    default: 'Paid',
   },
   orderStatus: {
     type: String,

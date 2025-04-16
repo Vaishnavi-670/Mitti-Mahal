@@ -1,49 +1,58 @@
 "use client";
-import { IconCircleCheck, IconCircleX } from "@tabler/icons-react";
-import React, { useEffect, useRef, useState } from "react";
-// import { useLocation } from "next/navigation";
+import React, { useEffect, useRef, useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+const ISSERVER = typeof window === "undefined"; 
+
 const ThankYou = () => {
-  const hasRun = useRef();
-
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(sessionStorage.getItem("user"))
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ThankYouContent />
+    </Suspense>
   );
+};
+const ThankYouContent = () => {
 
-  let params = new URLSearchParams(location.search);
-  console.log(params.get("payment_intent"));
-
-  const savePayment = async () => {
-    const bookingDetails = JSON.parse(sessionStorage.getItem("bookingDetails"));
+  const hasRun = useRef();
+  const searchParams = useSearchParams();
+  const [currentUser, setCurrentUser] = useState(
+    !ISSERVER ? JSON.parse(sessionStorage.getItem("user") || "null") : null
+  );   
+  // Use searchParams instead of directly accessing location
+  const paymentIntentId = searchParams.get("payment_intent");
+  const redirectStatus = searchParams.get("redirect_status");
+  const savePayment = async () => {   
+    const bookingDetails = !ISSERVER ? JSON.parse(sessionStorage.getItem("bookingDetails") || "null") : null;
     const paymentDetails = await retrievePaymentIntent();
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/booking/add`,
-      {
+      {   
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        
         body: JSON.stringify({
           ...bookingDetails,
           paymentDetails: paymentDetails,
-          intentId: params.get("payment_intent")
-        }),
+          intentId: paymentIntentId
+        }),      
       }
+
     );
     console.log(response.status);
     if (response.status === 200) {
-      sessionStorage.removeItem("bookingDetails");
-      sessionStorage.removeItem("carDetails");
-    }
+      !ISSERVER && sessionStorage.removeItem("bookingDetails");
+      !ISSERVER && sessionStorage.removeItem("carDetails");
+    } 
   };
-
   const retrievePaymentIntent = async () => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/retrieve-payment-intent`,
       {
         method: "POST",
         body: JSON.stringify({
-          paymentIntentId: params.get("payment_intent"),
+          paymentIntentId: paymentIntentId,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -59,12 +68,12 @@ const ThankYou = () => {
   useEffect(() => {
     if (!hasRun.current) {
       hasRun.current = true;
-      if (params.get("redirect_status") === "succeeded") {
+      if (redirectStatus === "succeeded") {
         savePayment();
-
       }
     }
-  }, []);
+  }, [redirectStatus]);
+  
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
       <img
@@ -91,9 +100,6 @@ const ThankYou = () => {
       >
         Back to Home Page
       </Link>
-
-      
-      
     </div>
   );
 };

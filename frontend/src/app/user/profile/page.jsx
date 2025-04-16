@@ -6,7 +6,7 @@ import Account from './Account';
 import Settings from './Settings';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-const ISSERVER = typeof window === undefined;
+const ISSERVER = typeof window === "undefined";
 
 
 

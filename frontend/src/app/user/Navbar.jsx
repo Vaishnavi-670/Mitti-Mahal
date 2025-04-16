@@ -1,10 +1,12 @@
 'use client'
-import useUserContext from '@/context/AppContext';
+import { useUserContext } from '@/context/AppContext';
 import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {
-  const { isLoggedIn, logout} = useUserContext();
+  const context = useUserContext();
+  const isLoggedIn = context?.isLoggedIn;
+  const logout = context?.logout;
 
   const showLoggedInOptions = () => {
     if (isLoggedIn) {

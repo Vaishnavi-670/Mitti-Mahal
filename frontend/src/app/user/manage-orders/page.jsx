@@ -4,7 +4,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-const ISSERVER = typeof window === undefined;
+const ISSERVER = typeof window === "undefined";
 
 
 const ManageOrdersPage = () => {
@@ -45,35 +45,43 @@ const ManageOrdersPage = () => {
   }
 
   return (
+    
     <div className='flex flex-col items-center justify-center'>
       <div className="p-8 w-[90%] min-h-screen">
         <h2 className="text-3xl font-bold mb-6 text-center">Manage Orders</h2>
         {orderList.length === 0 ? (
           <p>No orders found.</p>
-        ) : (
+        ) : (          
           <div className="overflow-x-auto">
+
             <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
               <thead className="bg-gray-200">
                 <tr>
-                  <th className="px-4 py-2 border">Product</th>
+
+                  <th className="px-4 py-2 border">Product Id</th>
                   <th className="px-4 py-2 border">Product Name</th>
                   <th className="px-4 py-2 border">Price</th>
                   <th className="px-4 py-2 border">Quantity</th>
                   <th className="px-4 py-2 border">Status</th>
                   <th className="px-4 py-2 border">Actions</th>
                   <th className="px-4 py-2 border">View Details</th>
+
                 </tr>
+
               </thead>
+
               <tbody>
-                {orderList.map((order) => (
+                {orderList.map((order) => (                  
                   <tr key={order._id} className="text-center hover:bg-gray-50 transition">
                     <td className="px-4 py-2 border">
-                      <img
+                      {/* <img
                         src={order.image}
                         alt={order.title}
                         className="w-20 h-20 rounded-md object-cover mx-auto"
-                      />
-                    </td>
+                      /> */}
+                      {order._id}
+                    </td>               
+                    <td className="px-4 py-2 border">{order.items.title}</td>
                     <td className="px-4 py-2 border">{order.items.length}</td>
                     <td className="px-4 py-2 border">₹{calculateItemsTotal(order.items)}</td>
                     {/* <td className="px-4 py-2 border">{order.qty}</td> */}
