@@ -55,7 +55,7 @@ const AddProduct = () => {
                 console.log(err);
             });
     }
-    
+
     return (
         <>
             <div className='flex justify-center  items-center h-screen'>
@@ -66,6 +66,7 @@ const AddProduct = () => {
                                 Add Products
                             </h3>
                         </div>
+                        
                         <div className="flex flex-col gap-4 p-6">
                             <div className="relative h-14 w-full min-w-[200px]">
                                 <input id='title' onChange={addProduct.handleChange} value={addProduct.values.title}
