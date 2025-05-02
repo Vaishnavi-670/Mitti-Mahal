@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { IconHeart, IconUserCircle } from '@tabler/icons-react';
-
 // Dynamically import LocomotiveScroll with no SSR
 const LocomotiveScroll = dynamic(() => import('locomotive-scroll'), {
   ssr: false
