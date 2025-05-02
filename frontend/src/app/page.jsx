@@ -22,7 +22,6 @@ const ScrollContainer = ({ children }) => {
   console.log(scrollRef.current);
   
   const [locomotiveScroll, setLocomotiveScroll] = useState(null);
-
   useEffect(() => {
     if (!scrollRef.current) return;
     console.log(scrollRef.current);
