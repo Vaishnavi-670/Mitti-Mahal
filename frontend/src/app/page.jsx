@@ -17,7 +17,6 @@ const useBrowserObject = () => {
 
   return { isClient };
 };
-
 const ScrollContainer = ({ children }) => {
   const scrollRef = useRef(null);
   console.log(scrollRef.current);
