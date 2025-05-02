@@ -8,7 +8,6 @@ import { IconHeart, IconUserCircle } from '@tabler/icons-react';
 const LocomotiveScroll = dynamic(() => import('locomotive-scroll'), {
   ssr: false
 });
-
 const useBrowserObject = () => {
   const [isClient, setIsClient] = useState(false);
 
