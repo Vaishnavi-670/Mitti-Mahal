@@ -24,8 +24,7 @@ const ScrollContainer = ({ children }) => {
   const [locomotiveScroll, setLocomotiveScroll] = useState(null);
   useEffect(() => {
     if (!scrollRef.current) return;
-    console.log(scrollRef.current);
-    
+    console.log(scrollRef.current); 
     // Import the CSS only on client-side
     import('locomotive-scroll/dist/locomotive-scroll.css');
 
